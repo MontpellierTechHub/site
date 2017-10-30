@@ -1,7 +1,6 @@
 {:title "About"
  :layout :page
- :page-index 0
- :navbar? true}
+ :page-index 0}
 
 ## Write something about something
 

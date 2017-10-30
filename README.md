@@ -18,10 +18,9 @@ Features List
  - [ ] Défilement des sponsors
  - [ ] Proposer un talk
  - [ ] Liste des membres
- - [ ] Liste des sponsors
  - [ ] Systeme de notif meetups (RSS/...
  - [ ] Faire un don
- - [ ] Derniers vidéos Youtube
+ - [ ] Dernières vidéos Youtube
 
 ## Dev
 

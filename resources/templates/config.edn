@@ -17,7 +17,7 @@
  :sass-src             []
  :sass-path            "sass"
  :compass-path         "compass"
- :theme                "blue"
+ :theme                "blue_centered"
  :resources            ["img"]
  :keep-files           [".git"]
  :disqus?              false

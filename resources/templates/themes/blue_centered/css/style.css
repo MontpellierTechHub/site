@@ -1,0 +1,22 @@
+#socialmedia ul {
+    bottom: 30px;
+    left: 30px;
+    margin: 0;
+}
+#socialmedia ul li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 12px 0 0;
+    padding: 0;
+}
+
+#socialmedia ul li a {
+    font-size: 23px;
+    color: #FFF;
+    opacity: 0.4;
+}
+
+#socialmedia ul li a:hover {
+    opacity: 1;
+}
+
