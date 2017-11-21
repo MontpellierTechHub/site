@@ -1,5 +1,5 @@
 {:title "Sponsors"
- :layout :page
+ :layout :sponsors
  :page-index 2
  :navbar? true}
 

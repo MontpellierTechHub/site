@@ -4,10 +4,10 @@
  :site-url             "https://www.montpellier-techhub.org"
  :post-root            "posts"
  :page-root            "pages"
- :post-root-uri        "posts-output"
- :page-root-uri        "pages-output"
- :tag-root-uri         "tags-output"
- :author-root-uri      "authors-output"
+ :post-root-uri        "posts"
+ :page-root-uri        ""
+ :tag-root-uri         "tags"
+ :author-root-uri      "authors"
  :blog-prefix          "/"
  :rss-name             "feed.xml"
  :rss-filters          ["cryogen"]
@@ -29,4 +29,31 @@
  :clean-urls?          true
  :hide-future-posts?   true
  :klipse               {}
- :debug?               false}
+ :debug?               false
+ :sponsors             [{:name "Or"
+                         :list [{:name        "TabMo"
+                                 :url         "https://www.tabmo.io/"
+                                 :image       "tabmo.png"
+                                 :description "Just TabMo !"}
+                                {:name        "BeOpinion"
+                                 :url         "https://www.beopinion.com/"
+                                 :image       "beopinion.png"
+                                 :description "Just BeOpinion !"}]}
+                        {:name "Argent"
+                         :list [{:name        "GitHub"
+                                 :url         "https://www.github.com/"
+                                 :image       "github.png"
+                                 :description "Just GitHub !"}]}
+                        {:name "Bronze"
+                         :list [{:name        "Google"
+                                 :url         "https://www.google.com/"
+                                 :image       "google.png"
+                                 :description "Just Google !"}]}]
+ :members              [{:name        "JUG-Montpellier"
+                         :url         "https://www.meetup.com/JUG-Montpellier/"
+                         :image       "JUG.png"
+                         :description "Le Java Users Group de Montpellier !"}
+                        {:name        "MontpellierJS"
+                         :url         "https://www.meetup.com/MontpellierJS/"
+                         :image       "MontpellierJS.jpeg"
+                         :description "Les meetups JavaScript & Node.js de Montpellier !"}]}
