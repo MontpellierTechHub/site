@@ -1,8 +1,16 @@
 <template>
   <div id="app">
-    <mth-header/>
-    <router-view/>
-    <mth-footer/>
+    <b-container>
+      <b-row class="mb-4">
+        <mth-header/>
+      </b-row>
+      <b-row class="mb-4">
+        <router-view/>
+      </b-row>
+      <b-row class="mb-4">
+        <mth-footer/>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
