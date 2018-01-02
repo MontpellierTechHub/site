@@ -9,7 +9,7 @@ import config from '../../config'
 Vue.use(Router)
 export default new Router({
   mode: 'history',
-  base: config.assetsPublicPath,
+  base: config.build.assetsPublicPath,
   routes: [
     {
       path: '/',
