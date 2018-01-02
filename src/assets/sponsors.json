@@ -1,8 +1,12 @@
 [
   {
-    "name": "foo"
+    "name": "sponsor1",
+    "logo": "https://placebear.com/300/200",
+    "href": "https://www.google.com/"
   },
   {
-    "name": "bar"
+    "name": "sponsor2",
+    "logo": "https://placebear.com/300/200",
+    "href": "https://www.google.com/"
   }
 ]
