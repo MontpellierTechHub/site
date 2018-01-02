@@ -1,16 +1,8 @@
 <template>
-  <div id="app">
-    <b-container>
-      <b-row class="mb-4">
-        <mth-header/>
-      </b-row>
-      <b-row class="mb-4">
-        <router-view/>
-      </b-row>
-      <b-row class="mb-4">
-        <mth-footer/>
-      </b-row>
-    </b-container>
+  <div id="app" class="App">
+    <mth-header class="App__header"/>
+    <router-view class="App__content"/>
+    <mth-footer class="App__footer"/>
   </div>
 </template>
 
@@ -25,8 +17,5 @@ export default {
 </script>
 
 <style>
-#app {
-  height: 100%;
-  width: 100%;
-}
+
 </style>
