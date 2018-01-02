@@ -11,7 +11,8 @@
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
+    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
+    "deploy": "npm run build && gh-pages -d build"
   },
   "dependencies": {
     "bootstrap": "4.0.0-beta.2",
@@ -22,6 +23,7 @@
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
+    "gh-pages": "^1.1.0",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
