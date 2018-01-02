@@ -2,24 +2,26 @@
   <header class="Header" :class="['Header--' + theme, { 'Header--fixed': fixed, 'Header--collapsed': collapsed }]">
     <b-navbar toggleable="md" :type="theme">
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-      <b-navbar-brand :to="{ name:'Home' }">TechHub</b-navbar-brand>
+      <b-navbar-brand :to="{ name:'Home' }">
+        <img class="Header__logo" :src="logo" alt="Montpellier Tech Hub"/>
+      </b-navbar-brand>
       <b-collapse id="nav_collapse" is-nav>
         <b-navbar-nav class="ml-auto">
-          <b-nav-item :to="{ name:'Home' }">ACCUEIL</b-nav-item>
-          <b-nav-item :to="{ name:'Meetups' }">MEETUPS</b-nav-item>
-          <b-nav-item :to="{ name:'Sponsors' }">SPONSORS</b-nav-item>
-          <b-nav-item :to="{ name:'About' }">À PROPOS</b-nav-item>
+          <!-- <b-nav-item :to="{ name:'Home' }">ACCUEIL</b-nav-item> -->
+          <!-- <b-nav-item :to="{ name:'Meetups' }">MEETUPS</b-nav-item> -->
+          <!-- <b-nav-item :to="{ name:'Sponsors' }">SPONSORS</b-nav-item> -->
+          <!-- <b-nav-item :to="{ name:'About' }">À PROPOS</b-nav-item> -->
           <b-nav-item target="_blank" href="https://comm-montpellier-invit.herokuapp.com/">
             <i class="fa fa-slack"></i>
-          </b-nav-item>
-          <b-nav-item target="_blank" href="https://www.meetup.com/fr-FR/">
-            <i class="fa fa-meetup"></i>
+            <span class="d-md-none">Slack</span>
           </b-nav-item>
           <b-nav-item target="_blank" href="https://www.youtube.com/channel/UC1ZadBAsgOgD0eo2R3JTgNA">
             <i class="fa fa-youtube"></i>
+            <span class="d-md-none">YouTube</span>
           </b-nav-item>
           <b-nav-item target="_blank" href="https://github.com/MontpellierTechHub">
             <i class="fa fa-github"></i>
+            <span class="d-md-none">GitHub</span>
           </b-nav-item>
         </b-navbar-nav>
       </b-collapse>
@@ -28,6 +30,9 @@
 </template>
 
 <script>
+  import logoDark from '../assets/logo-dark.svg'
+  import logoLight from '../assets/logo-light.svg'
+
   export default {
     name: 'Header',
     data () {
@@ -47,6 +52,9 @@
     computed: {
       theme () {
         return this.fixed || this.collapsed ? 'light' : 'dark'
+      },
+      logo () {
+        return this.fixed || this.collapsed ? logoDark : logoLight
       }
     },
     mounted () {
@@ -85,6 +93,10 @@
     padding: 0;
   }
 
+  .Header__logo {
+    height: 40px;
+  }
+
   /* Override Bootstrap */
   .navbar > .navbar-toggler {
     border: none;
@@ -93,5 +105,9 @@
   .navbar > .navbar-brand,
   .navbar .navbar-nav > .nav-item > .nav-link {
     transition: color 1s ease
+  }
+  .navbar > .navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 </style>

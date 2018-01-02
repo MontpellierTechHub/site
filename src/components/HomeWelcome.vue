@@ -32,7 +32,7 @@ export default {
     bottom: 0;
     right: 0;
     background: #000000;
-    opacity: .7;
+    opacity: .5;
   }
   .HomeWelcome p {
     font-size: 1.5rem;

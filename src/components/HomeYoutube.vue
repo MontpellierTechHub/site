@@ -1,7 +1,9 @@
 <template>
   <section class="HomeYoutube">
     <b-container>
-      <h2 class="mb-5 text-center">Notre chaîne YouTube</h2>
+      <h2 class="mb-5 text-center">
+        <i class="fa fa-youtube"></i> Notre chaîne YouTube
+      </h2>
       <div class="HomeYoutube__player">
         <iframe src="https://www.youtube.com/embed/+lastest?list=PLmPKd8IshlDRcbve6iLkxeYAlDJ2xIDC1" frameborder="0" allowfullscreen></iframe>
       </div>
