@@ -4,11 +4,12 @@ import About from '@/components/About'
 import Home from '@/components/Home'
 import Meetups from '@/components/Meetups'
 import Sponsors from '@/components/Sponsors'
+import config from '../../config'
 
 Vue.use(Router)
-
 export default new Router({
   mode: 'history',
+  base: config.assetsPublicPath,
   routes: [
     {
       path: '/',
