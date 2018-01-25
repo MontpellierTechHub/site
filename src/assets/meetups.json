@@ -1,0 +1,42 @@
+[
+  {
+    "name": "JUG - JAVA USER GROUP",
+    "body": "Créé pour partager nos expériences des TIC, et promouvoir les technologies autour de Java. Depuis 2009, un évènements par mois qui regroupe de 50 à 150 personnes.",
+    "href": "https://www.meetup.com/fr-FR/JUG-Montpellier/"
+  },
+  {
+    "name": "ANDROID USER GROUP",
+    "body": "Le meetup Android aborde tous les sujets autour de cet OS, son écosystème et ses technologies. Le libre a ici une place importante.",
+    "href": "https://www.meetup.com/fr-FR/Montpellier-Android-User-Group/"
+  },
+  {
+    "name": "BIG DATA / DATA SCIENCE",
+    "body": "La Data est au coeur des transformations numériques d’aujourd’hui et de demain ! Ce meetup couvre deux aspects de ces transformations : L’engineering nécessaire au traitement des données Big Data (streaming processing, bases de données NoSQL, data lake, architectures Lambda/Kappa) et la Data Science lié aux aspects scientifiques de l’analyse des données (machine learning, analytics predictive, statistique, extraction des connaissances)",
+    "href": "https://www.meetup.com/fr-FR/Big-Data-Science-Montpellier/"
+  },
+  {
+    "name": "FONCTIONAL PROGRAMMING",
+    "body": null,
+    "href": "https://www.meetup.com/fr-FR/Functional-Programming-Montpellier/"
+  },
+  {
+    "name": "HUMAN TALKS",
+    "body": "Des présentations de 10 minutes tous les 2ème mardi du mois pour découvrir de nouvelles choses, faire sa veille technologique et pourquoi pas ses premiers pas de speaker !",
+    "href": "https://www.meetup.com/fr-FR/HumanTalks-Montpellier/"
+  },
+  {
+    "name": "MONTPELLIER C++",
+    "body": "Depuis 2011, C++ évolue et se transforme de façon importante. Découvrir et échanger autour de ce langage au spectre d’utilisation incroyablement large. Et également, découvrir d’autres langages tels que Go, D ou Rust !",
+    "href": "https://www.meetup.com/fr-FR/Montpellier-CPP/"
+  },
+  {
+    "name": "AFUP MONTPELLIER",
+    "body": "Depuis 2016, l’antenne Montpellieraine de l’AFUP organise, une fois par mois, des meetups pour partager les expériences autour du langage PHP mais, également, d’évoquer les sujets plus large sur le métier de développeur.",
+    "href": "https://www.meetup.com/fr-FR/Montpellier-PHP-Meetup/"
+  },
+  {
+    "name": "MONTPELLIER JS",
+    "body": "JavaScript est l’un des langages les plus populaires au monde. Indispensable au développement web, il offre également d’infinies possibilités côté serveur avec Node.js. Les meetups ont lieu tous les 2 mois et réunissent entre 30 et 80 personnes.",
+    "href": "https://www.meetup.com/fr-FR/Montpellier-PHP-Meetup/"
+  }
+]

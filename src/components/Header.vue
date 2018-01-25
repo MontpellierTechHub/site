@@ -27,6 +27,10 @@
             <i class="fa fa-github"></i>
             <span class="d-md-none">GitHub</span>
           </b-nav-item>
+          <b-nav-item target="_blank" href="https://www.linkedin.com/company/11447137/">
+            <i class="fa fa-linkedin"></i>
+            <span class="d-md-none">LinkedIn</span>
+          </b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
