@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import logo from '../assets/logo-mth.svg'
+import logo from '../assets/logo-light.svg'
 
 export default {
   name: 'HomeWelcome',

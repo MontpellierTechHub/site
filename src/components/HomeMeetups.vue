@@ -42,6 +42,4 @@ export default {
     padding: 80px 0;
     background-color: #f5f5f5;
   }
-  .HomeMeetups__item {
-  }
 </style>

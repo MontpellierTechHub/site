@@ -1,7 +1,10 @@
 <template>
   <section class="HomeSponsors">
     <b-container>
-      <h2 class="mb-5 text-center">Nos sponsors</h2>
+      <h2 class="mb-5 text-center">
+        <i class="fa fa-heart" aria-hidden="true"></i>
+        Nos sponsors
+      </h2>
       <b-row>
         <b-col sm="6" md="4" lg="3" v-for="sponsor of sponsors" :key="sponsor.name">
           <a class="HomeSponsors__item" :href="sponsor.href">
