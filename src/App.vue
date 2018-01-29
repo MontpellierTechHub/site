@@ -17,5 +17,7 @@ export default {
 </script>
 
 <style>
-
+a, a:hover {
+  color: #9734A2;
+}
 </style>

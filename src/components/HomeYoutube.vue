@@ -2,7 +2,8 @@
   <section class="HomeYoutube">
     <b-container>
       <h2 class="mb-5 text-center">
-        <i class="fa fa-youtube"></i> Notre chaîne YouTube
+        <i class="fa fa-youtube" aria-hidden="true"></i>
+        Nos dernières vidéos
       </h2>
       <div class="HomeYoutube__player">
         <iframe src="https://www.youtube.com/embed/+lastest?list=PLmPKd8IshlDRcbve6iLkxeYAlDJ2xIDC1" frameborder="0" allowfullscreen></iframe>

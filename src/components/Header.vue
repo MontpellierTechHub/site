@@ -11,7 +11,11 @@
           <!-- <b-nav-item :to="{ name:'Meetups' }">MEETUPS</b-nav-item> -->
           <!-- <b-nav-item :to="{ name:'Sponsors' }">SPONSORS</b-nav-item> -->
           <!-- <b-nav-item :to="{ name:'About' }">À PROPOS</b-nav-item> -->
-          <b-nav-item target="_blank" href="https://comm-montpellier-invit.herokuapp.com/">
+          <b-nav-item target="_blank" href="https://twitter.com/MtpTechHub">
+            <i class="fa fa-twitter"></i>
+            <span class="d-md-none">Twitter</span>
+          </b-nav-item>
+          <b-nav-item target="_blank" href="https://bit.ly/comm-mtp">
             <i class="fa fa-slack"></i>
             <span class="d-md-none">Slack</span>
           </b-nav-item>
@@ -22,6 +26,10 @@
           <b-nav-item target="_blank" href="https://github.com/MontpellierTechHub">
             <i class="fa fa-github"></i>
             <span class="d-md-none">GitHub</span>
+          </b-nav-item>
+          <b-nav-item target="_blank" href="https://www.linkedin.com/company/11447137/">
+            <i class="fa fa-linkedin"></i>
+            <span class="d-md-none">LinkedIn</span>
           </b-nav-item>
         </b-navbar-nav>
       </b-collapse>

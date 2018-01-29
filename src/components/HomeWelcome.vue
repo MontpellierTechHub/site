@@ -2,16 +2,23 @@
   <section class="HomeWelcome">
     <b-container class="position-relative d-table h-100">
       <div class="d-table-cell align-middle text-white text-center">
-        <h1 class="mb-4">Montpellier TechHub</h1>
-        <p>Une super phrase pour nous présenter !</p>
+        <img class="HomeWelcome__logo" :src="logo" alt="Montpellier Tech Hub"/>
+        <p>Association qui accompagne les meetups tech de Montpellier</p>
       </div>
     </b-container>
   </section>
 </template>
 
 <script>
+import logo from '../assets/logo-light.svg'
+
 export default {
-  name: 'HomeWelcome'
+  name: 'HomeWelcome',
+  data () {
+    return {
+      logo: logo
+    }
+  }
 }
 </script>
 
@@ -37,5 +44,9 @@ export default {
   .HomeWelcome p {
     font-size: 1.5rem;
     font-weight: 300;
+  }
+  .HomeWelcome__logo {
+    max-width: 35rem;
+    margin-bottom: 2rem;
   }
 </style>
