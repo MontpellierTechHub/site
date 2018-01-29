@@ -5,14 +5,21 @@
         <i class="fa fa-meetup" aria-hidden="true"></i>
         Les meetups qui nous ont déjà rejoint
       </h2>
-      <b-row>
-        <b-col class="HomeMeetups__item" sm="6" md="4" lg="3" v-for="meetup of meetups" :key="meetup.name">
-          <a :href="meetup.href">
-            {{ meetup.name }}
-          </a>
-          <p>{{ meetup.body }}</p>
-        </b-col>
-      </b-row>
+      <b-card-group columns>
+        <b-card v-for="meetup of meetups" :key="meetup.name" tag="article" class="mb-4">
+          <h5 class="card-title">
+            <a :href="meetup.href" target="_blank">
+              {{ meetup.name }}
+            </a>
+          </h5>
+          <p class="card-text">{{ meetup.body }}</p>
+          <div slot="footer">
+            <span class="text-muted">
+              ~ {{ meetup.avg_events }} évènements par an / {{ meetup.members }} membres
+            </span>
+          </div>
+        </b-card>
+      </b-card-group>
     </b-container>
   </section>
 </template>

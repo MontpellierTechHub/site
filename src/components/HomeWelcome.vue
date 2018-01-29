@@ -53,7 +53,7 @@ export default {
     font-weight: 300;
   }
   .HomeWelcome__icon {
-    width: 5rem;
+    width: 6rem;
     margin-bottom: 1rem;
   }
 </style>
