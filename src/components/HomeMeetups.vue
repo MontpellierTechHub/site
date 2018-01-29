@@ -6,7 +6,7 @@
         Les meetups qui nous ont déjà rejoint
       </h2>
       <b-card-group columns>
-        <b-card v-for="meetup of meetups" :key="meetup.name" tag="article" class="mb-4">
+        <b-card v-for="meetup of meetups" :key="meetup.name" tag="article">
           <h5 class="card-title">
             <a :href="meetup.href" target="_blank">
               {{ meetup.name }}

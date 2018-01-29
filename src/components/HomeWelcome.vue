@@ -2,8 +2,7 @@
   <section class="HomeWelcome">
     <b-container class="position-relative d-table h-100">
       <div class="d-table-cell align-middle text-white text-center">
-        <img class="HomeWelcome__icon" :src="icon" alt="Montpellier Tech Hub"/>
-        <h1 class="mb-4">Montpellier <strong>Tech Hub</strong></h1>
+        <img class="HomeWelcome__logo" :src="logo" alt="Montpellier Tech Hub"/>
         <p>Association qui accompagne les meetups tech de Montpellier</p>
       </div>
     </b-container>
@@ -11,13 +10,13 @@
 </template>
 
 <script>
-import icon from '../assets/logo-icon.png'
+import logo from '../assets/logo-mth.svg'
 
 export default {
   name: 'HomeWelcome',
   data () {
     return {
-      icon: icon
+      logo: logo
     }
   }
 }
@@ -42,18 +41,12 @@ export default {
     background: #000000;
     opacity: .5;
   }
-  .HomeWelcome h1 {
-    font-size: 2.5rem;
-    font-weight: 100;
-    text-transform: uppercase;
-    letter-spacing: -0.05rem;
-  }
   .HomeWelcome p {
     font-size: 1.5rem;
     font-weight: 300;
   }
-  .HomeWelcome__icon {
-    width: 6rem;
-    margin-bottom: 1rem;
+  .HomeWelcome__logo {
+    max-width: 35rem;
+    margin-bottom: 2rem;
   }
 </style>
