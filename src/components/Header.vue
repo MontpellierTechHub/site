@@ -10,7 +10,7 @@
           <!-- <b-nav-item :to="{ name:'Home' }">ACCUEIL</b-nav-item> -->
           <!-- <b-nav-item :to="{ name:'Meetups' }">MEETUPS</b-nav-item> -->
           <!-- <b-nav-item :to="{ name:'Sponsors' }">SPONSORS</b-nav-item> -->
-          <!-- <b-nav-item :to="{ name:'About' }">À PROPOS</b-nav-item> -->
+          <b-nav-item :to="{ name:'BecomeMember' }">Devenir member</b-nav-item>
           <b-nav-item target="_blank" href="https://twitter.com/MtpTechHub">
             <i class="fa fa-twitter"></i>
             <span class="d-md-none">Twitter</span>

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import About from '@/components/About'
+import BecomeMember from '@/components/BecomeMember'
 import Home from '@/components/Home'
 import Meetups from '@/components/Meetups'
 import Sponsors from '@/components/Sponsors'
@@ -30,6 +31,11 @@ export default new Router({
       path: '/sponsors',
       name: 'Sponsors',
       component: Sponsors
+    },
+    {
+      path: '/become-member',
+      name: 'BecomeMember',
+      component: BecomeMember
     },
     {
       path: '*',
