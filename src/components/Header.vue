@@ -2,7 +2,7 @@
   <header class="Header" :class="['Header--' + theme, { 'Header--fixed': fixed, 'Header--collapsed': collapsed }]">
     <b-navbar toggleable="md" :type="theme">
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-      <b-navbar-brand :to="{ name:'Home' }">
+      <b-navbar-brand :to="{ name:'Home' }" v-if="fixed || collapsed">
         <img class="Header__logo" :src="logo" alt="Montpellier Tech Hub"/>
       </b-navbar-brand>
       <b-collapse id="nav_collapse" is-nav>
@@ -39,14 +39,14 @@
 
 <script>
   import logoDark from '../assets/logo-dark.svg'
-  import logoLight from '../assets/logo-light.svg'
 
   export default {
     name: 'Header',
     data () {
       return {
         fixed: window.pageYOffset > 0,
-        collapsed: window.outerWidth < 768
+        collapsed: window.outerWidth < 768,
+        logo: logoDark
       }
     },
     methods: {
@@ -60,9 +60,6 @@
     computed: {
       theme () {
         return this.fixed || this.collapsed ? 'light' : 'dark'
-      },
-      logo () {
-        return this.fixed || this.collapsed ? logoDark : logoLight
       }
     },
     mounted () {

@@ -62,6 +62,7 @@ export default {
     padding: 80px 0;
   }
   .HomeAbout_social {
+    margin-top: 2.5rem;
     list-style: none;
     text-align: center;
   }
