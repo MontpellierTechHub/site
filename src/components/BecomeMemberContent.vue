@@ -36,11 +36,13 @@
             Des questions sur comment organiser mes meetups ? Nous sommes là pour t'aider dans ces démarches ! :)
           </b-media>
         </ul>
+
+        <a target="_blank" href="https://goo.gl/forms/8FzWcZnEryRnEKT63">Remplis ce formulaire pour inscrire ton meetup à Montpellier Tech Hub</a>
       </article>
 
       <article>
         <h4>Ton meetup ou le meetup à laquel tu assistes fait déjà parti de Montpellier Tech Hub ?</h4>
-        <p>Tu peux également devenir membre et donner ta cotisation à ce meetup. Tu contribueras ainsi directement à ses dépenses et son évolution :)</p>
+        <p>Tu peux également devenir membre et donner ta cotisation à ce meetup. Tu contribueras ainsi directement à ses dépenses et son évolution :). <a target="_blank" href="https://goo.gl/forms/InYJtKAgXIYJgRxT2">Deviens membre</a></p>
       </article>
     </b-container>
   </section>
