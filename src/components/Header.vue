@@ -7,10 +7,11 @@
       </b-navbar-brand>
       <b-collapse id="nav_collapse" is-nav>
         <b-navbar-nav class="ml-auto">
-          <!-- <b-nav-item :to="{ name:'Home' }">ACCUEIL</b-nav-item> -->
+          <b-nav-item exact active-class="active" :to="{ name:'Home' }">Home</b-nav-item>
           <!-- <b-nav-item :to="{ name:'Meetups' }">MEETUPS</b-nav-item> -->
           <!-- <b-nav-item :to="{ name:'Sponsors' }">SPONSORS</b-nav-item> -->
-          <b-nav-item :to="{ name:'BecomeMember' }">Devenir member</b-nav-item>
+          <b-nav-item active-class="active" class="nav-item__last" :to="{ name:'BecomeMember' }">Devenir member</b-nav-item>
+          
           <b-nav-item target="_blank" href="https://twitter.com/MtpTechHub">
             <i class="fa fa-twitter"></i>
             <span class="d-md-none">Twitter</span>
@@ -101,6 +102,13 @@
   .Header__logo {
     height: 40px;
   }
+  .active {
+    opacity: 1;
+    pointer-events: none;
+  }
+  .nav-item__last {
+    margin-right: 1rem;
+  }
 
   /* Override Bootstrap */
   .navbar > .navbar-toggler {
@@ -114,5 +122,12 @@
   .navbar > .navbar-brand {
     padding-top: 0;
     padding-bottom: 0;
+  }
+  .active {
+    opacity: 1;
+    pointer-events: none;
+  }
+  .nav-item__last {
+    margin-right: 1rem;
   }
 </style>
