@@ -19,14 +19,19 @@ export default {
 </script>
 
 <style scoped>
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .HomeYoutube {
     font-family: 'Roboto', sans-serif;
     padding: 80px 0;
   }
   .HomeYoutube__player {
     position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
+    width: 600px;
+    height: 339px;
   }
   .HomeYoutube__player > iframe {
     position: absolute;
