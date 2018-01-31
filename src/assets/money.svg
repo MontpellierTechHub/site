@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 61.8 61.8" enable-background="new 0 0 61.8 61.8" xml:space="preserve">
+<g>
+	<g>
+		<circle fill="#E5E6E7" cx="30.9" cy="30.9" r="30.9"/>
+	</g>
+	<g>
+		<g>
+			<circle fill="#EE9F31" cx="34.7" cy="27.6" r="14"/>
+			<circle fill="#F5CB35" cx="34.7" cy="27.6" r="11.2"/>
+			<text transform="matrix(1 0 0 1 30.7195 34.317)" fill="#EE9F31" font-family="'BebasNeueBold'" font-size="20.1529">€</text>
+		</g>
+		<g>
+			<g>
+				<path fill="#EE9F31" d="M25.7,49.3c-8.3,0-15-6.7-15-15s6.7-15,15-15c8.3,0,15,6.7,15,15S34,49.3,25.7,49.3z"/>
+				<path fill="#E5E6E7" d="M25.7,20.4c7.7,0,14,6.3,14,14s-6.3,14-14,14s-14-6.3-14-14S18,20.4,25.7,20.4 M25.7,18.4
+					c-8.8,0-16,7.2-16,16s7.2,16,16,16s16-7.2,16-16S34.5,18.4,25.7,18.4L25.7,18.4z"/>
+			</g>
+			<circle fill="#F5CB35" cx="25.7" cy="34.3" r="11.2"/>
+			<text transform="matrix(1 0 0 1 21.7136 41.0784)" fill="#EE9F31" font-family="'BebasNeueBold'" font-size="20.1529">€</text>
+		</g>
+	</g>
+</g>
+</svg>
