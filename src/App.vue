@@ -3,9 +3,7 @@
     <mth-home-header v-if="$route.path === '/'" class="App__header"/>
     <mth-page-header v-if="$route.path !== '/'" class="App__header"/>
     <router-view class="App__content"/>
-    <mth-footer class="App__footer"/>
-    <p>{{$route.path}}</p>
-    
+    <mth-footer class="App__footer"/>    
   </div>
 </template>
 
