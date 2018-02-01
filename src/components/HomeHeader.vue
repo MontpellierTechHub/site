@@ -5,44 +5,18 @@
       <b-navbar-brand :to="{ name:'Home' }" v-if="fixed || collapsed">
         <img class="Header__logo" :src="logo" alt="Montpellier Tech Hub"/>
       </b-navbar-brand>
-      <b-collapse id="nav_collapse" is-nav>
-        <b-navbar-nav class="ml-auto">
-          <b-nav-item exact active-class="active" :to="{ name:'Home' }">Home</b-nav-item>
-          <!-- <b-nav-item :to="{ name:'Meetups' }">MEETUPS</b-nav-item> -->
-          <!-- <b-nav-item :to="{ name:'Sponsors' }">SPONSORS</b-nav-item> -->
-          <b-nav-item active-class="active" class="nav-item__last" :to="{ name:'BecomeMember' }">Devenir member</b-nav-item>
-          
-          <b-nav-item target="_blank" href="https://twitter.com/MtpTechHub">
-            <i class="fa fa-twitter"></i>
-            <span class="d-md-none">Twitter</span>
-          </b-nav-item>
-          <b-nav-item target="_blank" href="https://bit.ly/comm-mtp">
-            <i class="fa fa-slack"></i>
-            <span class="d-md-none">Slack</span>
-          </b-nav-item>
-          <b-nav-item target="_blank" href="https://www.youtube.com/channel/UC1ZadBAsgOgD0eo2R3JTgNA">
-            <i class="fa fa-youtube"></i>
-            <span class="d-md-none">YouTube</span>
-          </b-nav-item>
-          <b-nav-item target="_blank" href="https://github.com/MontpellierTechHub">
-            <i class="fa fa-github"></i>
-            <span class="d-md-none">GitHub</span>
-          </b-nav-item>
-          <b-nav-item target="_blank" href="https://www.linkedin.com/company/11447137/">
-            <i class="fa fa-linkedin"></i>
-            <span class="d-md-none">LinkedIn</span>
-          </b-nav-item>
-        </b-navbar-nav>
-      </b-collapse>
+      <mth-main-menu />
     </b-navbar>
   </header>
 </template>
 
 <script>
   import logoDark from '../assets/logo-dark.svg'
+  import MthMainMenu from '@/components/MainMenu'
 
   export default {
-    name: 'Header',
+    name: 'HomeHeader',
+    components: { MthMainMenu },
     data () {
       return {
         fixed: window.pageYOffset > 0,

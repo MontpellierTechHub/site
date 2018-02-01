@@ -51,7 +51,7 @@
       </article>
 
       <article>
-        <h4>Ton meetup ou le meetup à laquel tu assistes fait déjà parti de Montpellier Tech Hub ?</h4>
+        <h4>Ton meetup ou le meetup auquel tu assistes fait déjà parti de Montpellier Tech Hub ?</h4>
         <p>Tu peux également devenir membre et donner ta cotisation à ce meetup. Tu contribueras ainsi directement à ses dépenses et son évolution.</p>
           
         <b-button variant="outline-secondary" target="_blank" href="https://goo.gl/forms/InYJtKAgXIYJgRxT2">Deviens membre</b-button>
@@ -87,6 +87,7 @@ export default {
 <style scoped>
   h1 {
     margin: 2rem;
+    margin-top: 4rem;
   }
   article {
     margin-top: 5rem;
@@ -99,5 +100,8 @@ export default {
   }
   article {
     text-align: center;
+  }
+  .btn {
+    margin: 4rem;
   }
 </style>
