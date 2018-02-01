@@ -1,18 +1,22 @@
 <template>
   <div id="app" class="App">
-    <mth-header class="App__header"/>
+    <mth-home-header v-if="$route.path === '/'" class="App__header"/>
+    <mth-page-header v-if="$route.path !== '/'" class="App__header"/>
     <router-view class="App__content"/>
     <mth-footer class="App__footer"/>
+    <p>{{$route.path}}</p>
+    
   </div>
 </template>
 
 <script>
 import MthFooter from '@/components/Footer'
-import MthHeader from '@/components/Header'
+import MthHomeHeader from '@/components/HomeHeader'
+import MthPageHeader from '@/components/PageHeader'
 
 export default {
   name: 'App',
-  components: { MthFooter, MthHeader }
+  components: { MthFooter, MthHomeHeader, MthPageHeader }
 }
 </script>
 
