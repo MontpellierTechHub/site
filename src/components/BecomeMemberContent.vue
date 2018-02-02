@@ -21,7 +21,7 @@
             <b-media tag="li" class="my-4 media">
               <b-img slot="aside" :src="bank" width="64" alt="placeholder" />
               <h5 class="mt-0 mb-1">Compte bancaire virtuel</h5>
-              Grâce à la comptabilité analytique, tu auras un espace dans notre compte bancaire pour permettre à des sponsors et à des personnes assistants à tes meetups de te soutenir financièrement. 
+              Grâce à la comptabilité analytique, tu auras un espace dans notre compte bancaire pour permettre à des sponsors et à des personnes assistants à tes meetups de te soutenir financièrement.
             </b-media>
           </b-col>
           <b-col :sm="sm" :md="md" :lg="lg">
@@ -47,13 +47,13 @@
           </b-col>
         </b-row>
 
-        <b-button variant="outline-secondary" target="_blank" href="https://goo.gl/forms/8FzWcZnEryRnEKT63">Remplis ce formulaire pour inscrire ton meetup à Montpellier Tech Hub</b-button>
+        <b-button size="lg" variant="outline-secondary" target="_blank" href="https://goo.gl/forms/8FzWcZnEryRnEKT63">Remplis ce formulaire pour inscrire ton meetup à Montpellier Tech Hub</b-button>
       </article>
 
       <article>
         <h4>Ton meetup ou le meetup auquel tu assistes fait déjà parti de Montpellier Tech Hub ?</h4>
         <p>Tu peux également devenir membre et donner ta cotisation à ce meetup. Tu contribueras ainsi directement à ses dépenses et son évolution.</p>
-          
+
         <b-button variant="outline-secondary" target="_blank" href="https://goo.gl/forms/InYJtKAgXIYJgRxT2">Deviens membre</b-button>
       </article>
     </b-container>
@@ -103,5 +103,6 @@ export default {
   }
   .btn {
     margin: 4rem;
+    white-space: normal;
   }
 </style>

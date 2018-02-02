@@ -30,7 +30,8 @@ export default {
   }
   .HomeYoutube__player {
     position: relative;
-    width: 600px;
+    width: 90%;
+    max-width: 600px;
     height: 339px;
   }
   .HomeYoutube__player > iframe {
