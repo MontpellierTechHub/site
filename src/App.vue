@@ -3,7 +3,7 @@
     <mth-home-header v-if="$route.path === '/'" class="App__header"/>
     <mth-page-header v-if="$route.path !== '/'" class="App__header"/>
     <router-view class="App__content"/>
-    <mth-footer class="App__footer"/>    
+    <mth-footer class="App__footer"/>
   </div>
 </template>
 
@@ -17,9 +17,3 @@ export default {
   components: { MthFooter, MthHomeHeader, MthPageHeader }
 }
 </script>
-
-<style>
-a, a:hover {
-  color: #9734A2;
-}
-</style>
