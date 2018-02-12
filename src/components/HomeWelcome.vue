@@ -29,7 +29,7 @@ export default {
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-image: url(../assets/welcome-background.jpg);
+    background-image: url(../assets/background.jpg);
   }
   .HomeWelcome::before {
     content: "";
