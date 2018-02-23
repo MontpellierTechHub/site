@@ -32,7 +32,6 @@ export default {
   .HomeSponsors {
     font-family: 'Roboto', sans-serif;
     padding: 80px 0;
-    background-color: #f5f5f5;
   }
   .HomeSponsors__item {
     display: block;

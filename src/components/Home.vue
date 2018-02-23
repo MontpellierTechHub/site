@@ -3,8 +3,8 @@
     <mth-home-welcome class="Home__welcome"/>
     <mth-home-about class="Home__about"/>
     <mth-home-meetups class="Home__meetups"/>
+    <mth-home-sponsors class="Home__sponsors"/>
     <mth-home-youtube class="Home__youtube"/>
-    <!-- <mth-home-sponsors class="Home__sponsors"/> -->
   </div>
 </template>
 

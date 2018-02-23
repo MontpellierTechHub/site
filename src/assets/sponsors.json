@@ -1,12 +1,12 @@
 [
   {
-    "name": "Teads",
-    "logo": "https://placekitten.com/g/300/200",
-    "href": "https://www.google.com/"
+    "name": "Agysoft",
+    "logo": "../assets/sponsors/agysoft.jpeg",
+    "href": "http://www.agysoft.fr/"
   },
   {
-    "name": "TabMo",
-    "logo": "https://placekitten.com/g/300/200",
-    "href": "https://www.google.com/"
+    "name": "Believe it",
+    "logo": "../assets/sponsors/believeit.png",
+    "href": "http://www.believeit.fr/"
   }
 ]

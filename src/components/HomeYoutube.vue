@@ -27,6 +27,7 @@ export default {
   .HomeYoutube {
     font-family: 'Roboto', sans-serif;
     padding: 80px 0;
+    background-color: #f5f5f5;
   }
   .HomeYoutube__player {
     position: relative;
