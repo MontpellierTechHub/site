@@ -1,0 +1,60 @@
+version: 2
+
+jobs:
+  build:
+    working_directory: ~/site
+    docker:
+      - image: circleci/clojure:lein-2.7.1
+    environment:
+      LEIN_ROOT: true
+    steps:
+      - checkout
+      - restore_cache:
+          key: site-{{ checksum "project.clj" }}-{{ checksum "package.json" }}
+      - run: lein deps
+      - save_cache:
+          paths:
+            - ~/.m2
+            - node_modules
+          key: site-{{ checksum "project.clj" }}-{{ checksum "package.json" }}
+      - run:
+          name: test and build
+          command: |
+            lein test
+            lein run
+      - store_artifacts:
+          path: resources/public/
+          destination: ~/build
+      - persist_to_workspace:
+          root: ~
+          paths:
+            - build
+
+  deploy:
+    working_directory: ~/site
+    docker:
+      - image: circleci/clojure:lein-2.7.1
+    steps:
+      - checkout
+      - run: rsync -e ssh -avz --delete-after build $USER@$SERVER_IP:/var/www/
+
+workflows:
+  version: 2
+  build_publish_deploy:
+    jobs:
+      - build
+      - hold-deploy:
+        type: approval
+        requires:
+          - build
+        filters:
+          branches:
+            only:
+              - production
+      - deploy:
+        requires:
+          - hold-deploy
+        filters:
+          branches:
+            only:
+              - production

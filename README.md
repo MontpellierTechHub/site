@@ -18,12 +18,13 @@ Features List
  - [ ] Défilement des sponsors
  - [ ] Proposer un talk
  - [ ] Liste des membres
- - [ ] Liste des sponsors
  - [ ] Systeme de notif meetups (RSS/...
  - [ ] Faire un don
- - [ ] Derniers vidéos Youtube
+ - [ ] Dernières vidéos Youtube
 
 ## Dev
+
+### Front
 
 ``` bash
 # install dependencies
@@ -42,6 +43,21 @@ npm run e2e
 npm test
 ```
 
+### Back
+
+#### Pre-requesites
+You will need [Leiningen][1] 2.5.0 or above installed.
+
+[1]: https://github.com/technomancy/leiningen
+
+Clone the project and run `lein deps` to fetch the dependencies, and then `lein ring server` to build the static website and launch a server on port 3000. A new tab of your default browser will automatically open on `localhost:3000`.
+
+#### New pages
+To create a new page, simply add a new `.md` file with the desired template in `resources/templates/md/pages`
+
+#### Build
+Run `lein run` to build the project. The static website is created in `resources/public`. You can now `s3cmd`/`sftp` it onto your server. Enjoy !
+                    
 ## Build
 
 ``` bash
