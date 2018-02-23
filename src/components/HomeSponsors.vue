@@ -5,9 +5,9 @@
         <i class="fa fa-heart" aria-hidden="true"></i>
         Nos sponsors
       </h2>
-      <b-row>
-        <b-col sm="6" md="4" lg="3" v-for="sponsor of sponsors" :key="sponsor.name">
-          <a class="HomeSponsors__item" :href="sponsor.href">
+      <b-row class="HomeSponsors__row">
+        <b-col class="HomeSponsors__item" sm="6" md="4" lg="3" v-for="sponsor of sponsors" :key="sponsor.name">
+          <a :title="sponsor.name" rel="noopener noreferrer" target="_blank" :href="sponsor.href">
             <img class="mw-100" :src="sponsor.logo"/>
           </a>
         </b-col>
@@ -18,7 +18,13 @@
 
 <script>
 import shuffle from 'lodash.shuffle'
-import sponsors from '@/assets/sponsors.json'
+import logoAgysoft from '@/assets/sponsors/agysoft.jpeg'
+import logoBelieveit from '@/assets/sponsors/believeit.png'
+
+const sponsors = [
+  {name: 'Agysoft', logo: logoAgysoft, href: 'http://www.agysoft.fr/'},
+  {name: 'Believe it', logo: logoBelieveit, href: 'http://www.believeit.fr/'}
+]
 
 export default {
   name: 'HomeSponsors',
@@ -32,10 +38,13 @@ export default {
   .HomeSponsors {
     font-family: 'Roboto', sans-serif;
     padding: 80px 0;
-    background-color: #f5f5f5;
+  }
+  .HomeSponsors__row {
+    justify-content: center;
   }
   .HomeSponsors__item {
-    display: block;
+    display: flex;
+    align-items: center;
     background-color: #ffffff;
   }
 </style>
