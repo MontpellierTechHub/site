@@ -7,7 +7,7 @@
       </h2>
       <b-row class="HomeSponsors__row">
         <b-col class="HomeSponsors__item" sm="6" md="4" lg="3" v-for="sponsor of sponsors" :key="sponsor.name">
-          <a target="_blank" :href="sponsor.href">
+          <a :title="sponsor.name" rel="noopener noreferrer" target="_blank" :href="sponsor.href">
             <img class="mw-100" :src="sponsor.logo"/>
           </a>
         </b-col>
