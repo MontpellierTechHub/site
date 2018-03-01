@@ -54,5 +54,12 @@
     "href": "https://www.meetup.com/fr-FR/Montpellier-PHP-Meetup/",
     "avg_events": 6,
     "members": 610
+  },
+  {
+    "name": "PYTHON MONTPELLIER",
+    "body": "Une fois par mois, de 19H00 à 22H00 des ateliers autours du langage Python sont organisés. Chaque séance comporte plusieurs ateliers autour d'un même thème, ce qui nous permet d'accueillir des participant.es avec des niveaux différents.",
+    "href": "https://www.meetup.com/fr-FR/Meetup-Python-Montpellier/",
+    "avg_events": 6,
+    "members": 69
   }
 ]
