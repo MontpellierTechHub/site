@@ -3312,6 +3312,10 @@ node-fetch@1.6.3:
     encoding "^0.1.11"
     is-stream "^1.0.1"
 
+node-fetch@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.1.1.tgz#369ca70b82f50c86496104a6c776d274f4e4a2d4"
+
 node-libs-browser@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/node-libs-browser/-/node-libs-browser-2.1.0.tgz#5f94263d404f6e44767d726901fff05478d600df"
@@ -4732,6 +4736,10 @@ tar@^2.2.1:
     block-stream "*"
     fstream "^1.0.2"
     inherits "2"
+
+tcomb@^3.2.25:
+  version "3.2.25"
+  resolved "https://registry.yarnpkg.com/tcomb/-/tcomb-3.2.25.tgz#4df5f436263252325d6b48afb50ab89d8a8c035a"
 
 test-exclude@^4.1.1:
   version "4.1.1"
