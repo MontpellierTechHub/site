@@ -47,14 +47,14 @@
           </b-col>
         </b-row>
 
-        <b-button size="lg" variant="outline-secondary" target="_blank" href="https://goo.gl/forms/kHQmXuxa8wrtP5u93">Remplis ce formulaire pour inscrire ton meetup à Montpellier Tech Hub</b-button>
+        <b-button size="lg" variant="outline-secondary" target="_blank" href="https://goo.gl/forms/aueKB8rJxu4kO1Qp2">Remplis ce formulaire pour inscrire ton meetup à Montpellier Tech Hub</b-button>
       </article>
 
       <article>
         <h4>Ton meetup ou le meetup auquel tu assistes fait déjà parti de Montpellier Tech Hub ?</h4>
         <p>Tu peux également devenir membre et donner ta cotisation à ce meetup. Tu contribueras ainsi directement à ses dépenses et son évolution.</p>
 
-        <b-button variant="outline-secondary" target="_blank" href="https://goo.gl/forms/fn539VmC9nT95KZf2">Deviens membre</b-button>
+        <b-button variant="outline-secondary" target="_blank" href="https://goo.gl/forms/U5rWGSGWJOpumrGr1">Deviens membre</b-button>
       </article>
     </b-container>
   </section>
