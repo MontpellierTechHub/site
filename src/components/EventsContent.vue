@@ -12,7 +12,8 @@
               </div>
               <div class="event_venue" v-if="event.venue">
                 <h5>{{event.venue.name}}</h5>
-                <span>{{event.venue.address_1}}</span>
+                <p>{{event.venue.address_1}}</p>
+                <p>{{event.how_to_find_us}}</p>
               </div>
             </div>
             <div class="event_details">
