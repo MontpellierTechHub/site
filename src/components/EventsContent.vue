@@ -12,7 +12,7 @@
               </div>
               <div class="event_venue" v-if="event.venue">
                 <h5>{{event.venue.name}}</h5>
-                <span>Adresse</span>
+                <span>{{event.venue.address_1}}</span>
               </div>
             </div>
             <div class="event_details">

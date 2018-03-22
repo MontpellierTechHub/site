@@ -21,7 +21,6 @@
     "lodash.shuffle": "^4.2.0",
     "moment": "^2.21.0",
     "node-fetch": "^2.1.1",
-    "tcomb": "^3.2.25",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
