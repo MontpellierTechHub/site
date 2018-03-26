@@ -4,22 +4,21 @@
       <h1 class="text-center">Prochains événements</h1>
       <article>
         <b-list-group>
-          <b-list-group-item v-for="event of events" :key="event.id" :href="event.event_url" target="_blank" class="d-flex">
+          <b-list-group-item v-for="event of events" :key="event.eventId" :href="event.link" target="_blank" class="d-flex">
             <div class="event_time-venue">
               <div class="event_time">
-                <h5>{{moment(event.time).format("dddd DD MMMM")}}</h5>
-                <span>{{moment(event.time).format("à HH:mm")}}</span>
+                <h5>{{moment(event.plannedAt).format("dddd DD MMMM")}}</h5>
+                <span>{{moment(event.plannedAt).format("à HH:mm")}}</span>
               </div>
-              <div class="event_venue" v-if="event.venue">
-                <h5>{{event.venue.name}}</h5>
-                <p>{{event.venue.address_1}}</p>
-                <p>{{event.how_to_find_us}}</p>
+              <div class="event_venue" v-if="event.venueName">
+                <h5>{{event.venueName}}</h5>
+                <p>{{event.venueAddress}}</p>
               </div>
             </div>
             <div class="event_details">
               <div class="d-flex w-100 justify-content-between">
-                <h6>{{ event.group.name }}</h6>
-                <small>{{event.yes_rsvp_count}} inscrits <span v-if="event.rsvp_limit">(max: {{event.rsvp_limit}})</span></small>
+                <h6>{{ event.groupName }}</h6>
+                <small>{{event.numberOfMembers}} inscrits <span v-if="event.limitOfMembers">(max: {{event.limitOfMembers}})</span></small>
               </div>
               <h4 class="mb-1">{{ event.name }}</h4>
               <p class="mb-1 event_description" v-html="event.description"></p>
@@ -35,7 +34,7 @@
 </template>
 
 <script>
-import events from '@/assets/events.json'
+import meetups from '@/assets/meetups.json'
 import moment from 'moment'
 
 moment.locale('fr')
@@ -44,9 +43,17 @@ export default {
   name: 'EventsContent',
   data () {
     return {
-      events: events,
+      events: [],
       moment: moment
     }
+  },
+  mounted () {
+    const groupIds = meetups.map(meetup => meetup.meetup_id)
+    fetch(`https://techmeetups.fr/api/events?group_ids=${groupIds.join()}`)
+      .then(async response => {
+        const results = await response.json()
+        this.events = results.events
+      })
   }
 }
 </script>
