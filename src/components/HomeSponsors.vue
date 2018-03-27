@@ -20,10 +20,12 @@
 import shuffle from 'lodash.shuffle'
 import logoAgysoft from '@/assets/sponsors/agysoft.jpeg'
 import logoBelieveit from '@/assets/sponsors/believeit.png'
+import logoITK from '@/assets/sponsors/ITK.png'
 
 const sponsors = [
   {name: 'Agysoft', logo: logoAgysoft, href: 'http://www.agysoft.fr/'},
-  {name: 'Believe it', logo: logoBelieveit, href: 'http://www.believeit.fr/'}
+  {name: 'Believe it', logo: logoBelieveit, href: 'http://www.believeit.fr/'},
+  {name: 'ITK', logo: logoITK, href: 'http://www.itk.fr/'}
 ]
 
 export default {
