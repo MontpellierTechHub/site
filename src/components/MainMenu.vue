@@ -4,7 +4,8 @@
       <!-- <b-nav-item exact active-class="active" :to="{ name:'Home' }">Home</b-nav-item> -->
       <!-- <b-nav-item :to="{ name:'Meetups' }">MEETUPS</b-nav-item> -->
       <!-- <b-nav-item :to="{ name:'Sponsors' }">SPONSORS</b-nav-item> -->
-      <b-nav-item active-class="active" class="nav-item__last" :to="{ name:'BecomeMember' }">Devenir membre</b-nav-item>
+      <b-nav-item active-class="active" class="nav-item_text" :to="{ name:'BecomeMember' }">Devenir membre</b-nav-item>
+      <b-nav-item active-class="active" class="nav-item_text" :to="{ name:'Events' }">Evénements</b-nav-item>
       
       <b-nav-item target="_blank" href="https://twitter.com/MtpTechHub">
         <i class="fa fa-twitter"></i>
@@ -44,9 +45,6 @@
     opacity: 1;
     pointer-events: none;
   }
-  .nav-item__last {
-    margin-right: 1rem;
-  }
 
   /* Override Bootstrap */
   .navbar > .navbar-toggler {
@@ -65,7 +63,7 @@
     opacity: 1;
     pointer-events: none;
   }
-  .nav-item__last {
+  .nav-item_text {
     margin-right: 1rem;
   }
 </style>

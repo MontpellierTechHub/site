@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import About from '@/components/About'
 import BecomeMember from '@/components/BecomeMember'
+import Events from '@/components/Events'
 import Home from '@/components/Home'
 import Meetups from '@/components/Meetups'
 import config from '../../config'
@@ -30,6 +31,11 @@ export default new Router({
       path: '/become-member',
       name: 'BecomeMember',
       component: BecomeMember
+    },
+    {
+      path: '/events',
+      name: 'Events',
+      component: Events
     },
     {
       path: '*',
