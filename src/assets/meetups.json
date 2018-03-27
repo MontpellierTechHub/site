@@ -70,5 +70,13 @@
     "href": "https://www.meetup.com/fr-FR/Meetup-Python-Montpellier/",
     "avg_events": 6,
     "members": 69
+  },
+  {
+    "meetup_id": "19023432",
+    "name": "UX FLUPA Montpellier",
+    "body": "Flupa est une association reconnue qui oeuvre pour les professionnels de l’expérience utilisateur (UX). L’objectif est de promouvoir la pratique de l’UX  auprès du grand public et des professionnels du domaine des Technologies de l’Information et de la Communication. L’antenne Montpellieraine est la deuxième plus active de France. Nous rassemblons chaque mois entre 15 et 40 participants, les meetups s’organisent sous forme d’atelier ou de conférence.",
+    "href": "https://www.meetup.com/fr-FR/FLUPA-Montpellier/",
+    "avg_events": 11,
+    "members": 473
   }
 ]
