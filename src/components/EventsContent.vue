@@ -13,6 +13,7 @@
               <div class="event_venue" v-if="event.venueName">
                 <h5>{{event.venueName}}</h5>
                 <p>{{event.venueAddress}}</p>
+                <p>{{event.howToFindUs}}</p>
               </div>
             </div>
             <div class="event_details">
