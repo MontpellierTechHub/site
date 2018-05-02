@@ -54,7 +54,7 @@
         <h4>Ton meetup ou le meetup auquel tu assistes fait déjà parti de Montpellier Tech Hub ?</h4>
         <p>Tu peux également devenir membre et donner ta cotisation à ce meetup. Tu contribueras ainsi directement à ses dépenses et son évolution.</p>
 
-        <b-button variant="outline-secondary" target="_blank" href="https://goo.gl/forms/U5rWGSGWJOpumrGr1">Deviens membre</b-button>
+        <b-button variant="outline-secondary" target="_blank" href="https://www.helloasso.com/associations/montpellier-tech-hub/adhesions/cotisation-annuelle-1">Deviens membre</b-button>
       </article>
     </b-container>
   </section>
