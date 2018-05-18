@@ -22,12 +22,14 @@ import logoAgysoft from '@/assets/sponsors/agysoft.jpeg'
 import logoBelieveit from '@/assets/sponsors/believeit.png'
 import logoITK from '@/assets/sponsors/ITK.png'
 import logoAkio from '@/assets/sponsors/akio.png'
+import logoZendesk from '@/assets/sponsors/zendesk-medium.png'
 
 const sponsors = [
   {name: 'Agysoft', logo: logoAgysoft, href: 'http://www.agysoft.fr/'},
   {name: 'Believe it', logo: logoBelieveit, href: 'http://www.believeit.fr/'},
   {name: 'ITK', logo: logoITK, href: 'http://www.itk.fr/'},
-  {name: 'Akio', logo: logoAkio, href: 'https://www.akio.com'}
+  {name: 'Akio', logo: logoAkio, href: 'https://www.akio.com'},
+  {name: 'Zendesk', logo: logoZendesk, href: 'http://www.zendesk.fr'}
 ]
 
 export default {
