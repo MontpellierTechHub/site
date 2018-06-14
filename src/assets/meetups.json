@@ -5,7 +5,7 @@
     "body": "Depuis 2016, l’antenne Montpellieraine de l’AFUP organise, une fois par mois, des meetups pour partager les expériences autour du langage PHP mais, également, d’évoquer les sujets plus large sur le métier de développeur.",
     "href": "https://www.meetup.com/fr-FR/Montpellier-PHP-Meetup/",
     "avg_events": 15,
-    "members": 660
+    "members": 770
   },
   {
     "meetup_id": "19216572",
@@ -13,7 +13,7 @@
     "body": "Le meetup Android aborde tous les sujets autour de cet OS, son écosystème et ses technologies. Le libre a ici une place importante.",
     "href": "https://www.meetup.com/fr-FR/Montpellier-Android-User-Group/",
     "avg_events": 6,
-    "members": 330
+    "members": 365
   },
   {
     "meetup_id": "19967941",
@@ -21,7 +21,7 @@
     "body": "À l’intersection de différentes communautés (sciences, business et techniques), le meetup couvre les deux principaux aspects de la Data : l’ingénierie nécessaire au traitement des données Big Data et la Data Science liée à l’extraction de connaissances des données.",
     "href": "https://www.meetup.com/fr-FR/Big-Data-Science-Montpellier/",
     "avg_events": 10,
-    "members": 780
+    "members": 1020
   },
   {
     "meetup_id": "23234614",
@@ -29,7 +29,7 @@
     "body": "Le meetup est né avec pour objectif de rassembler les développeurs passionnés par la programmation fonctionnelle, qui revient en force en entreprise, ansi que de faire découvrir à tous les développeurs curieux un nouvel univers : Scala, Haskell, Elm, les architectures distribuées, la théorie des catégories, etc.",
     "href": "https://www.meetup.com/fr-FR/Functional-Programming-Montpellier/",
     "avg_events": 10,
-    "members": 232
+    "members": 325
   },
   {
     "meetup_id": "18458103",
@@ -37,7 +37,7 @@
     "body": "Des présentations de 10 minutes tous les 2ème mardi du mois pour découvrir de nouvelles choses, faire sa veille technologique et pourquoi pas ses premiers pas de speaker !",
     "href": "https://www.meetup.com/fr-FR/HumanTalks-Montpellier/",
     "avg_events": 10,
-    "members": 310
+    "members": 465
   },
   {
     "meetup_id": "19224279",
@@ -45,7 +45,7 @@
     "body": "Créé pour partager nos expériences des TIC, et promouvoir les technologies autour de Java. Depuis 2009, un évènements par mois qui regroupe de 50 à 150 personnes.",
     "href": "https://www.meetup.com/fr-FR/JUG-Montpellier/",
     "avg_events": 10,
-    "members": 520
+    "members": 620
   },
   {
     "meetup_id": "17056242",
@@ -53,7 +53,7 @@
     "body": "Depuis 2011, C++ évolue et se transforme de façon importante. Découvrir et échanger autour de ce langage au spectre d’utilisation incroyablement large. Et également, découvrir d’autres langages tels que Go, D ou Rust !",
     "href": "https://www.meetup.com/fr-FR/Montpellier-CPP/",
     "avg_events": 3,
-    "members": 280
+    "members": 290
   },
   {
     "meetup_id": "15351542",
@@ -61,7 +61,7 @@
     "body": "JavaScript est l’un des langages les plus populaires au monde. Indispensable au développement web, il offre également d’infinies possibilités côté serveur avec Node.js. Les meetups ont lieu tous les 2 mois et réunissent entre 30 et 80 personnes.",
     "href": "https://www.meetup.com/fr-FR/MontpellierJS/",
     "avg_events": 6,
-    "members": 610
+    "members": 630
   },
   {
     "meetup_id": "26413943",
@@ -69,7 +69,7 @@
     "body": "Une fois par mois, de 19H00 à 22H00 des ateliers autours du langage Python sont organisés. Chaque séance comporte plusieurs ateliers autour d'un même thème, ce qui nous permet d'accueillir des participant.es avec des niveaux différents.",
     "href": "https://www.meetup.com/fr-FR/Meetup-Python-Montpellier/",
     "avg_events": 6,
-    "members": 69
+    "members": 120
   },
   {
     "meetup_id": "19023432",
@@ -77,6 +77,14 @@
     "body": "Flupa est une association reconnue qui oeuvre pour les professionnels de l’expérience utilisateur (UX). L’objectif est de promouvoir la pratique de l’UX  auprès du grand public et des professionnels du domaine des Technologies de l’Information et de la Communication. L’antenne Montpellieraine est la deuxième plus active de France. Nous rassemblons chaque mois entre 15 et 40 participants, les meetups s’organisent sous forme d’atelier ou de conférence.",
     "href": "https://www.meetup.com/fr-FR/FLUPA-Montpellier/",
     "avg_events": 11,
-    "members": 473
+    "members": 520
+  },
+  {
+    "meetup_id": "28448367",
+    "name": "Montpellier Rust Meetup",
+    "body": "Interressé par Rust ? Le meetup couvre tous les thèmes autour du langage, son écosystème, et les domaines métiers où il est utilisé. Venez découvrir ce langage de programmation système de nouvelle génération, incroyablement performant et au champ d'application si vaste !",
+    "href": "https://www.meetup.com/fr-FR/Montpellier-Rust-Meetup/",
+    "avg_events": 10,
+    "members": 40
   }
 ]
