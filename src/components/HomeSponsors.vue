@@ -26,6 +26,7 @@ import logoZendesk from '@/assets/sponsors/zendesk-medium.png'
 import logoAusy from '@/assets/sponsors/ausy.png'
 import logoTeads from '@/assets/sponsors/teadz_black.png'
 import logoSaagie from '@/assets/sponsors/saagie-red.png'
+import logoTabmo from '@/assets/sponsors/tabmolabs.png'
 
 const sponsors = [
   {name: 'Agysoft', logo: logoAgysoft, href: 'http://www.agysoft.fr/'},
@@ -35,7 +36,8 @@ const sponsors = [
   {name: 'Zendesk', logo: logoZendesk, href: 'http://www.zendesk.fr'},
   {name: 'AUSY', logo: logoAusy, href: 'https://www.ausy.fr/fr'},
   {name: 'Teads.tv', logo: logoTeads, href: 'https://teads.tv/'},
-  {name: 'Saagie', logo: logoSaagie, href: 'https://www.saagie.com/'}
+  {name: 'Saagie', logo: logoSaagie, href: 'https://www.saagie.com/'},
+  {name: 'Tabmo', logo: logoTabmo, href: 'http://tabmo.io/'}
 ]
 
 export default {
