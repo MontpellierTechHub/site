@@ -86,5 +86,37 @@
     "href": "https://www.meetup.com/fr-FR/Montpellier-Rust-Meetup/",
     "avg_events": 10,
     "members": 40
+  },
+  {
+    "meetup_id": "28448367",
+    "name": "Ca fait écho",
+    "body": "L'émission sur la tech, en live et en public",
+    "href": "https://www.meetup.com/fr-FR/Ca-Fait-Echo/?_locale=fr-FR",
+    "avg_events": 4,
+    "members": 60
+  },
+  {
+    "meetup_id": "28448367",
+    "name": "CocoaHeads",
+    "body": "CocoaHeads est un groupe de développeurs passionnés par les technologies Apple (iPhone, iPad et Mac) qui veulent échanger sur leurs problématiques et partager leur expérience.",
+    "href": "https://www.meetup.com/fr-FR/CocoaHeads-Montpellier/",
+    "avg_events": 4,
+    "members": 317
+  },
+  {
+    "meetup_id": "28448367",
+    "name": "Vulcan JS",
+    "body": "Plus qu'un framework, Vulcan.js est un stack qui réunit les meilleurs librairies JavaScript : React, Meteor (Node.js) et Apollo (GraphQL). Le groupe meetup a pour objectif de vous faire découvrir cette technologie et de discuter au sens large du développement web fullstack avec JavaScript.",
+    "href": "https://www.meetup.com/fr-FR/vulcanjs-montpellier/",
+    "avg_events": 6,
+    "members": 103
+  },
+  {
+    "meetup_id": "28448367",
+    "name": "R-Ladies",
+    "body": "Nous sommes un chapitre local des R-Ladies, une organisation mondial qui promouvoit la diversité au sein de la communauté des utilisateurs de R (language de programmation). Nous organisons des meetups sous différentes formes, parfois avec des présentations, workshops, tables rondes, discussions autour de R. ",
+    "href": "https://www.meetup.com/fr-FR/rladies-montpellier",
+    "avg_events": 5,
+    "members": 53
   }
 ]
