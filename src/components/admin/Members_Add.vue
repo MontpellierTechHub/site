@@ -1,6 +1,6 @@
 <template>
 
-      <b-modal id="modal_members__add" scrollable title="Ajouter un membre">
+      <b-modal ref="MembersAddModalRef" @ok="onSubmit" id="modal_members__add" scrollable title="Ajouter un membre">
       <b-form @submit="onSubmit" @reset="onReset" v-if="show">
       
       <b-form-group
@@ -42,21 +42,30 @@
           required
           placeholder="Valeur (en Euros)" />
       </b-form-group>
-      <div slot="modal-footer" class="w-100">
-        <b-button type="submit" variant="primary">Submit</b-button>
-      </div>
+
+        <datepicker v-model="form.cotisation.date"></datepicker>
+
+      
     </b-form>
       
       </b-modal>
 </template>
 
 <script>
-
-import {getMeetups, addMemberCotisation, addMember} from '../../firebase'
+import Datepicker from 'vuejs-datepicker'
 import moment from 'moment'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'AdminMembers_Add',
+  components: {
+    Datepicker
+  },
+  computed: {
+    ...mapGetters('entities', {
+      meetups: 'getMeetupsOptions'
+    })
+  },
   data () {
     return {
       form: {
@@ -64,34 +73,34 @@ export default {
         email: '',
         cotisation: {
           meetup: null,
-          value: '40'
+          value: '40',
+          date: moment().format()
         }
       },
-      meetups: [{ text: 'Sélectionner un meetup', value: null }],
       show: true
     }
   },
-  mounted () {
-    getMeetups().then(result => {
-      result.map(meetup => this.meetups.push({text: meetup.name, value: meetup.id}))
-    })
-  },
+
+  // mounted () {
+  //   getMeetups().then(result => {
+  //     result.map(meetup => this.meetups.push({text: meetup.name, value: meetup.id}))
+  //   })
+  // },
   methods: {
     onSubmit (evt) {
       evt.preventDefault()
       const member = {
         name: this.form.name,
-        email: this.form.email
-      }
-      const cotisation = {
-        meetup: this.form.cotisation.meetup,
-        value: this.form.cotisation.value,
-        created_at: moment().format()
+        email: this.form.email,
+        cotisations: [{
+          meetup: this.form.cotisation.meetup,
+          value: this.form.cotisation.value,
+          created_at: moment(this.form.cotisation.date).format()
+        }]
       }
 
-      addMemberCotisation(cotisation).then(snapshot => {
-        addMember({...member, active_cotisation: snapshot.id, cotisations: [snapshot.id]})
-      })
+      this.$store.dispatch('entities/addMember', member)
+      this.$refs.MembersAddModalRef.hide()
     },
     onReset (evt) {
       evt.preventDefault()

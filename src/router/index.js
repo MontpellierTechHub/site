@@ -13,6 +13,7 @@ import AdminMeetups from '@/components/admin/Meetups'
 import config from '../../config'
 
 Vue.use(Router)
+
 export default new Router({
   mode: 'history',
   base: config.build.assetsPublicPath,

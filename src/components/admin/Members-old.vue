@@ -2,7 +2,7 @@
     <div>
       <h2 class="text-center">Members</h2>
 
-        <b-button v-b-modal.modal_members__add>Ajouter un member</b-button>
+       <b-button v-b-modal.modal_members__add>Ajouter un member</b-button>
       <table>
         <thead>
           <tr>
@@ -22,11 +22,11 @@
 </template>
 
 <script>
+import {getMembers, getCotisationsMembersAsEntities, getMeetupsAsEntities} from '../../firebase'
+
 import AdminMembersAdd from '@/components/admin/Members_Add'
 import AdminMembersLine from '@/components/admin/Members_Line'
 import AdminMembersUpdateButton from '@/components/admin/Members_UpdateButton'
-
-import { mapGetters } from 'vuex'
 
 export default {
   name: 'AdminMembers',
@@ -35,13 +35,23 @@ export default {
     AdminMembersLine,
     AdminMembersUpdateButton
   },
-  computed: {
-    ...mapGetters('entities', {
-      members: 'getMembersArray'
-    })
+  data () {
+    return {
+      members: [],
+      cotisationsMembersEntities: {},
+      meetupsEntities: {}
+    }
   },
-  created () {
-    this.$store.dispatch('entities/getMembers')
+  mounted () {
+    getMembers().then(result => {
+      this.members = result
+    })
+    getCotisationsMembersAsEntities().then(result => {
+      this.cotisationsMembersEntities = result
+    })
+    getMeetupsAsEntities().then(result => {
+      this.meetupsEntities = result
+    })
   }
 }
 </script>
