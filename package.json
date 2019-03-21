@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "bootstrap": "4.0.0-beta.3",
-    "bootstrap-vue": "^v2.0.0-rc.14",
+    "bootstrap-vue": "^v2.0.0-rc.15",
     "fetch": "^1.1.0",
     "firebase": "^5.8.6",
     "font-awesome": "^4.7.0",

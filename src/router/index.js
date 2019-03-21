@@ -10,6 +10,7 @@ import AdminLayout from '@/components/admin/Layout'
 import AdminSponsors from '@/components/admin/Sponsors'
 import AdminMembers from '@/components/admin/Members'
 import AdminMeetups from '@/components/admin/Meetups'
+import AdminDashboard from '@/components/admin/Dashboard'
 import config from '../../config'
 
 Vue.use(Router)
@@ -55,6 +56,11 @@ export default new Router({
       name: 'Admin',
       component: AdminLayout,
       children: [
+        {
+          path: '/',
+          name: 'AdminDashboard',
+          component: AdminDashboard
+        },
         {
           path: 'sponsors',
           name: 'AdminSponsors',

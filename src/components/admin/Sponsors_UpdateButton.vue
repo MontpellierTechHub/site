@@ -1,6 +1,6 @@
 <template>
     <div>
-        <b-button v-b-modal="'modal_sponsors__update' + sponsor.id">Edit</b-button>
+        <b-button size="sm" v-b-modal="'modal_sponsors__update' + sponsor.id">Editer</b-button>
 
         <admin-sponsors-update :sponsor="sponsor" />
      

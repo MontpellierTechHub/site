@@ -1,10 +1,12 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
+import 'firebase/auth'
 import firebaseConfig from '../config/firebaseConfig'
 
 export const firebaseMain = firebase.initializeApp(firebaseConfig)
+export const provider = new firebase.auth.GoogleAuthProvider()
 
-// export const authProvider = firebaseMain.auth()
+export const firebaseAuth = firebaseMain.auth()
 export const firestore = firebaseMain.firestore()
 
 /* SPONSORS */
@@ -40,4 +42,10 @@ export const addMember = (data) => {
 }
 export const updateMember = (data) => {
   return firestore.collection('members').doc(data.id).update(data)
+}
+
+/* PERMISSIONS */
+
+export const getPermissions = () => {
+  return firestore.collection('permissions').get().then(snapshot => snapshot)
 }

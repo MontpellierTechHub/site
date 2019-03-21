@@ -1,38 +1,35 @@
 <template>
     <div>
-      <h2 class="text-center">Sponsors</h2>
-
-       <b-button v-b-modal.modal_sponsors__add>Ajouter un sponsor</b-button>
+      <div class="page-title">
+        <h3>Sponsors</h3>
+        <b-button variant="primary" v-b-modal.modal_sponsors__add>
+          Ajouter un sponsor
+        </b-button>
+      </div>
       <table>
         <thead>
           <tr>
-            <th rowspan="2">Infos</th>
-            <th rowspan="2">Contact sponsor</th>
-            <th rowspan="2">Contact MTH</th>
-            <th colspan="3">Sponsoring</th>
-          </tr>
-          <tr>
-            <th>Valeur</th>
-            <th>Date</th>
-            <th>Meetup</th>
+            <th>Infos sponsor</th>
+            <th>Contact sponsor</th>
+            <th>Contact MTH</th>
+            <th>Sponsoring</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          <admin-sponsors-line v-for="sponsor of sponsors" :sponsor="sponsor" />
+          <admin-sponsors-line v-for="sponsor of sponsors" :sponsor="sponsor" v-bind:key="sponsor.id" />
         </tbody>
       </table>
 
+      <admin-sponsors-add />
 
-
-        <admin-sponsors-add />
-
-      
     </div>
 </template>
 
 <script>
 import AdminSponsorsAdd from '@/components/admin/Sponsors_Add'
 import AdminSponsorsLine from '@/components/admin/Sponsors_Line'
+
 import { mapGetters } from 'vuex'
 
 export default {
@@ -42,49 +39,18 @@ export default {
     AdminSponsorsLine
   },
   computed: {
-    ...mapGetters('entities', {
+    ...mapGetters('sponsors', {
       sponsors: 'getSponsorsArray'
     })
   },
   mounted () {
-    this.$store.dispatch('entities/getSponsors')
-    this.$store.dispatch('entities/getMeetups')
-    this.$store.dispatch('entities/getMembers')
+    this.$store.dispatch('sponsors/getSponsors')
+    this.$store.dispatch('meetups/getMeetups')
+    this.$store.dispatch('members/getMembers')
   }
 }
 </script>
 
 <style>
-table {
-  border: 2px solid #42b983;
-  border-radius: 3px;
-  background-color: #fff;
-}
-
-th {
-  background-color: #42b983;
-  color: rgba(255,255,255,0.66);
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-td {
-  background-color: #f9f9f9;
-}
-
-th, td {
-  min-width: 120px;
-  padding: 10px 20px;
-}
-
-th.active {
-  color: #fff;
-}
-
-th.active .arrow {
-  opacity: 1;
-}
+  @import './admin.css';
 </style>
