@@ -46,7 +46,7 @@ export default {
   },
   data () {
     return {
-      form: initialForm
+      form: initialForm()
     }
   },
   methods: {

@@ -54,7 +54,7 @@ export default {
   },
   data () {
     return {
-      form: initialForm,
+      form: initialForm(),
       status_list: [{ text: 'Sélectionner un status', value: null }, 'Devis envoyé', 'Facture envoyé', 'Payé'],
       show: true
     }

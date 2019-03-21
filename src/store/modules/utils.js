@@ -3,10 +3,10 @@ export const formatAsEntitiesFromObject = object => {
     [object.id]: object
   }
 }
-export const formatAsEntitiesFromSnapshot = (snapshot, key = 'id') => {
+export const formatAsEntitiesFromSnapshot = (snapshot) => {
   const data = {}
   snapshot.forEach(doc => {
-    data[doc.data()[key]] = {
+    data[doc.id] = {
       id: doc.id,
       ...doc.data()
     }

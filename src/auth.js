@@ -1,6 +1,6 @@
 import { firebaseAuth, provider, getPermissions } from './firebase'
 import store from './store/index'
-import { formatAsEntitiesFromSnapshot } from './store/modules/utils'
+import { formatAsArrayFromSnapshot } from './store/modules/utils'
 
 const formatUserFromFirebaseAuth = (user) => {
   return {
@@ -13,7 +13,7 @@ const formatUserFromFirebaseAuth = (user) => {
 
 const loadingPermissions = (user) => {
   getPermissions().then(snapshot => {
-    const permission = formatAsEntitiesFromSnapshot(snapshot, 'userId')[user.id]
+    const permission = formatAsArrayFromSnapshot(snapshot, 'userId').filter(permission => permission.userId === user.id)[0]
     if (permission) {
       store.commit('auth/addPermission', {
         isAdmin: permission.isAdmin

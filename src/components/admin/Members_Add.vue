@@ -43,7 +43,7 @@ export default {
   },
   data () {
     return {
-      form: initialForm,
+      form: initialForm(),
       show: true
     }
   },
