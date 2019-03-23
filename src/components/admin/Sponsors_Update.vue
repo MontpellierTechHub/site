@@ -93,18 +93,18 @@ export default {
         ]
       }
       this.$store.dispatch('sponsors/updateSponsor', {...this.sponsor, ...newSponsor})
-      this.form = initialForm({})
+      this.form = initialForm(this.sponsor)
       this.$refs.SponsorsUpdateModalRef.hide()
     },
     onDelete (evt) {
       evt.preventDefault()
       this.$store.dispatch('sponsors/updateSponsor', {...this.sponsor, deleted_at: moment().format()})
-      this.form = initialForm({})
+      this.form = initialForm(this.sponsor)
       this.$refs.SponsorsUpdateModalRef.hide()
     },
     onReset (evt) {
       evt.preventDefault()
-      this.form = initialForm({})
+      this.form = initialForm(this.sponsor)
       this.$refs.SponsorsUpdateModalRef.hide()
     }
   }

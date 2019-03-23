@@ -24,15 +24,14 @@ const initialForm = (meetup) => {
     name: meetup.name,
     description: meetup.description,
     contact_member: meetup.contact_member,
-    display_on_home: meetup.display_on_home,
-    active: meetup.active,
     last_event_at: meetup.last_event_at,
     logo: meetup.logo,
     twitter_link: meetup.twitter_link,
     average_per_year: meetup.average_per_year,
     meetup_dot_link: meetup.meetup_dot_link,
     meetup_dot_members: meetup.meetup_dot_members,
-    meetup_dot_id: meetup.meetup_dot_id
+    meetup_dot_id: meetup.meetup_dot_id,
+    status: meetup.status
   }
 }
 
@@ -47,6 +46,11 @@ export default {
       form: initialForm(this.meetup)
     }
   },
+  mounted () {
+    this.$root.$on('bv::modal::show', () => {
+      this.form = initialForm(this.meetup)
+    })
+  },
   methods: {
     onSubmit (evt) {
       evt.preventDefault()
@@ -55,28 +59,28 @@ export default {
         description: this.form.description,
         logo: this.form.logo,
         contact_member: this.form.contact_member,
-        display_on_home: this.form.display_on_home,
-        active: this.form.active,
-        last_event_at: this.form.last_event_at,
+        last_event_at: this.form.last_event_at ? moment(this.form.last_event_at).format() : null,
         twitter_link: this.form.twitter_link,
         average_per_year: this.form.average_per_year,
         meetup_dot_link: this.form.meetup_dot_link,
         meetup_dot_members: this.form.meetup_dot_members,
-        meetup_dot_id: this.form.meetup_dot_id
+        meetup_dot_id: this.form.meetup_dot_id,
+        status: this.form.status
       }
+      console.log(meetup)
       this.$store.dispatch('meetups/updateMeetup', {...this.meetup, ...meetup})
-      this.form = initialForm({})
+      this.form = initialForm(this.meetup)
       this.$refs.MeetupsAddModalRef.hide()
     },
     onDelete (evt) {
       evt.preventDefault()
       this.$store.dispatch('meetups/updateMeetup', {...this.meetup, deleted_at: moment().format()})
-      this.form = initialForm({})
+      this.form = initialForm(this.meetup)
       this.$refs.MeetupsAddModalRef.hide()
     },
     onReset (evt) {
       evt.preventDefault()
-      this.form = initialForm({})
+      this.form = initialForm(this.meetup)
       this.$refs.MeetupsAddModalRef.hide()
     }
   }

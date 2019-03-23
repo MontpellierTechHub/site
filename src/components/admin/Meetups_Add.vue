@@ -16,21 +16,21 @@
 <script>
 import AdminMeetupsFormInputs from '@/components/admin/Meetups_FormInputs'
 import { mapGetters } from 'vuex'
+import moment from 'moment'
 
 const initialForm = () => {
   return {
     name: '',
     description: '',
     contact_member: null,
-    display_on_home: true,
-    active: true,
     last_event_at: null,
     logo: '',
     twitter_link: '',
     average_per_year: '',
     meetup_dot_link: '',
     meetup_dot_members: '',
-    meetup_dot_id: ''
+    meetup_dot_id: '',
+    status: null
   }
 }
 
@@ -51,20 +51,7 @@ export default {
   },
   methods: {
     clear () {
-      this.form = {
-        name: '',
-        description: '',
-        contact_member: null,
-        display_on_home: true,
-        active: true,
-        last_event_at: null,
-        logo: '',
-        twitter_link: '',
-        average_per_year: '',
-        meetup_dot_link: '',
-        meetup_dot_members: '',
-        meetup_dot_id: ''
-      }
+      this.form = initialForm()
     },
     onSubmit (evt) {
       evt.preventDefault()
@@ -73,14 +60,13 @@ export default {
         description: this.form.description,
         logo: this.form.logo,
         contact_member: this.form.contact_member,
-        display_on_home: this.form.display_on_home,
-        active: this.form.active,
-        last_event_at: this.form.last_event_at,
+        last_event_at: this.form.last_event_at ? moment(this.form.last_event_at).format() : null,
         twitter_link: this.form.twitter_link,
         average_per_year: this.form.average_per_year,
         meetup_dot_link: this.form.meetup_dot_link,
         meetup_dot_members: this.form.meetup_dot_members,
-        meetup_dot_id: this.form.meetup_dot_id
+        meetup_dot_id: this.form.meetup_dot_id,
+        status: this.form.status
       }
 
       this.$store.dispatch('meetups/addMeetup', meetup)

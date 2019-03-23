@@ -21,23 +21,6 @@
           </div>
         </b-card>
       </b-card-group>
-    
-      <br />
-      <b-card-group columns>
-        <b-card v-for="meetup of meetups" :key="meetup.name" tag="article">
-          <h5 class="card-title">
-            <a :href="meetup.href" target="_blank">
-              {{ meetup.name }}
-            </a>
-          </h5>
-          <p class="card-text">{{ meetup.body }}</p>
-          <div slot="footer">
-            <span class="text-muted">
-              ~ {{ meetup.avg_events }} évènements par an / {{ meetup.members }} membres
-            </span>
-          </div>
-        </b-card>
-      </b-card-group>
     </b-container>
   </section>
 </template>

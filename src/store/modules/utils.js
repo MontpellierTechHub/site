@@ -1,3 +1,12 @@
+export const formatAsEntitiesFromArray = objects => {
+  const data = {}
+  objects.map(object => {
+    data[object.id] = {
+      ...object
+    }
+  })
+  return data
+}
 export const formatAsEntitiesFromObject = object => {
   return {
     [object.id]: object

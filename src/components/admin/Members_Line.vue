@@ -31,14 +31,16 @@ export default {
   computed: {
     ...mapGetters('meetups', {
       meetupsEntities: 'getMeetupsEntities'
-    })
+    }),
+    active_cotisation () {
+      return this.member.cotisations ? this.member.cotisations.slice(0).sort((a, b) => {
+        return new Date(b.created_at) - new Date(a.created_at)
+      })[0] : null
+    }
   },
   data () {
     return {
-      moment: moment,
-      active_cotisation: this.member.cotisations ? this.member.cotisations.sort((a, b) => {
-        return new Date(b.created_at) - new Date(a.created_at)
-      })[0] : null
+      moment: moment
     }
   },
   created () {

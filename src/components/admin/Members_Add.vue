@@ -24,7 +24,7 @@ const initialForm = () => {
     email: '',
     cotisation: {
       meetup: null,
-      value: null,
+      value: 40,
       date: null
     }
   }
@@ -54,7 +54,7 @@ export default {
         name: this.form.name,
         email: this.form.email
       }
-      if (this.form.cotisation.value) {
+      if (this.form.cotisation.meetup) {
         member.cotisations = [
           {
             meetup: this.form.cotisation.meetup,

@@ -13,7 +13,7 @@ const getters = {
     return Object.keys(state.meetups).map(key => state.meetups[key]).filter(meetup => !meetup.deleted_at)
   },
   getMeetupsForHomePage: (state) => {
-    return getters.getMeetupsArray(state).filter(meetup => meetup.display_on_home === true)
+    return getters.getMeetupsArray(state).filter(meetup => meetup.status === 'active')
   },
   getMeetupsOptions: (state) => {
     const meetupsOptions = [{ text: 'Sélectionner un meetup', value: null }]

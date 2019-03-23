@@ -25,34 +25,18 @@
           type="text"
           v-model="form.logo"
           placeholder="Lien vers un logo" />
-
-      <div class="d-flex">
-          <b-form-checkbox
-              class="form checkbox" 
-              id="meetup-display_home"
-              name="meetup-display_home"
-              v-model="form.display_on_home"
-              >
-                  Afficher sur la page d'accueil
-              </b-form-checkbox>
-          <b-form-checkbox
-              class="form" 
-              id="meetup-active"
-              name="meetup-active"
-              v-model="form.active"
-              value="true"
-              unchecked-value="false"
-              >
-                  Meetup actif
-              </b-form-checkbox>
-      </div>
+      <b-form-select 
+        class="form" 
+        id="meetup-status" 
+        :options="status" 
+        required 
+        v-model="form.status" />
 
       <h3 class="form-title">Représentant</h3>
       <b-form-select 
         class="form" 
         id="meetup-contact-mth" 
-        :options="members" 
-        required 
+        :options="members"  
         v-model="form.contact_member" />
 
     </div>
@@ -113,6 +97,17 @@ export default {
     ...mapGetters('members', {
       members: 'getMembersOptions'
     })
+  },
+  data () {
+    return {
+      status: [
+        { text: 'Sélectionner un status', value: null },
+        { text: 'Actif', value: 'active' },
+        { text: 'Inactif', value: 'inactive' },
+        { text: 'En attente de validation', value: 'pending_validation' },
+        { text: 'En attente de cotisation', value: 'pending_cotisation' }
+      ]
+    }
   },
   props: ['form']
 }

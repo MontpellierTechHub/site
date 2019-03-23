@@ -1,5 +1,6 @@
 <template>
     <div>
+      <!-- {{formattedMembers}} -->
       <div class="page-title">
         <h3>Members</h3>
         <b-button variant="primary" v-b-modal.modal_members__add>Ajouter un member</b-button>

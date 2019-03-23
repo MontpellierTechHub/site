@@ -30,13 +30,12 @@
       <span class="link" v-if="!add_cotisation" v-on:click="add_cotisation = true">Ajouter une cotisation</span>
 
       <div v-if="add_cotisation">
-          <b-form-select class="form" id="member-cotisation-meetup" :options="meetups" required v-model="form.cotisation.meetup" />
+          <b-form-select class="form" id="member-cotisation-meetup" :options="meetups" v-model="form.cotisation.meetup" />
           <b-form-input
           class="form"
           id="member-cotisation-value"
           type="text"
           v-model="form.cotisation.value"
-          required
           placeholder="Valeur (en Euros)" />
 
           <datepicker 

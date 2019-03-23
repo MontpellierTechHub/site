@@ -14,7 +14,9 @@ const getters = {
   },
   getMembersOptions: (state) => {
     const membersOptions = [{ text: 'Sélectionner un membre', value: null }]
-    getters.getMembersArray(state).map(member => {
+    getters.getMembersArray(state).sort((a, b) => {
+      return a.name.localeCompare(b.name)
+    }).map(member => {
       membersOptions.push({text: member.name, value: member.id})
     })
     return membersOptions
