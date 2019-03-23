@@ -21,6 +21,9 @@ const getters = {
       meetupsOptions.push({text: meetup.name, value: meetup.id})
     })
     return meetupsOptions
+  },
+  getMeetupsIdFromMeetupCom: (state) => {
+    return getters.getMeetupsArray(state).filter(meetup => meetup.meetup_dot_id !== '').map(meetup => meetup.meetup_dot_id)
   }
 }
 

@@ -16,10 +16,5 @@ export default {
     AdminMembersUpdate
   },
   props: ['member']
-//   data () {
-//     return {
-//       member: this.member
-//     }
-//   }
 }
 </script>

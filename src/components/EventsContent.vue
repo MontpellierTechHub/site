@@ -35,8 +35,8 @@
 </template>
 
 <script>
-import meetups from '@/assets/meetups.json'
 import moment from 'moment'
+import { mapGetters } from 'vuex'
 
 moment.locale('fr')
 
@@ -45,16 +45,31 @@ export default {
   data () {
     return {
       events: [],
+      eventsLoaded: false,
       moment: moment
     }
   },
-  mounted () {
-    const groupIds = meetups.map(meetup => meetup.meetup_id)
-    fetch(`https://techmeetups.fr/api/events?group_ids=${groupIds.join()}`)
+  computed: {
+    ...mapGetters('meetups', {
+      meetupsId: 'getMeetupsIdFromMeetupCom'
+    })
+  },
+  beforeUpdate () {
+    if (this.meetupsId.length > 0 && !this.eventsLoaded) {
+      fetch(`https://techmeetups.fr/api/events?group_ids=${this.meetupsId.join()}`)
       .then(async response => {
         const results = await response.json()
         this.events = results.events
       })
+      this.eventsLoaded = true
+    }
+  },
+  mounted () {
+    fetch(`https://techmeetups.fr/api/events?group_ids=${this.meetupsId.join()}`)
+    .then(async response => {
+      const results = await response.json()
+      this.events = results.events
+    })
   }
 }
 </script>
