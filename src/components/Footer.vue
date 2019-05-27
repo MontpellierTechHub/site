@@ -9,6 +9,7 @@
             <li><b-nav-item :to="{ name: 'BecomeMember' }">Devenir membre</b-nav-item></li>
             <li><b-nav-item :to="{ name: 'Events' }">Evénements</b-nav-item></li>
             <li><b-nav-item target="_blank" href="https://docs.google.com/document/d/1mHhKxdeWkU8H6xXzfF85Hgn9x_InXjjFMb-Cl7AOvqg/edit#">Statuts de l'association</b-nav-item></li>
+            <li><b-nav-item target="_blank" href="http://bit.ly/mth-cfp">CFP des meetups</b-nav-item></li>
             <li><b-nav-item href="mailto:contact@montpellier-techhub.org">Contact</b-nav-item></li>
           </ul>
         </b-col>
