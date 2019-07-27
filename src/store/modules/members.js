@@ -10,7 +10,9 @@ const getters = {
     return state.members
   },
   getMembersArray: (state) => {
-    return Object.keys(state.members).map(key => state.members[key]).filter(member => !member.deleted_at)
+    return Object.keys(state.members).map(key => state.members[key]).filter(member => !member.deleted_at).sort((a, b) => {
+      return a.name.localeCompare(b.name)
+    })
   },
   getMembersOptions: (state) => {
     const membersOptions = [{ text: 'Sélectionner un membre', value: null }]

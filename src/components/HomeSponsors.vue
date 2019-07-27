@@ -50,7 +50,7 @@ export default {
   // },
   computed: {
     ...mapGetters('sponsors', {
-      sponsors: 'getSponsorsArray'
+      sponsors: 'getSponsorsForHomePage'
     })
   },
   mounted () {

@@ -67,7 +67,6 @@ export default {
         meetup_dot_id: this.form.meetup_dot_id,
         status: this.form.status
       }
-      console.log(meetup)
       this.$store.dispatch('meetups/updateMeetup', {...this.meetup, ...meetup})
       this.form = initialForm(this.meetup)
       this.$refs.MeetupsAddModalRef.hide()

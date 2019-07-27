@@ -16,7 +16,7 @@
           id="meetup-description"
           v-model="form.description"
           placeholder="Description de 3 lignes du meetup "
-          rows="3"
+          rows="6"
           max-rows="6"/>
 
       <b-form-input

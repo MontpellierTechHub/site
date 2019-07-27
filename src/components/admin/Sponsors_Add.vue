@@ -35,7 +35,8 @@ const initialForm = () => {
       status: null,
       meetup: null,
       value: ''
-    }
+    },
+    status: null
   }
 }
 
@@ -72,7 +73,8 @@ export default {
           email: this.form.contact.email
         },
         url_website: this.form.url_website,
-        contact_member: this.form.contact_member
+        contact_member: this.form.contact_member,
+        status: this.form.status
       }
 
       if (this.form.cotisation.value) {

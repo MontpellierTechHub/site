@@ -10,14 +10,18 @@ const getters = {
     return state.meetups
   },
   getMeetupsArray: (state) => {
-    return Object.keys(state.meetups).map(key => state.meetups[key]).filter(meetup => !meetup.deleted_at)
+    return Object.keys(state.meetups).map(key => state.meetups[key]).filter(meetup => !meetup.deleted_at).sort((a, b) => {
+      return a.name.localeCompare(b.name)
+    })
   },
   getMeetupsForHomePage: (state) => {
     return getters.getMeetupsArray(state).filter(meetup => meetup.status === 'active')
   },
   getMeetupsOptions: (state) => {
     const meetupsOptions = [{ text: 'Sélectionner un meetup', value: null }]
-    getters.getMeetupsArray(state).map(meetup => {
+    getters.getMeetupsArray(state).sort((a, b) => {
+      return a.name.localeCompare(b.name)
+    }).map(meetup => {
       meetupsOptions.push({text: meetup.name, value: meetup.id})
     })
     return meetupsOptions

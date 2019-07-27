@@ -1,7 +1,7 @@
 <template>
   <b-form @submit="onSubmit" @reset="onReset">
     <b-modal size="lg" ref="SponsorsUpdateModalRef" @ok="onSubmit" :id="'modal_sponsors__update' + this.sponsor.id" title="Editer un sponsor">
-      
+
       <Admin-sponsors-form-inputs :form="form" :sponsor="this.sponsor" editing="true"/>
       
       <div slot="modal-footer" class="w-100">
@@ -36,7 +36,8 @@ const initialForm = (sponsor) => {
       meetup: null,
       value: '',
       payed_at: ''
-    }
+    },
+    status: sponsor.status
   }
 }
 
@@ -77,11 +78,12 @@ export default {
           name: this.form.contact.name,
           email: this.form.contact.email
         },
-        contact_member: this.form.contact_member
+        contact_member: this.form.contact_member,
+        status: this.form.status
       }
       if (this.form.cotisation.value) {
         newSponsor.cotisations = [
-          ...this.sponsor.cotisations,
+          ...this.sponsor.cotisations.slice(0),
           {
             status: this.form.cotisation.status,
             meetup: this.form.cotisation.meetup,

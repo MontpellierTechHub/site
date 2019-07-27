@@ -57,7 +57,7 @@ export default {
       const newMember = {
         name: this.form.name,
         email: this.form.email,
-        cotisations: this.member.cotisations ? this.member.cotisations.splice(0) : []
+        cotisations: this.member.cotisations ? this.member.cotisations.slice(0) : []
       }
       if (this.form.cotisation.meetup) {
         newMember.cotisations.push(

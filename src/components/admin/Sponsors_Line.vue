@@ -16,7 +16,7 @@
         <td>
             <span v-if="membersEntities[sponsor.contact_member]">{{membersEntities[sponsor.contact_member].name}}</span>
         </td>
-        <td :class="{ expired: moment(active_cotisation.payed_at).isBefore(moment().subtract(1, 'years').format()) }">
+        <td :class="{ expired: active_cotisation && moment(active_cotisation.payed_at).isBefore(moment().subtract(1, 'years').format()) }">
             <span v-if="active_cotisation && meetupsEntities[active_cotisation.meetup]">
               <span class="line_bloc__title">{{active_cotisation.status}} - {{active_cotisation.value}} € </span>
               <span v-if="active_cotisation.payed_at">le {{moment(active_cotisation.payed_at).format("DD/MM/YYYY")}}</span>
@@ -43,9 +43,9 @@ export default {
   data () {
     return {
       moment: moment,
-      active_cotisation: this.sponsor.cotisations.sort((a, b) => {
+      active_cotisation: this.sponsor.cotisations ? this.sponsor.cotisations.slice(0).sort((a, b) => {
         return new Date(b.payed_at) - new Date(a.payed_at)
-      })[0]
+      })[0] : null
     }
   },
   computed: {

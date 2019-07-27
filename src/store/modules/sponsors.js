@@ -10,7 +10,12 @@ const getters = {
     return state.sponsors
   },
   getSponsorsArray: (state) => {
-    return Object.keys(state.sponsors).map(key => state.sponsors[key]).filter(sponsor => !sponsor.deleted_at)
+    return Object.keys(state.sponsors).map(key => state.sponsors[key]).filter(sponsor => !sponsor.deleted_at).sort((a, b) => {
+      return a.name.localeCompare(b.name)
+    })
+  },
+  getSponsorsForHomePage: (state) => {
+    return getters.getSponsorsArray(state).filter(sponsor => sponsor.status === 'active')
   }
 }
 
