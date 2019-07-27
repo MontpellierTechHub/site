@@ -2,7 +2,8 @@ import { getMeetups, addMeetup, updateMeetup } from '../../firebase'
 import { formatAsEntitiesFromObject, formatAsEntitiesFromSnapshot } from './utils'
 
 const state = {
-  meetups: {}
+  meetups: {},
+  sortBy: 'name'
 }
 
 const getters = {
@@ -10,8 +11,11 @@ const getters = {
     return state.meetups
   },
   getMeetupsArray: (state) => {
+    return Object.keys(state.meetups).map(key => state.meetups[key]).filter(meetup => !meetup.deleted_at)
+  },
+  getMeetupsArraySortable: (state) => {
     return Object.keys(state.meetups).map(key => state.meetups[key]).filter(meetup => !meetup.deleted_at).sort((a, b) => {
-      return a.name.localeCompare(b.name)
+      return a[state.sortBy].localeCompare(b[state.sortBy])
     })
   },
   getMeetupsForHomePage: (state) => {
@@ -46,12 +50,19 @@ const actions = {
     updateMeetup(meetup).then(ref => {
       commit('addMeetups', formatAsEntitiesFromObject(meetup))
     }).catch(error => console.log(error))
+  },
+  setSortBy ({state, commit}, sortBy) {
+    console.log(sortBy)
+    commit('updateSortBy', sortBy)
   }
 }
 
 const mutations = {
   addMeetups (state, meetups) {
     state.meetups = {...state.meetups, ...meetups}
+  },
+  updateSortBy (state, sortBy) {
+    state.sortBy = sortBy
   }
 }
 
