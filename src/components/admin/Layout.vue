@@ -7,6 +7,7 @@
 
         <div v-if="user" class="nav-wrapper ml-auto d-flex">
           <b-navbar-nav class="nav" v-if="user.isAdmin">
+            <b-nav-item active-class="active" href="/admin">Dashboard</b-nav-item>
             <b-nav-item active-class="active" :to="{ name:'AdminSponsors' }">Sponsors</b-nav-item>
             <b-nav-item active-class="active" :to="{ name:'AdminMembers' }">Members</b-nav-item>
             <b-nav-item active-class="active" :to="{ name:'AdminMeetups' }">Meetups</b-nav-item>
