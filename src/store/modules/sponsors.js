@@ -1,5 +1,6 @@
 import { getSponsors, addSponsor, updateSponsor } from '../../firebase'
 import { formatAsEntitiesFromObject, formatAsEntitiesFromSnapshot } from './utils'
+import shuffle from 'lodash.shuffle'
 
 const state = {
   sponsors: {}
@@ -15,7 +16,7 @@ const getters = {
     })
   },
   getSponsorsForHomePage: (state) => {
-    return getters.getSponsorsArray(state).filter(sponsor => sponsor.status === 'active')
+    return shuffle(getters.getSponsorsArray(state).filter(sponsor => sponsor.status === 'active'))
   }
 }
 
