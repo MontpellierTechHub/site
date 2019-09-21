@@ -43,7 +43,6 @@
 
 <script>
 import { mapGetters } from 'vuex'
-// import {getMeetupEvents} from '../../apiMeetup'
 import moment from 'moment'
 import AdminMeetupsAdd from '@/components/admin/Meetups_Add'
 import AdminMeetupsUpdateButton from '@/components/admin/Meetups_UpdateButton'
@@ -70,7 +69,6 @@ export default {
   mounted () {
     this.$store.dispatch('meetups/getMeetups')
     this.$store.dispatch('members/getMembers')
-    // getMeetupEvents()
   },
   methods: {
     setSortBy: function (sortBy, evt) {

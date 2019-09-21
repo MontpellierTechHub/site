@@ -30,7 +30,7 @@ export const googleSignIn = () => {
       loadingPermissions(user)
     }
   }).catch((error) => {
-    console.log(error)
+    console.error(error)
   })
 }
 
@@ -50,6 +50,6 @@ export const firebaseSignOut = () => (
   firebaseAuth.signOut().then(() => {
     store.commit('auth/addUser', null)
   }).catch((error) => {
-    console.log(error)
+    console.error(error)
   })
 )

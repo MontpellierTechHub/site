@@ -52,7 +52,6 @@ const actions = {
     }).catch(error => console.log(error))
   },
   setSortBy ({state, commit}, sortBy) {
-    console.log(sortBy)
     commit('updateSortBy', sortBy)
   }
 }

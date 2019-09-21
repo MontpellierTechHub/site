@@ -35,17 +35,7 @@
             v-model="form.logo"
             required
             placeholder="Url du logo" />
-
-        <div>
-
-          <ul>
-    <!-- <li v-for="file in files">{{file.name}} - Error: {{file.error}}, Success: {{file.success}}</li> -->
-  </ul>
-  
-        </div>
-
-
-
+            
           <b-form-input
             class="form"
             id="sponsor-logo"
@@ -159,33 +149,6 @@ export default {
         { text: 'Actif', value: 'active' },
         { text: 'Inactif', value: 'inactive' }
       ]
-    }
-  },
-  methods: {
-    inputFile: function (newFile, oldFile) {
-      if (newFile && oldFile && !newFile.active && oldFile.active) {
-        // Get response data
-        console.log('response', newFile.response)
-        if (newFile.xhr) {
-          //  Get the response status code
-          console.log('status', newFile.xhr.status)
-        }
-      }
-    },
-    inputFilter: function (newFile, oldFile, prevent) {
-      if (newFile && !oldFile) {
-        // Filter non-image file
-        if (!/\.(jpeg|jpe|jpg|gif|png|webp)$/i.test(newFile.name)) {
-          return prevent()
-        }
-      }
-
-      // Create a blob field
-      newFile.blob = ''
-      let URL = window.URL || window.webkitURL
-      if (URL && URL.createObjectURL) {
-        newFile.blob = URL.createObjectURL(newFile.file)
-      }
     }
   }
 }
