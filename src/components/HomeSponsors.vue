@@ -30,6 +30,7 @@ import logoTabmo from '@/assets/sponsors/tabmolabs.png'
 import logoCodinGame from '@/assets/sponsors/codingame_black.png'
 import logoNetheos from '@/assets/sponsors/netheos_logo_hd.png'
 import logoEsii from '@/assets/sponsors/logo-esii.png'
+import logoSmag from '@/assets/sponsors/logo-smag.png'
 
 const sponsors = [
   {name: 'Agysoft', logo: logoAgysoft, href: 'http://www.agysoft.fr/'},
@@ -43,7 +44,8 @@ const sponsors = [
   {name: 'Tabmo', logo: logoTabmo, href: 'http://tabmo.io/'},
   {name: 'CodinGame', logo: logoCodinGame, href: 'https://www.codingame.com/'},
   {name: 'Netheos', logo: logoNetheos, href: 'https://www.netheos.com/'},
-  {name: 'ESII', logo: logoEsii, href: 'https://www.esii.com'}
+  {name: 'ESII', logo: logoEsii, href: 'https://www.esii.com'},
+  {name: 'SMAG', logo: logoSmag, href: 'https://smag.tech'}
 ]
 
 export default {
