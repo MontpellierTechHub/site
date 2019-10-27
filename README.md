@@ -1,27 +1,7 @@
-# techhub-site
+# Montpellier Tech Hub site
 
-> Montpellier Tech Hub site  
-Presentation site of the association and some cool features.
-
-
-## Todo
-
-Setup :
- - [ ] CSS Theme
- - [ ] Store & loading
- - [ ] Router
- - [ ] Social 
-
-Features List
- - [ ] Calendrier des prochains meetups
- - [ ] Liste des sponsors
- - [ ] Défilement des sponsors
- - [ ] Proposer un talk
- - [ ] Liste des membres
- - [ ] Liste des sponsors
- - [ ] Systeme de notif meetups (RSS/...
- - [ ] Faire un don
- - [ ] Derniers vidéos Youtube
+Website of the MTH association which help local meetups in Montpellier, France.
+More information on [montpellier-techhub.org](https://www.montpellier-techhub.org/).
 
 ## Dev
 
