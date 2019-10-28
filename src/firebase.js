@@ -64,10 +64,17 @@ export const addSponsor = (data) => {
     })
 }
 export const updateSponsor = (data) => {
-  // TODO : update update
-  return firestore
-    .collection('sponsors')
-    .doc(data.id).update(data)
+  const {publicData, privateData} = splitSponsorData(data)
+  privateData.updatedAt = serverTimestamp()
+
+  return Promise.all([
+    firestore
+      .collection('sponsors')
+      .doc(data.id).update(publicData),
+    firestore
+      .collection('sponsorsPrivateData')
+      .doc(data.id).update(privateData)
+  ])
 }
 
 /* MEETUPS */
@@ -132,5 +139,9 @@ const splitSponsorData = (sponsorData) => {
   delete privateData.name
   delete privateData.status
   delete privateData.url_website
+  if (sponsorData.id) {
+    publicData.id = sponsorData.id
+    privateData.sponsorId = sponsorData.id
+  }
   return {publicData, privateData}
 }

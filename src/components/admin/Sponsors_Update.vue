@@ -3,7 +3,7 @@
     <b-modal size="lg" ref="SponsorsUpdateModalRef" @ok="onSubmit" :id="'modal_sponsors__update' + this.sponsor.id" title="Editer un sponsor">
 
       <Admin-sponsors-form-inputs :form="form" :sponsor="this.sponsor" editing="true"/>
-      
+
       <div slot="modal-footer" class="w-100">
         <b-button class="float-left" type="button" v-on:click="onDelete" variant="danger">Supprimer</b-button>
         <b-button class="float-right" type="submit" variant="primary">Editer</b-button>
@@ -55,11 +55,13 @@ export default {
     ...mapGetters('meetups', {
       meetups: 'getMeetupsOptions',
       meetupsEntities: 'getMeetupsEntities'
-    })
+    }),
+    form: function () {
+      return initialForm(this.sponsor)
+    }
   },
   data () {
     return {
-      form: initialForm(this.sponsor),
       status_list: [{ text: 'Sélectionner un status', value: null }, 'Devis envoyé', 'Facture envoyé', 'Payé'],
       add_cotisation: false,
       moment: moment
@@ -95,18 +97,15 @@ export default {
         ]
       }
       this.$store.dispatch('sponsors/updateSponsor', {...this.sponsor, ...newSponsor})
-      this.form = initialForm(this.sponsor)
       this.$refs.SponsorsUpdateModalRef.hide()
     },
     onDelete (evt) {
       evt.preventDefault()
       this.$store.dispatch('sponsors/updateSponsor', {...this.sponsor, deleted_at: moment().format()})
-      this.form = initialForm(this.sponsor)
       this.$refs.SponsorsUpdateModalRef.hide()
     },
     onReset (evt) {
       evt.preventDefault()
-      this.form = initialForm(this.sponsor)
       this.$refs.SponsorsUpdateModalRef.hide()
     }
   }
