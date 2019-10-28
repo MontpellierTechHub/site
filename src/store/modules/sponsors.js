@@ -1,5 +1,10 @@
-import { getSponsors, addSponsor, updateSponsor } from '../../firebase'
-import { formatAsEntitiesFromObject, formatAsEntitiesFromSnapshot } from './utils'
+import {
+  getSponsors as getSponsorsFromDB,
+  getPrivateSponsorsData as getPrivateSponsorsDataFromDB,
+  addSponsor as addSponsorToDB,
+  updateSponsor as updateSponsorToDB
+} from '../../firebase'
+import {formatAsEntitiesFromObject, formatAsEntitiesFromSnapshot} from './utils'
 import shuffle from 'lodash.shuffle'
 
 const state = {
@@ -7,9 +12,6 @@ const state = {
 }
 
 const getters = {
-  getSponsorsEntities: (state, getters, rootState) => {
-    return state.sponsors
-  },
   getSponsorsArray: (state) => {
     return Object.keys(state.sponsors).map(key => state.sponsors[key]).filter(sponsor => !sponsor.deleted_at).sort((a, b) => {
       return a.name.localeCompare(b.name)
@@ -21,20 +23,31 @@ const getters = {
 }
 
 const actions = {
-  getSponsors ({ state, commit }) {
-    getSponsors().then(snapshot => {
-      commit('addSponsors', formatAsEntitiesFromSnapshot(snapshot))
-    })
+  getSponsors ({state, commit}) {
+    getSponsorsFromDB()
+      .then(snapshot => {
+        commit('addSponsors', formatAsEntitiesFromSnapshot(snapshot))
+      })
   },
-  addSponsor ({ state, commit }, sponsor) {
-    addSponsor(sponsor).then(ref => {
-      commit('addSponsors', formatAsEntitiesFromObject({id: ref.id, ...sponsor}))
-    }).catch(error => console.log(error))
+  getPrivateDataForSponsors ({state, commit}) {
+    getPrivateSponsorsDataFromDB()
+      .then(snapshot => {
+        commit('addSponsors', snapshot)
+      })
   },
-  updateSponsor ({ state, commit }, sponsor) {
-    updateSponsor(sponsor).then(ref => {
-      commit('addSponsors', formatAsEntitiesFromObject(sponsor))
-    }).catch(error => console.log(error))
+  addSponsor ({state, commit}, sponsor) {
+    addSponsorToDB(sponsor)
+      .then(sponsorId => {
+        commit('addSponsors', formatAsEntitiesFromObject({id: sponsorId, ...sponsor}))
+      })
+      .catch(error => console.log(error))
+  },
+  updateSponsor ({state, commit}, sponsor) {
+    updateSponsorToDB(sponsor)
+      .then(ref => {
+        commit('addSponsors', formatAsEntitiesFromObject(sponsor))
+      })
+      .catch(error => console.log(error))
   }
 }
 

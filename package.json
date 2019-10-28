@@ -18,7 +18,7 @@
     "bootstrap": "4.0.0-beta.3",
     "bootstrap-vue": "^v2.0.0-rc.15",
     "fetch": "^1.1.0",
-    "firebase": "^5.8.6",
+    "firebase": "^7.2.2",
     "font-awesome": "^4.7.0",
     "lodash.shuffle": "^4.2.0",
     "moment": "^2.21.0",
