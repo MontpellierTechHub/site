@@ -43,7 +43,7 @@ export default {
   mounted () {
     this.$store.dispatch('meetups/getMeetups')
     this.$store.dispatch('members/getMembers')
-    this.$store.dispatch('sponsors/getSponsors')
+    this.$store.dispatch('sponsors/getPrivateDataForSponsors')
   }
 }
 </script>

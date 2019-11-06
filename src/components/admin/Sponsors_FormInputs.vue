@@ -11,7 +11,7 @@
             v-model="form.name"
             required
             placeholder="Nom du sponsor" />
-        
+
           <b-form-input
             class="form"
             id="sponsor-siret"
@@ -27,7 +27,7 @@
             v-model="form.address"
             required
             placeholder="Addresse du siège" />
-            
+
           <b-form-input
             class="form"
             id="sponsor-logo"
@@ -35,7 +35,7 @@
             v-model="form.logo"
             required
             placeholder="Url du logo" />
-            
+
           <b-form-input
             class="form"
             id="sponsor-logo"
@@ -43,7 +43,7 @@
             v-model="form.url_website"
             required
             placeholder="Url du site web" />
-          
+
           <b-form-select class="form" id="sponsor-status" :options="status" required v-model="form.status" />
 
         </div>
@@ -65,7 +65,7 @@
             v-model="form.contact.email"
             required
             placeholder="Email" />
-            
+
           <b-form-input
             class="form"
             id="sponsor-contact-phone"
@@ -74,12 +74,12 @@
             placeholder="Téléphone" />
 
       <h3 class="form-title">Contact MTH</h3>
-      
-      <b-form-select 
-        class="form" 
-        id="sponsor-contact-mth" 
-        :options="members" 
-        required 
+
+      <b-form-select
+        class="form"
+        id="sponsor-contact-mth"
+        :options="members"
+        required
         v-model="form.contact_member" />
 
         </div>
@@ -90,12 +90,12 @@
         <h3 class="form-title">Sponsoring</h3>
           <div v-if="editing && sponsor">
               <p v-for="cotisation of sponsor.cotisations">
-              {{cotisation.value}} € <span v-if="meetupsEntities[cotisation.meetup]"> pour {{meetupsEntities[cotisation.meetup].name}}</span> le {{moment(cotisation.created_at).format('DD/MM/YYYY')}} 
+              {{cotisation.value}} € <span v-if="meetupsEntities[cotisation.meetup]"> pour {{meetupsEntities[cotisation.meetup].name}}</span> le {{moment(cotisation.created_at).format('DD/MM/YYYY')}}
               </p>
           </div>
-          <a v-if="editing && !add_cotisation" v-on:click="add_cotisation = true">Ajouter une cotisation</a>
+          <a v-if="editing && !add_cotisation" v-on:click="add_cotisation = true">Ajouter un paiement</a>
 
-      
+
           <div v-if="!editing || (editing && add_cotisation)">
               <b-form-select class="form" id="sponsoring-cotisation-status" :options="cotisation_status_list" required v-model="form.cotisation.status" />
               <b-form-select class="form" id="sponsoring-cotisation-meetup" :options="meetups" required v-model="form.cotisation.meetup" />
@@ -106,10 +106,10 @@
               v-model="form.cotisation.value"
               required
               placeholder="Valeur (en Euros)" />
-              <datepicker 
-              class="form" 
-              input-class="datepicker_input" 
-              placeholder="Date de paiement" 
+              <datepicker
+              class="form"
+              input-class="datepicker_input"
+              placeholder="Date de paiement"
               v-model="form.cotisation.payed_at"></datepicker>
           </div>
         </div>
