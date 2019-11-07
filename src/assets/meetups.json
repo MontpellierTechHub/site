@@ -86,5 +86,13 @@
     "href": "https://www.meetup.com/fr-FR/Montpellier-Rust-Meetup/",
     "avg_events": 10,
     "members": 40
+  },
+  {
+    "meetup_id": "23948780",
+    "name": "Microsoft User Group",
+    "body": "Ce groupe est destiné à échanger autour des technologies Microsoft : .Net , C#, Office 365, Azure, Windows, SharePoint. Soyez les bienvenus !",
+    "href": "https://www.meetup.com/fr-FR/MUG-Montpellier/",
+    "avg_events": 8,
+    "members": 323
   }
 ]
