@@ -16,13 +16,17 @@
   },
   "dependencies": {
     "bootstrap": "4.0.0-beta.3",
-    "bootstrap-vue": "^1.2.0",
+    "bootstrap-vue": "^v2.0.0-rc.15",
     "fetch": "^1.1.0",
+    "firebase": "^7.2.2",
     "font-awesome": "^4.7.0",
     "lodash.shuffle": "^4.2.0",
     "moment": "^2.21.0",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue-upload-component": "^2.8.19",
+    "vuejs-datepicker": "^1.5.4",
+    "vuex": "^3.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

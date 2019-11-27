@@ -13,6 +13,9 @@ export default {
   components: {
     MthPageBanner,
     MthEventsContent
+  },
+  mounted () {
+    this.$store.dispatch('meetups/getMeetups')
   }
 }
 </script>
