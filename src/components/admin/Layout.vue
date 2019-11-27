@@ -12,20 +12,20 @@
             <b-nav-item active-class="active" :to="{ name:'AdminMembers' }">Members</b-nav-item>
             <b-nav-item active-class="active" :to="{ name:'AdminMeetups' }">Meetups</b-nav-item>
           </b-navbar-nav>
-          
+
            <b-dropdown right variant="link" size="lg" no-caret>
             <template slot="button-content"><img class="avatar" :src="user.avatarUrl" :title="user.name"/></template>
 
             <b-dropdown-item v-on:click="signOut">Deconnexion</b-dropdown-item>
           </b-dropdown>
-          
+
         </div>
 
       </header>
       <div class="main-content">
         <div v-if="!user"><admin-sign-in /></div>
         <div class="text-center" v-if="user && !user.isAdmin">
-          Vous n'avez pas les droits pour accéder à l'admin, contactez un membre du bureau de l'association pour arranger ça :) 
+          Vous n'avez pas les droits pour accéder à l'admin, contactez un membre du bureau de l'association pour arranger ça :)
         </div>
 
         <div v-if="user && user.isAdmin">
@@ -67,7 +67,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 header {
   display: flex;
   height: 70px;
