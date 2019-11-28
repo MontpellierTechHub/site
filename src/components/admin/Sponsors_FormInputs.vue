@@ -6,7 +6,6 @@
         <h3 class="form-title">Informations</h3>
           <b-form-input
             class="form"
-            id="sponsor-name"
             type="text"
             v-model="form.name"
             required
@@ -14,7 +13,6 @@
 
           <b-form-input
             class="form"
-            id="sponsor-siret"
             type="text"
             v-model="form.siret"
             required
@@ -22,7 +20,6 @@
 
           <b-form-input
             class="form"
-            id="sponsor-address"
             type="text"
             v-model="form.address"
             required
@@ -30,7 +27,6 @@
 
           <b-form-input
             class="form"
-            id="sponsor-logo"
             type="text"
             v-model="form.logo"
             required
@@ -38,13 +34,12 @@
 
           <b-form-input
             class="form"
-            id="sponsor-logo"
             type="text"
             v-model="form.url_website"
             required
             placeholder="Url du site web" />
 
-          <b-form-select class="form" id="sponsor-status" :options="status" required v-model="form.status" />
+          <b-form-select class="form" :options="status" required v-model="form.status" />
 
         </div>
         <div class="form-column__right">
@@ -52,7 +47,6 @@
         <h3 class="form-title">Contact sponsor</h3>
           <b-form-input
             class="form"
-            id="sponsor-contact-name"
             type="text"
             v-model="form.contact.name"
             required
@@ -60,7 +54,6 @@
 
           <b-form-input
             class="form"
-            id="sponsor-contact-email"
             type="email"
             v-model="form.contact.email"
             required
@@ -68,7 +61,6 @@
 
           <b-form-input
             class="form"
-            id="sponsor-contact-phone"
             type="text"
             v-model="form.contact.phone"
             placeholder="Téléphone" />
@@ -77,7 +69,6 @@
 
       <b-form-select
         class="form"
-        id="sponsor-contact-mth"
         :options="members"
         required
         v-model="form.contact_member" />
