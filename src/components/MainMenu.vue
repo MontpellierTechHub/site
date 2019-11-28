@@ -1,12 +1,9 @@
 <template>
   <b-collapse id="nav_collapse" is-nav>
     <b-navbar-nav class="ml-auto">
-      <!-- <b-nav-item exact active-class="active" :to="{ name:'Home' }">Home</b-nav-item> -->
-      <!-- <b-nav-item :to="{ name:'Meetups' }">MEETUPS</b-nav-item> -->
-      <!-- <b-nav-item :to="{ name:'Sponsors' }">SPONSORS</b-nav-item> -->
       <b-nav-item active-class="active" class="nav-item_text" :to="{ name:'BecomeMember' }">Devenir membre</b-nav-item>
       <b-nav-item active-class="active" class="nav-item_text" :to="{ name:'Events' }">Evénements</b-nav-item>
-      
+
       <b-nav-item target="_blank" href="https://twitter.com/MtpTechHub">
         <i class="fa fa-twitter"></i>
         <span class="d-md-none">Twitter</span>
