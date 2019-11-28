@@ -1,9 +1,9 @@
 <template>
   <b-form @submit="onSubmit" @reset="onReset">
       <b-modal size="lg" ref="MeetupsAddModalRef" :id="'modal_meetups__update' + this.meetup.id" title="Ajouter un meetup">
-    
-        <admin-meetups-form-inputs :form="form"/>
-   
+
+        <admin-meetups-form-inputs :form="form" :id="'input_meetups__update' + this.meetup.id"/>
+
 
       <div slot="modal-footer" class="w-100">
         <b-button class="float-left" type="button" v-on:click="onDelete" variant="danger">Supprimer</b-button>
@@ -21,6 +21,7 @@ import moment from 'moment'
 
 const initialForm = (meetup) => {
   return {
+    id: meetup.id,
     name: meetup.name,
     description: meetup.description,
     contact_member: meetup.contact_member,

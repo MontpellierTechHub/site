@@ -21,7 +21,6 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Layout',
       component: Layout,
       children: [
         {
@@ -53,7 +52,6 @@ export default new Router({
     },
     {
       path: '/admin',
-      name: 'Admin',
       component: AdminLayout,
       children: [
         {
