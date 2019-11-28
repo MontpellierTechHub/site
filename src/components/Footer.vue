@@ -15,7 +15,7 @@
         </b-col>
       </b-row>
       <b-row>
-        <p class="copyright">© 2018 Montpellier Tech Hub, association loi 1901</p>
+        <p class="copyright">© {{new Date().getFullYear()}} Montpellier Tech Hub, association loi 1901</p>
       </b-row>
     </b-container>
   </footer>
