@@ -42,3 +42,26 @@ docker run -p 3000:80 MontpellierTechHub/site:local
 
 # Site available in localhost:3000
 ```
+
+## Serverless (aka Cloud Functions)
+Some part are automated using Firebase Cloud Functions. 
+Install Firebase CLI
+```bash
+    npm install -g firebase-tools
+```
+
+**Only for  `/functions`**
+
+Build commands
+```bash
+   npm run build
+```
+
+Test locally
+```bash
+   npm run shell
+```
+Deploy
+```bash
+   npm run deploy
+```
