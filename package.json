@@ -22,6 +22,7 @@
     "font-awesome": "^4.7.0",
     "lodash.shuffle": "^4.2.0",
     "moment": "^2.21.0",
+    "reveal.js": "^3.8.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vue-upload-component": "^2.8.19",

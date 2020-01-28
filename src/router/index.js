@@ -6,6 +6,7 @@ import Events from '@/components/Events'
 import Layout from '@/components/Layout'
 import Home from '@/components/Home'
 import Meetups from '@/components/Meetups'
+import Slideshow from '@/components/slideshow/Slideshow'
 import AdminLayout from '@/components/admin/Layout'
 import AdminSponsors from '@/components/admin/Sponsors'
 import AdminMembers from '@/components/admin/Members'
@@ -51,6 +52,11 @@ export default new Router({
       ]
     },
     {
+      path: '/slideshow',
+      name: 'Slideshow',
+      component: Slideshow
+    },
+    {
       path: '/admin',
       component: AdminLayout,
       children: [
@@ -78,7 +84,7 @@ export default new Router({
     },
     {
       path: '*',
-      redirect: { name: 'home' }
+      redirect: { name: 'Home' }
     }
   ],
   scrollBehavior (to, from, savedPosition) {
