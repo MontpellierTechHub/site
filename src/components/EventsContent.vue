@@ -4,31 +4,29 @@
       <h1 class="text-center">Prochains événements</h1>
       <article>
         <b-list-group>
-          <b-list-group-item v-for="event of events" :key="event.eventId" :href="event.link" target="_blank" class="d-flex">
+          <b-list-group-item v-for="event of events" :key="event.id" :href="event.url" target="_blank" class="d-flex">
             <div class="event_time-venue">
               <div class="event_time">
-                <h5>{{moment(event.plannedAt).format("dddd DD MMMM")}}</h5>
-                <span>{{moment(event.plannedAt).format("à HH:mm")}}</span>
+                <h5>{{moment(event.startDate).format("dddd DD MMMM")}}</h5>
+                <span>{{moment(event.startDate).format("à HH:mm")}}</span>
               </div>
-              <div class="event_venue" v-if="event.venueName">
-                <h5>{{event.venueName}}</h5>
-                <p>{{event.venueAddress}}</p>
-                <p>{{event.howToFindUs}}</p>
+              <div class="event_venue" v-if="event.location">
+                <h5>{{event.locationName}}</h5>
+                <p>{{event.location}}</p>
               </div>
             </div>
             <div class="event_details">
               <div class="d-flex w-100 justify-content-between">
-                <h6>{{ event.groupName }}</h6>
-                <small>{{event.numberOfMembers}} inscrits <span v-if="event.limitOfMembers">(max: {{event.limitOfMembers}})</span></small>
+                <h6>{{ event.icalName }}</h6>
               </div>
-              <h4 class="mb-1">{{ event.name }}</h4>
+              <h4 class="mb-1">{{ event.title }}</h4>
               <p class="mb-1 event_description" v-html="event.description"></p>
             </div>
           </b-list-group-item>
         </b-list-group>
       </article>
       <article>
-        <b-button variant="outline-secondary" target="_blank" href="https://techmeetups.fr/">Voir tout l'agenda des meetups du numérique à Montpellier sur <strong>techmeetups.fr</strong></b-button>
+        <b-button variant="outline-secondary" target="_blank" href="https://ical2api.web.app/o/9Y6UMiuKiWTyu12Sjetn">Voir tout l'agenda des meetups du numérique à Montpellier sur <strong>ical2api.web.app</strong></b-button>
       </article>
     </b-container>
   </section>
@@ -46,6 +44,7 @@ export default {
     return {
       events: [],
       eventsLoaded: false,
+      eventsLoading: false,
       moment: moment
     }
   },
@@ -56,20 +55,27 @@ export default {
   },
   beforeUpdate () {
     if (this.meetupsId.length > 0 && !this.eventsLoaded) {
-      fetch(`https://techmeetups.fr/api/events?group_ids=${this.meetupsId.join()}`)
-      .then(async response => {
-        const results = await response.json()
-        this.events = results.events
-      })
-      this.eventsLoaded = true
+      this.fetchEvents()
     }
   },
   mounted () {
-    fetch(`https://techmeetups.fr/api/events?group_ids=${this.meetupsId.join()}`)
-    .then(async response => {
-      const results = await response.json()
-      this.events = results.events
-    })
+    this.fetchEvents()
+  },
+  methods: {
+    fetchEvents () {
+      if (this.eventsLoading) return
+      fetch(`https://ical2api.web.app/api/v1/events/?status=upcoming&organizations=9Y6UMiuKiWTyu12Sjetn`)
+        .then(async response => {
+          const events = await response.json()
+
+          this.events = events.map(event => ({
+            ...event,
+            locationName: event.location ? event.location.substring(0, event.location.indexOf('(')) : ''
+          }))
+          this.eventsLoaded = true
+          this.eventsLoading = false
+        })
+    }
   }
 }
 </script>
