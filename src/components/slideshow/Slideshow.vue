@@ -1,9 +1,9 @@
 <template>
   <div id="slideshow" class="reveal">
     <div class="slides">
-      <SlideEvents/>
       <SlideLinks/>
       <SlideSponsors/>
+      <SlideEvents/>
     </div>
   </div>
 </template>

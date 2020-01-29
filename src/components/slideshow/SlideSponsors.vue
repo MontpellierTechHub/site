@@ -1,5 +1,5 @@
 <template>
-  <section class="section" data-background-image="/static/images/background-slideshow-header2.jpg">
+  <section class="section" data-background-image="/static/images/background-slideshow-header.jpg">
     <h3 class="title">SPONSORS</h3>
     <mth-sponsors class="sponsors-component"/>
   </section>
