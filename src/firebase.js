@@ -2,7 +2,7 @@ import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/auth'
 import firebaseConfig from '../config/firebaseConfig'
-import {formatAsEntitiesFromSnapshot} from './store/modules/utils'
+import { formatAsEntitiesFromSnapshot } from './store/modules/utils'
 
 export const firebaseMain = firebase.initializeApp(firebaseConfig)
 export const provider = new firebase.auth.GoogleAuthProvider()
@@ -42,7 +42,7 @@ export const getPrivateSponsorsData = () => {
     })
 }
 export const addSponsor = (data) => {
-  const {publicData, privateData} = splitSponsorData(data)
+  const { publicData, privateData } = splitSponsorData(data)
 
   privateData.createdAt = privateData.updatedAt = serverTimestamp()
 
@@ -64,7 +64,7 @@ export const addSponsor = (data) => {
     })
 }
 export const updateSponsor = (data) => {
-  const {publicData, privateData} = splitSponsorData(data)
+  const { publicData, privateData } = splitSponsorData(data)
   privateData.updatedAt = serverTimestamp()
 
   return Promise.all([
@@ -134,7 +134,7 @@ const splitSponsorData = (sponsorData) => {
     url_website: sponsorData.url_website
   }
 
-  const privateData = {...sponsorData}
+  const privateData = { ...sponsorData }
   delete privateData.logo
   delete privateData.name
   delete privateData.status
@@ -143,5 +143,5 @@ const splitSponsorData = (sponsorData) => {
     publicData.id = sponsorData.id
     privateData.sponsorId = sponsorData.id
   }
-  return {publicData, privateData}
+  return { publicData, privateData }
 }

@@ -2,10 +2,10 @@
   <tr>
         <td>{{member.name}}</td>
         <td>{{member.email}}</td>
-        
+
         <td :class="{ expired: active_cotisation && moment(active_cotisation.created_at).isBefore(moment().subtract(1, 'years').format()) }">
             <span v-if="active_cotisation && meetupsEntities[active_cotisation.meetup]">
-            {{meetupsEntities[active_cotisation.meetup].name}} le 
+            {{meetupsEntities[active_cotisation.meetup].name}} le
               {{moment(active_cotisation.created_at).format("DD/MM/YYYY")}}
             </span>
         </td>

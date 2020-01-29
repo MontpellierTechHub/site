@@ -4,7 +4,7 @@ import {
   addSponsor as addSponsorToDB,
   updateSponsor as updateSponsorToDB
 } from '../../firebase'
-import {formatAsEntitiesFromObject, formatAsEntitiesFromSnapshot} from './utils'
+import { formatAsEntitiesFromObject, formatAsEntitiesFromSnapshot } from './utils'
 import shuffle from 'lodash.shuffle'
 
 const state = {
@@ -23,37 +23,39 @@ const getters = {
 }
 
 const actions = {
-  getSponsors ({state, commit}) {
+  getSponsors ({ commit }) {
     getSponsorsFromDB()
       .then(snapshot => {
         commit('addSponsors', formatAsEntitiesFromSnapshot(snapshot))
       })
   },
-  getPrivateDataForSponsors ({state, commit}) {
+  getPrivateDataForSponsors ({ commit }) {
     getPrivateSponsorsDataFromDB()
       .then(snapshot => {
         commit('addSponsors', snapshot)
       })
   },
-  addSponsor ({state, commit}, sponsor) {
+  addSponsor ({ commit }, sponsor) {
     addSponsorToDB(sponsor)
       .then(sponsorId => {
-        commit('addSponsors', formatAsEntitiesFromObject({id: sponsorId, ...sponsor}))
+        commit('addSponsors', formatAsEntitiesFromObject({ id: sponsorId, ...sponsor }))
       })
+      // eslint-disable-next-line no-console
       .catch(error => console.log(error))
   },
-  updateSponsor ({state, commit}, sponsor) {
+  updateSponsor ({ commit }, sponsor) {
     updateSponsorToDB(sponsor)
-      .then(ref => {
+      .then(() => {
         commit('addSponsors', formatAsEntitiesFromObject(sponsor))
       })
+      // eslint-disable-next-line no-console
       .catch(error => console.log(error))
   }
 }
 
 const mutations = {
   addSponsors (state, sponsors) {
-    state.sponsors = {...state.sponsors, ...sponsors}
+    state.sponsors = { ...state.sponsors, ...sponsors }
   }
 }
 

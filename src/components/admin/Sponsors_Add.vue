@@ -1,14 +1,14 @@
 <template>
   <b-form @submit="onSubmit" @reset="onReset" v-if="show">
     <b-modal ref="SponsorsAddModalRef" size="lg" @ok="onSubmit" id="modal_sponsors__add"  title="Ajouter un sponsor">
-      
+
       <Admin-sponsors-form-inputs :form="form"/>
-      
+
       <div slot="modal-footer" class="w-100">
         <b-button class="float-right" type="submit" variant="primary">Ajouter</b-button>
         <b-button class="float-right" type="reset" variant="default">Annuler</b-button>
       </div>
-      
+
     </b-modal>
   </b-form>
 </template>
@@ -101,7 +101,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 @import './admin.css';

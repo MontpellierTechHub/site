@@ -4,7 +4,6 @@
 
         <admin-meetups-form-inputs :form="form" :id="'input_meetups__update' + this.meetup.id"/>
 
-
       <div slot="modal-footer" class="w-100">
         <b-button class="float-left" type="button" v-on:click="onDelete" variant="danger">Supprimer</b-button>
         <b-button class="float-right" type="submit" variant="primary">Editer</b-button>
@@ -68,13 +67,13 @@ export default {
         meetup_dot_id: this.form.meetup_dot_id,
         status: this.form.status
       }
-      this.$store.dispatch('meetups/updateMeetup', {...this.meetup, ...meetup})
+      this.$store.dispatch('meetups/updateMeetup', { ...this.meetup, ...meetup })
       this.form = initialForm(this.meetup)
       this.$refs.MeetupsAddModalRef.hide()
     },
     onDelete (evt) {
       evt.preventDefault()
-      this.$store.dispatch('meetups/updateMeetup', {...this.meetup, deleted_at: moment().format()})
+      this.$store.dispatch('meetups/updateMeetup', { ...this.meetup, deleted_at: moment().format() })
       this.form = initialForm(this.meetup)
       this.$refs.MeetupsAddModalRef.hide()
     },

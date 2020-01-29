@@ -3,7 +3,7 @@
         <b-button size="sm" v-b-modal="'modal_meetups__update' + meetup.id">Editer</b-button>
 
         <admin-meetups-update :meetup="this.meetup" editing />
-     
+
     </div>
 </template>
 

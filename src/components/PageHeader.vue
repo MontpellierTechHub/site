@@ -11,44 +11,44 @@
 </template>
 
 <script>
-  import logoDark from '../assets/logo-dark.svg'
-  import logoLight from '../assets/logo-light.svg'
-  import MthMainMenu from '@/components/MainMenu'
+import logoDark from '../assets/logo-dark.svg'
+import logoLight from '../assets/logo-light.svg'
+import MthMainMenu from '@/components/MainMenu'
 
-  export default {
-    name: 'PageHeader',
-    components: { MthMainMenu },
-    data () {
-      return {
-        fixed: window.pageYOffset > 0,
-        collapsed: window.outerWidth < 768
-      }
-    },
-    methods: {
-      handleScroll () {
-        this.fixed = window.pageYOffset > 0
-      },
-      handleResize () {
-        this.collapsed = window.outerWidth < 768
-      }
-    },
-    computed: {
-      theme () {
-        return this.fixed || this.collapsed ? 'light' : 'dark'
-      },
-      logo () {
-        return this.fixed || this.collapsed ? logoDark : logoLight
-      }
-    },
-    mounted () {
-      window.addEventListener('scroll', this.handleScroll)
-      window.addEventListener('resize', this.handleResize)
-    },
-    destroyed () {
-      window.removeEventListener('scroll', this.handleScroll)
-      window.removeEventListener('resize', this.handleResize)
+export default {
+  name: 'PageHeader',
+  components: { MthMainMenu },
+  data () {
+    return {
+      fixed: window.pageYOffset > 0,
+      collapsed: window.outerWidth < 768
     }
+  },
+  methods: {
+    handleScroll () {
+      this.fixed = window.pageYOffset > 0
+    },
+    handleResize () {
+      this.collapsed = window.outerWidth < 768
+    }
+  },
+  computed: {
+    theme () {
+      return this.fixed || this.collapsed ? 'light' : 'dark'
+    },
+    logo () {
+      return this.fixed || this.collapsed ? logoDark : logoLight
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('resize', this.handleResize)
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('resize', this.handleResize)
   }
+}
 </script>
 
 <style scoped>

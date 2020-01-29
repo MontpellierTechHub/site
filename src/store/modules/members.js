@@ -6,7 +6,7 @@ const state = {
 }
 
 const getters = {
-  getMembersEntities: (state, getters, rootState) => {
+  getMembersEntities: (state) => {
     return state.members
   },
   getMembersArray: (state) => {
@@ -19,26 +19,28 @@ const getters = {
     getters.getMembersArray(state).sort((a, b) => {
       return a.name.localeCompare(b.name)
     }).map(member => {
-      membersOptions.push({text: member.name, value: member.id})
+      membersOptions.push({ text: member.name, value: member.id })
     })
     return membersOptions
   }
 }
 
 const actions = {
-  getMembers ({ state, commit }) {
+  getMembers ({ commit }) {
     getMembers().then(snapshot => {
       commit('addMembers', formatAsEntitiesFromSnapshot(snapshot))
     })
   },
-  addMember ({ state, commit }, member) {
+  addMember ({ commit }, member) {
     addMember(member).then(ref => {
-      commit('addMember', formatAsEntitiesFromObject({id: ref.id, ...member}))
+      commit('addMember', formatAsEntitiesFromObject({ id: ref.id, ...member }))
+      // eslint-disable-next-line no-console
     }).catch(error => console.log(error))
   },
-  updateMember ({ state, commit }, member) {
-    updateMember(member).then(ref => {
+  updateMember ({ commit }, member) {
+    updateMember(member).then(() => {
       commit('addMember', formatAsEntitiesFromObject(member))
+      // eslint-disable-next-line no-console
     }).catch(error => console.log(error))
   }
 }
@@ -48,7 +50,7 @@ const mutations = {
     state.members = members
   },
   addMember (state, member) {
-    state.members = {...state.members, ...member}
+    state.members = { ...state.members, ...member }
   }
 }
 

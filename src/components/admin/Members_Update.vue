@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import Datepicker from 'vuejs-datepicker'
 import moment from 'moment'
 import { mapGetters } from 'vuex'
 import AdminMembersFormInputs from '@/components/admin/Members_FormInputs'
@@ -33,7 +32,6 @@ const initialForm = (member) => {
 export default {
   name: 'AdminMembers_Update',
   components: {
-    Datepicker,
     AdminMembersFormInputs
   },
   props: ['member'],
@@ -68,7 +66,7 @@ export default {
           })
       }
 
-      this.$store.dispatch('members/updateMember', {id: this.member.id, ...newMember})
+      this.$store.dispatch('members/updateMember', { id: this.member.id, ...newMember })
       this.$nextTick(() => {
         this.form = initialForm(this.member)
         this.add_cotisation = false
@@ -77,7 +75,7 @@ export default {
     },
     onDelete (evt) {
       evt.preventDefault()
-      this.$store.dispatch('members/updateMember', {id: this.member.id, deleted_at: moment().format()})
+      this.$store.dispatch('members/updateMember', { id: this.member.id, deleted_at: moment().format() })
       this.$refs.modal.hide()
     },
     onReset (evt) {

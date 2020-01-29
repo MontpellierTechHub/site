@@ -80,12 +80,11 @@
         <div class="form-column__left">
         <h3 class="form-title">Sponsoring</h3>
           <div v-if="editing && sponsor">
-              <p v-for="cotisation of sponsor.cotisations">
+              <p v-for="cotisation of sponsor.cotisations" v-bind:key="cotisation.id">
               {{cotisation.value}} € <span v-if="meetupsEntities[cotisation.meetup]"> pour {{meetupsEntities[cotisation.meetup].name}}</span> le {{moment(cotisation.created_at).format('DD/MM/YYYY')}}
               </p>
           </div>
           <a v-if="editing && !add_cotisation" v-on:click="add_cotisation = true">Ajouter un paiement</a>
-
 
           <div v-if="!editing || (editing && add_cotisation)">
               <b-form-select class="form" id="sponsoring-cotisation-status" :options="cotisation_status_list" required v-model="form.cotisation.status" />
@@ -144,7 +143,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
 @import './admin.css';

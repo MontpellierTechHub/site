@@ -2,8 +2,8 @@
   <b-form @submit="onSubmit" @reset="onReset" v-if="show">
     <b-modal size="lg" ref="MembersAddModalRef" @ok="onSubmit" id="modal_members__add" title="Ajouter un membre">
 
-      <Admin-members-form-inputs :form="form" />    
-      
+      <Admin-members-form-inputs :form="form" />
+
       <div slot="modal-footer" class="w-100">
         <b-button class="float-right" type="submit" variant="primary">Ajouter</b-button>
         <b-button class="float-right" type="reset" variant="default">Annuler</b-button>
@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import Datepicker from 'vuejs-datepicker'
 import moment from 'moment'
 import { mapGetters } from 'vuex'
 import AdminMembersFormInputs from '@/components/admin/Members_FormInputs'
@@ -33,7 +32,6 @@ const initialForm = () => {
 export default {
   name: 'AdminMembers_Add',
   components: {
-    Datepicker,
     AdminMembersFormInputs
   },
   computed: {

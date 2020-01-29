@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import Datepicker from 'vuejs-datepicker'
 import moment from 'moment'
 import { mapGetters } from 'vuex'
 import AdminSponsorsFormInputs from '@/components/admin/Sponsors_FormInputs'
@@ -44,7 +43,6 @@ const initialForm = (sponsor) => {
 export default {
   name: 'AdminSponsors_Update',
   components: {
-    Datepicker,
     AdminSponsorsFormInputs
   },
   props: ['sponsor'],
@@ -96,12 +94,12 @@ export default {
           }
         ]
       }
-      this.$store.dispatch('sponsors/updateSponsor', {...this.sponsor, ...newSponsor})
+      this.$store.dispatch('sponsors/updateSponsor', { ...this.sponsor, ...newSponsor })
       this.$refs.SponsorsUpdateModalRef.hide()
     },
     onDelete (evt) {
       evt.preventDefault()
-      this.$store.dispatch('sponsors/updateSponsor', {...this.sponsor, deleted_at: moment().format()})
+      this.$store.dispatch('sponsors/updateSponsor', { ...this.sponsor, deleted_at: moment().format() })
       this.$refs.SponsorsUpdateModalRef.hide()
     },
     onReset (evt) {

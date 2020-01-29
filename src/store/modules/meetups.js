@@ -7,7 +7,7 @@ const state = {
 }
 
 const getters = {
-  getMeetupsEntities: (state, getters, rootState) => {
+  getMeetupsEntities: (state) => {
     return state.meetups
   },
   getMeetupsArray: (state) => {
@@ -26,7 +26,7 @@ const getters = {
     getters.getMeetupsArray(state).sort((a, b) => {
       return a.name.localeCompare(b.name)
     }).map(meetup => {
-      meetupsOptions.push({text: meetup.name, value: meetup.id})
+      meetupsOptions.push({ text: meetup.name, value: meetup.id })
     })
     return meetupsOptions
   },
@@ -36,29 +36,30 @@ const getters = {
 }
 
 const actions = {
-  getMeetups ({ state, commit }) {
+  getMeetups ({ commit }) {
     getMeetups().then(snapshot => {
       commit('addMeetups', formatAsEntitiesFromSnapshot(snapshot))
     })
   },
-  addMeetup ({state, commit}, meetup) {
-    addMeetup(meetup).then(snapshot => {
+  addMeetup ({ commit }, meetup) {
+    addMeetup(meetup).then(() => {
       commit('addMeetups', formatAsEntitiesFromObject(meetup))
     })
   },
-  updateMeetup ({ state, commit }, meetup) {
-    updateMeetup(meetup).then(ref => {
+  updateMeetup ({ commit }, meetup) {
+    updateMeetup(meetup).then(() => {
       commit('addMeetups', formatAsEntitiesFromObject(meetup))
+      // eslint-disable-next-line no-console
     }).catch(error => console.log(error))
   },
-  setSortBy ({state, commit}, sortBy) {
+  setSortBy ({ commit }, sortBy) {
     commit('updateSortBy', sortBy)
   }
 }
 
 const mutations = {
   addMeetups (state, meetups) {
-    state.meetups = {...state.meetups, ...meetups}
+    state.meetups = { ...state.meetups, ...meetups }
   },
   updateSortBy (state, sortBy) {
     state.sortBy = sortBy

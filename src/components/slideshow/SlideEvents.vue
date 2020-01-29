@@ -14,39 +14,39 @@
 </template>
 
 <script>
-  import { ical2ApiURL } from '../../constants'
-  import moment from 'moment'
+import { ical2ApiURL } from '../../constants'
+import moment from 'moment'
 
-  export default {
-    name: 'SlideEvents',
-    data () {
-      return {
-        events: [],
-        eventsLoaded: false,
-        moment: moment
-      }
-    },
-    mounted () {
-      this.fetchEvents()
-    },
-    beforeUpdate () {
-      this.fetchEvents()
-    },
-    methods: {
-      fetchEvents () {
-        if (this.eventsLoaded) return
-        fetch(ical2ApiURL)
-          .then(async response => {
-            const events = await response.json()
-            this.events = events.map(event => ({
-              ...event,
-              locationName: event.location ? event.location.substring(0, event.location.indexOf('(')) : ''
-            }))
-            this.eventsLoaded = true
-          })
-      }
+export default {
+  name: 'SlideEvents',
+  data () {
+    return {
+      events: [],
+      eventsLoaded: false,
+      moment: moment
+    }
+  },
+  mounted () {
+    this.fetchEvents()
+  },
+  beforeUpdate () {
+    this.fetchEvents()
+  },
+  methods: {
+    fetchEvents () {
+      if (this.eventsLoaded) return
+      fetch(ical2ApiURL)
+        .then(async response => {
+          const events = await response.json()
+          this.events = events.map(event => ({
+            ...event,
+            locationName: event.location ? event.location.substring(0, event.location.indexOf('(')) : ''
+          }))
+          this.eventsLoaded = true
+        })
     }
   }
+}
 </script>
 
 <style scoped>

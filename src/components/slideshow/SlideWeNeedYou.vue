@@ -29,16 +29,16 @@
 </template>
 
 <script>
-  import cfp from '../../assets/cfp.png'
+import cfp from '../../assets/cfp.png'
 
-  export default {
-    name: 'SlideWeNeedYou',
-    data () {
-      return {
-        cfp
-      }
+export default {
+  name: 'SlideWeNeedYou',
+  data () {
+    return {
+      cfp
     }
   }
+}
 </script>
 
 <style scoped>

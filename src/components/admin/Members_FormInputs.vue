@@ -20,7 +20,7 @@
       <h3 class="form-title">Cotisations</h3>
 
       <div v-if="member">
-          <p v-for="cotisation of member.cotisations">
+          <p v-for="cotisation of member.cotisations" v-bind:key="cotisation.id">
               {{cotisation.value}} € <span v-if="meetupsEntities[cotisation.meetup]"> pour {{meetupsEntities[cotisation.meetup].name}}</span> le {{moment(cotisation.created_at).format('DD/MM/YYYY')}}
           </p>
       </div>
@@ -44,7 +44,6 @@
     </div>
   </div>
 </template>
-
 
 <script>
 import { mapGetters } from 'vuex'
