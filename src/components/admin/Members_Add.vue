@@ -1,15 +1,15 @@
 <template>
-  <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-    <b-modal size="lg" ref="MembersAddModalRef" @ok="onSubmit" id="modal_members__add" title="Ajouter un membre">
-
-      <Admin-members-form-inputs :form="form" />
+  <b-modal size="lg" ref="MembersAddModalRef" @ok="onSubmit" id="modal_members__add" title="Ajouter un membre"
+           hide-footer>
+    <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+      <Admin-members-form-inputs :form="form"/>
 
       <div slot="modal-footer" class="w-100">
         <b-button class="float-right" type="submit" variant="primary">Ajouter</b-button>
         <b-button class="float-right" type="reset" variant="default">Annuler</b-button>
       </div>
-    </b-modal>
-  </b-form>
+    </b-form>
+  </b-modal>
 </template>
 
 <script>

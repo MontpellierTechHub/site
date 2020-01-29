@@ -1,15 +1,15 @@
 <template>
-  <b-form @submit="onSubmit">
-    <b-modal size="lg" @ok="onSubmit" ref="modal" :id="'modal_members__update' + this.member.id" title="Editer un membre">
+  <b-modal size="lg" ref="modal" :id="'modal_members__update' + this.member.id" title="Editer un membre" hide-footer>
+    <b-form @submit="onSubmit">
       <Admin-members-form-inputs :form="form" :member="this.member" editing="true"/>
 
-      <div slot="modal-footer" class="w-100">
-        <b-button class="float-left" type="button" v-on:click="onDelete" variant="danger">Supprimer</b-button>
-        <b-button class="float-right" type="submit" variant="primary">Editer</b-button>
-        <b-button class="float-right" type="reset" v-on:click="onReset" variant="default">Annuler</b-button>
-      </div>
-    </b-modal>
-  </b-form>
+        <div class="w-100">
+          <b-button class="float-left" type="button" v-on:click="onDelete" variant="danger">Supprimer</b-button>
+          <b-button class="float-right" type="submit" variant="primary">Editer !</b-button>
+          <b-button class="float-right" type="reset" v-on:click="onReset" variant="default">Annuler</b-button>
+        </div>
+    </b-form>
+  </b-modal>
 </template>
 
 <script>
@@ -35,7 +35,6 @@ export default {
     AdminMembersFormInputs
   },
   props: ['member'],
-
   computed: {
     ...mapGetters('meetups', {
       meetups: 'getMeetupsOptions',
@@ -48,6 +47,11 @@ export default {
       moment: moment,
       add_cotisation: false
     }
+  },
+  mounted () {
+    this.$root.$on('bv::modal::show', () => {
+      this.form = initialForm(this.member)
+    })
   },
   methods: {
     onSubmit (evt) {

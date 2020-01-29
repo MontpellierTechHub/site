@@ -1,6 +1,6 @@
 <template>
-  <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-    <b-modal ref="SponsorsAddModalRef" size="lg" @ok="onSubmit" id="modal_sponsors__add"  title="Ajouter un sponsor">
+  <b-modal ref="SponsorsAddModalRef" size="lg" @ok="onSubmit" id="modal_sponsors__add" title="Ajouter un sponsor" hide-footer>
+    <b-form @submit="onSubmit" @reset="onReset" v-if="show">
 
       <Admin-sponsors-form-inputs :form="form"/>
 
@@ -9,8 +9,8 @@
         <b-button class="float-right" type="reset" variant="default">Annuler</b-button>
       </div>
 
-    </b-modal>
-  </b-form>
+    </b-form>
+  </b-modal>
 </template>
 
 <script>

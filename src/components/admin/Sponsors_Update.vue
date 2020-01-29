@@ -1,7 +1,7 @@
 <template>
-  <b-form @submit="onSubmit" @reset="onReset">
-    <b-modal size="lg" ref="SponsorsUpdateModalRef" @ok="onSubmit" :id="'modal_sponsors__update' + this.sponsor.id" title="Editer un sponsor">
-
+  <b-modal size="lg" ref="SponsorsUpdateModalRef" @ok="onSubmit" :id="'modal_sponsors__update' + this.sponsor.id"
+           title="Editer un sponsor" hide-footer>
+    <b-form @submit="onSubmit" @reset="onReset">
       <Admin-sponsors-form-inputs :form="form" :sponsor="this.sponsor" editing="true"/>
 
       <div slot="modal-footer" class="w-100">
@@ -9,8 +9,8 @@
         <b-button class="float-right" type="submit" variant="primary">Editer</b-button>
         <b-button class="float-right" type="reset" variant="default">Annuler</b-button>
       </div>
-    </b-modal>
-  </b-form>
+    </b-form>
+  </b-modal>
 </template>
 
 <script>
