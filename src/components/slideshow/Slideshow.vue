@@ -17,6 +17,8 @@ import SlideSponsors from './SlideSponsors'
 import SlideEvents from './SlideEvents'
 import SlideWeNeedYou from './SlideWeNeedYou'
 
+const cssFiles = ['/revealjs/css/reset.css', '/revealjs/css/reveal.css', '/revealjs/css/theme-white-modified.css']
+
 export default {
   name: 'Slideshow',
   components: {
@@ -24,6 +26,14 @@ export default {
     SlideSponsors,
     SlideEvents,
     SlideWeNeedYou
+  },
+  beforeCreate () {
+    cssFiles.forEach(filePath => {
+      const css = document.createElement('link')
+      css.href = filePath
+      css.rel = 'stylesheet'
+      document.head.appendChild(css)
+    })
   },
   mounted () {
     Reveal.initialize({
@@ -34,12 +44,7 @@ export default {
 }
 </script>
 
-<!--<style scoped src="../../../node_modules/reveal.js/css/reset.css"></style>-->
-<!--<style scoped src="../../../node_modules/reveal.js/css/reveal.css"></style>-->
-<!--<style scoped src="./revealjs/white-modified.css"></style>-->
-
 <style scoped>
-
   #slideshow {
     height: 100vh;
   }
