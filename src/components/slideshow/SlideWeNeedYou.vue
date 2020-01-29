@@ -9,7 +9,7 @@
             <p>
               <i class="fa fa-user fa-3x"></i>
               Soumettez un talk <img width="40" src="https://emojis.slackmojis.com/emojis/images/1563480763/5999/meow_party.gif?1563480763" alt=""/><br/>
-              <span>(on peut vous coachez si besoin)</span>
+              <span>(on peut vous coacher si besoin)</span>
             </p>
           </li>
           <li>
