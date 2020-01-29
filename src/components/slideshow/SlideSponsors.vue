@@ -24,4 +24,7 @@
     color: white;
     margin-bottom: 2rem;
   }
+  .sponsors-component {
+    padding-bottom: 30px;
+  }
 </style>

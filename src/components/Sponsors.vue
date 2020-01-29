@@ -42,11 +42,11 @@ export default {
   }
 
   .Sponsors__item a {
-    height: 130px;
+    height: 120px;
     width: 200px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     transition: all .15s linear;
     text-align: center;
   }

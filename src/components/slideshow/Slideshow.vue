@@ -4,6 +4,8 @@
       <SlideLinks/>
       <SlideSponsors/>
       <SlideEvents/>
+      <SlideWeNeedYou/>
+      <SlideLinks/>
     </div>
   </div>
 </template>
@@ -13,13 +15,15 @@ import Reveal from 'reveal.js/js/reveal'
 import SlideLinks from './SlideLinks'
 import SlideSponsors from './SlideSponsors'
 import SlideEvents from './SlideEvents'
+import SlideWeNeedYou from './SlideWeNeedYou'
 
 export default {
   name: 'Slideshow',
   components: {
     SlideLinks,
     SlideSponsors,
-    SlideEvents
+    SlideEvents,
+    SlideWeNeedYou
   },
   mounted () {
     Reveal.initialize({

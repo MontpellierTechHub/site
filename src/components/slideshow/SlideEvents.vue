@@ -42,40 +42,6 @@
               ...event,
               locationName: event.location ? event.location.substring(0, event.location.indexOf('(')) : ''
             }))
-            this.events.push({
-              id: 'JOAK4p5t50g5j7SIDQc9+event_268035076@meetup.com22',
-              icalId: 'JOAK4p5t50g5j7SIDQc9',
-              description: 'Montpellier DevOps↵Wednesday, January 29 at 7:00 PM↵↵Meilleurs voeux à tous ! Nous commencerons cette décénie par un sujet sur les unikernels par Arnaud Tourier (https://twitter.com/ltearno) ! Venez déco...↵↵https://www.meetup.com/Montpellier-DevOps/events/268035076/',
-              endDate: 1580328000000,
-              url: 'https://www.meetup.com/Montpellier-DevOps/events/268035076/',
-              icalFileId: 'event_268035076@meetup.com',
-              organizationId: '9Y6UMiuKiWTyu12Sjetn',
-              title: 'DevOps #9 : Voyage au pays merveilleux des unikernels',
-              location: 'Teads - Montpellier (159 Rue de Thor, Montpellier, France 34000)',
-              crawldAt: Object,
-              icalName: 'DevOps Montpellier',
-              durationInMinutes: 120,
-              startDate: 1580320800000,
-              locationName: 'Teads - Montpellier '
-            })
-
-            this.events.push({
-              id: 'JOAK4p5t50g5j7SIDQc9+event_268035076@meetup.com33',
-              icalId: 'JOAK4p5t50g5j7SIDQc9',
-              description: 'Montpellier DevOps↵Wednesday, January 29 at 7:00 PM↵↵Meilleurs voeux à tous ! Nous commencerons cette décénie par un sujet sur les unikernels par Arnaud Tourier (https://twitter.com/ltearno) ! Venez déco...↵↵https://www.meetup.com/Montpellier-DevOps/events/268035076/',
-              endDate: 1580328000000,
-              url: 'https://www.meetup.com/Montpellier-DevOps/events/268035076/',
-              icalFileId: 'event_268035076@meetup.com',
-              organizationId: '9Y6UMiuKiWTyu12Sjetn',
-              title: 'DevOps #9 : Voyage au pays merveilleux des unikernels',
-              location: 'Teads - Montpellier (159 Rue de Thor, Montpellier, France 34000)',
-              crawldAt: Object,
-              icalName: 'DevOps Montpellier',
-              durationInMinutes: 120,
-              startDate: 1580320800000,
-              locationName: 'Teads - Montpellier '
-            })
-            console.log(this.events)
             this.eventsLoaded = true
           })
       }
@@ -86,11 +52,13 @@
 <style scoped>
   .section {
     padding: 0 !important;
+    height: 100vh;
   }
 
   .title {
     color: white;
-    margin-bottom: 6rem;
+    margin-top: 3rem;
+    margin-bottom: 7rem;
   }
 
   .events {
