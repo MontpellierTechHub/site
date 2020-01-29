@@ -35,6 +35,7 @@
 <script>
 import moment from 'moment'
 import { mapGetters } from 'vuex'
+import { ical2ApiURL } from '../constants'
 
 moment.locale('fr')
 
@@ -64,7 +65,7 @@ export default {
   methods: {
     fetchEvents () {
       if (this.eventsLoading) return
-      fetch(`https://ical2api.web.app/api/v1/events/?status=upcoming&organizations=9Y6UMiuKiWTyu12Sjetn`)
+      fetch(ical2ApiURL)
         .then(async response => {
           const events = await response.json()
 
