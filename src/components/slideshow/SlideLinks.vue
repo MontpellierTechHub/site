@@ -57,14 +57,18 @@ export default {
 </script>
 
 <style scoped>
+  .SlideLinks {
+    height: 80vh;
+  }
+
   .subtitle {
     font-size: 2rem;
     text-align: left;
-    margin-top: 60px;
+    margin-top: 65px;
   }
 
   .social {
-    margin-top: 2.5rem;
+    margin-top: 4rem;
     margin-left: -20px;
     list-style: none;
     text-align: left;
@@ -74,20 +78,25 @@ export default {
   }
   .social a {
     color: white;
-    font-size: 1.8rem;
+    font-size: 1.75rem;
     line-height: 50px;
   }
   .social i {
     top: 5px;
     position: relative;
-    background: #444;
+    background: #eee;
+    color: black;
     border-radius: 100px;
-    padding: 20px;
+    padding: 15px;
     font-size: 40px;
+    line-height: 37px;
     text-align: center;
-    color: white;
-    height: 80px;
-    width: 80px;
+    height: 65px;
+    width: 65px;
     display: inline-block;
+    margin-right: 10px;
+  }
+  .social .fa-envelope-open {
+    font-size: 35px;
   }
 </style>

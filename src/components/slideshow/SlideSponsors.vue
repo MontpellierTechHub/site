@@ -1,24 +1,27 @@
 <template>
-    <mth-sponsors class="toto"/>
+  <section class="section" data-background-image="/static/images/background-slideshow-header2.jpg">
+    <h3 class="title">SPONSORS</h3>
+    <mth-sponsors class="sponsors-component"/>
+  </section>
 </template>
 
 <script>
-import MthSponsors from '@/components/Sponsors'
+  import MthSponsors from '@/components/Sponsors'
 
-export default {
-  name: 'SlideSponsors',
-  components: {
-    MthSponsors
+  export default {
+    name: 'SlideSponsors',
+    components: {
+      MthSponsors
+    }
   }
-}
 </script>
 
 <style scoped>
-
-  .toto >>> img {
-    padding: 20px !important;
-    border-radius: 4px;
-    max-height: 150px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  .section {
+    padding: 0 !important;
+  }
+  .title {
+    color: white;
+    margin-bottom: 2rem;
   }
 </style>

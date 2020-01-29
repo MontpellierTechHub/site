@@ -1,6 +1,7 @@
 <template>
   <div id="slideshow" class="reveal">
     <div class="slides">
+      <SlideEvents/>
       <SlideLinks/>
       <SlideSponsors/>
     </div>
@@ -11,15 +12,20 @@
 import Reveal from 'reveal.js/js/reveal'
 import SlideLinks from './SlideLinks'
 import SlideSponsors from './SlideSponsors'
+import SlideEvents from './SlideEvents'
 
 export default {
   name: 'Slideshow',
   components: {
     SlideLinks,
-    SlideSponsors
+    SlideSponsors,
+    SlideEvents
   },
   mounted () {
-    Reveal.initialize()
+    Reveal.initialize({
+      margin: 0.03,
+      maxScale: 1.7
+    })
   }
 }
 </script>
