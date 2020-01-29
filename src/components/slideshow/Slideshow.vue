@@ -34,11 +34,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<!--<style scoped src="../../../node_modules/reveal.js/css/reset.css"></style>-->
+<!--<style scoped src="../../../node_modules/reveal.js/css/reveal.css"></style>-->
+<!--<style scoped src="./revealjs/white-modified.css"></style>-->
 
-  @import url('../../../node_modules/reveal.js/css/reset.css');
-  @import url('../../../node_modules/reveal.js/css/reveal.css');
-  @import url('./revealjs/white-modified.css');
+<style scoped>
 
   #slideshow {
     height: 100vh;
