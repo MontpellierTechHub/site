@@ -17,7 +17,7 @@ import SlideSponsors from './SlideSponsors'
 import SlideEvents from './SlideEvents'
 import SlideWeNeedYou from './SlideWeNeedYou'
 
-const cssFiles = ['/revealjs/css/reset.css', '/revealjs/css/reveal.css', '/revealjs/css/theme-white-modified.css']
+const cssFiles = ['/static/revealjs/css/reset.css', '/static/revealjs/css/reveal.css', '/static/revealjs/css/theme-white-modified.css']
 
 export default {
   name: 'Slideshow',
