@@ -30,7 +30,7 @@ export default {
   beforeCreate () {
     cssFiles.forEach(filePath => {
       const css = document.createElement('link')
-      css.href = filePath
+      css.href = css.id = filePath
       css.rel = 'stylesheet'
       document.head.appendChild(css)
     })
