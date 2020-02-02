@@ -3,7 +3,7 @@
         <b-button size="sm" v-b-modal="'modal_sponsors__update' + sponsor.id">Editer</b-button>
 
         <admin-sponsors-update :sponsor="sponsor" />
-     
+
     </div>
 </template>
 

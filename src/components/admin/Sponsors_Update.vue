@@ -1,7 +1,7 @@
 <template>
-  <b-form @submit="onSubmit" @reset="onReset">
-    <b-modal size="lg" ref="SponsorsUpdateModalRef" @ok="onSubmit" :id="'modal_sponsors__update' + this.sponsor.id" title="Editer un sponsor">
-
+  <b-modal size="lg" ref="SponsorsUpdateModalRef" @ok="onSubmit" :id="'modal_sponsors__update' + this.sponsor.id"
+           title="Editer un sponsor" hide-footer>
+    <b-form @submit="onSubmit" @reset="onReset">
       <Admin-sponsors-form-inputs :form="form" :sponsor="this.sponsor" editing="true"/>
 
       <div slot="modal-footer" class="w-100">
@@ -9,12 +9,11 @@
         <b-button class="float-right" type="submit" variant="primary">Editer</b-button>
         <b-button class="float-right" type="reset" variant="default">Annuler</b-button>
       </div>
-    </b-modal>
-  </b-form>
+    </b-form>
+  </b-modal>
 </template>
 
 <script>
-import Datepicker from 'vuejs-datepicker'
 import moment from 'moment'
 import { mapGetters } from 'vuex'
 import AdminSponsorsFormInputs from '@/components/admin/Sponsors_FormInputs'
@@ -44,7 +43,6 @@ const initialForm = (sponsor) => {
 export default {
   name: 'AdminSponsors_Update',
   components: {
-    Datepicker,
     AdminSponsorsFormInputs
   },
   props: ['sponsor'],
@@ -96,12 +94,12 @@ export default {
           }
         ]
       }
-      this.$store.dispatch('sponsors/updateSponsor', {...this.sponsor, ...newSponsor})
+      this.$store.dispatch('sponsors/updateSponsor', { ...this.sponsor, ...newSponsor })
       this.$refs.SponsorsUpdateModalRef.hide()
     },
     onDelete (evt) {
       evt.preventDefault()
-      this.$store.dispatch('sponsors/updateSponsor', {...this.sponsor, deleted_at: moment().format()})
+      this.$store.dispatch('sponsors/updateSponsor', { ...this.sponsor, deleted_at: moment().format() })
       this.$refs.SponsorsUpdateModalRef.hide()
     },
     onReset (evt) {

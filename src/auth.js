@@ -30,6 +30,7 @@ export const googleSignIn = () => {
       loadingPermissions(user)
     }
   }).catch((error) => {
+    // eslint-disable-next-line no-console
     console.error(error)
   })
 }
@@ -50,6 +51,7 @@ export const firebaseSignOut = () => (
   firebaseAuth.signOut().then(() => {
     store.commit('auth/addUser', null)
   }).catch((error) => {
+    // eslint-disable-next-line no-console
     console.error(error)
   })
 )

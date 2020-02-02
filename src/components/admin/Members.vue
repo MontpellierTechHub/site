@@ -25,7 +25,6 @@
 <script>
 import AdminMembersAdd from '@/components/admin/Members_Add'
 import AdminMembersLine from '@/components/admin/Members_Line'
-import AdminMembersUpdateButton from '@/components/admin/Members_UpdateButton'
 
 import { mapGetters } from 'vuex'
 
@@ -33,8 +32,7 @@ export default {
   name: 'AdminMembers',
   components: {
     AdminMembersAdd,
-    AdminMembersLine,
-    AdminMembersUpdateButton
+    AdminMembersLine
   },
   computed: {
     ...mapGetters('members', {

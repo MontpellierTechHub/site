@@ -1,16 +1,16 @@
 <template>
-  <b-form @submit="onSubmit" @reset="onReset">
-      <b-modal size="lg" @shown="clear" ref="MeetupsAddModalRef" id="modal_meetups__add" title="Ajouter un meetup">
-    
-        <admin-meetups-form-inputs :form="form"/>
-             
+  <b-modal size="lg" @shown="clear" ref="MeetupsAddModalRef" id="modal_meetups__add" title="Ajouter un meetup"
+           hide-footer>
+    <b-form @submit="onSubmit" @reset="onReset">
+
+      <admin-meetups-form-inputs :form="form"/>
+
       <div slot="modal-footer" class="w-100">
         <b-button class="float-right" type="submit" variant="primary">Ajouter</b-button>
         <b-button class="float-right" type="reset" variant="default">Annuler</b-button>
       </div>
-    </b-modal>
     </b-form>
-
+  </b-modal>
 </template>
 
 <script>

@@ -2,12 +2,32 @@ service cloud.firestore {
   match /databases/{database}/documents {
 
     function authenticated() { return request.auth.uid != null }
-    function isAdmin(data) { return get(/databases/$(database)/documents/permissions/$(request.auth.uid)).data.isAdmin == true}
+    function isAdmin() { return get(/databases/$(database)/documents/permissions/$(request.auth.uid)).data.isAdmin == true}
+    function isAdmin2() { return exists(/databases/$(database)/documents/permissions/$(request.auth.uid))}
 
-    match /{document=**} {
+    match /permissions/{permUserId} {
       allow read: if true;
       allow write: if isAdmin();
     }
 
+    match /meetups/{meetupId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /members/{memberId} {
+      allow read: if isAdmin();
+      allow write: if isAdmin();
+    }
+
+    match /sponsors/{sponsorId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /sponsorsPrivateData/{sponsorId} {
+      allow read: if isAdmin();
+      allow write: if isAdmin();
+    }
   }
 }

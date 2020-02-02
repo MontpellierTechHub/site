@@ -6,16 +6,16 @@ const state = {
 }
 
 const getters = {
-  getConnectedUser: (state, getters, rootState) => {
+  getConnectedUser: (state) => {
     return state.user
   }
 }
 
 const actions = {
-  setUser ({ state, commit }, user) {
+  setUser ({ commit }, user) {
     commit('addUser', user)
   },
-  getUserPermissions ({state, commit}, user) {
+  getUserPermissions ({ commit }, user) {
     getPermissions().then(snapshot => {
       commit('addPermission', formatAsArrayFromSnapshot(snapshot)[user.id])
     })

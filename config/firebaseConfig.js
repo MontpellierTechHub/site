@@ -5,4 +5,4 @@ export default {
   projectId: 'montpellier-tech-hub-website',
   storageBucket: 'montpellier-tech-hub-website.appspot.com',
   messagingSenderId: '861779231517'
-};
+}

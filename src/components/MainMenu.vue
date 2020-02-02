@@ -29,15 +29,15 @@
 </template>
 
 <script>
-  export default {
-    name: 'MainMenu'
-  }
+export default {
+  name: 'MainMenu'
+}
 </script>
 
 <style scoped>
   .Header__logo {
     height: 40px;
-  } */
+  }
   .active {
     opacity: 1;
     pointer-events: none;

@@ -6,14 +6,14 @@
 </template>
 
 <script>
-  import MthSponsors from '@/components/Sponsors'
+import MthSponsors from '@/components/Sponsors'
 
-  export default {
-    name: 'SlideSponsors',
-    components: {
-      MthSponsors
-    }
+export default {
+  name: 'SlideSponsors',
+  components: {
+    MthSponsors
   }
+}
 </script>
 
 <style scoped>

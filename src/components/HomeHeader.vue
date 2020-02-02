@@ -11,41 +11,41 @@
 </template>
 
 <script>
-  import logoDark from '../assets/logo-dark.svg'
-  import MthMainMenu from '@/components/MainMenu'
+import logoDark from '../assets/logo-dark.svg'
+import MthMainMenu from '@/components/MainMenu'
 
-  export default {
-    name: 'HomeHeader',
-    components: { MthMainMenu },
-    data () {
-      return {
-        fixed: window.pageYOffset > 0,
-        collapsed: window.outerWidth < 768,
-        logo: logoDark
-      }
-    },
-    methods: {
-      handleScroll () {
-        this.fixed = window.pageYOffset > 0
-      },
-      handleResize () {
-        this.collapsed = window.outerWidth < 768
-      }
-    },
-    computed: {
-      theme () {
-        return this.fixed || this.collapsed ? 'light' : 'dark'
-      }
-    },
-    mounted () {
-      window.addEventListener('scroll', this.handleScroll)
-      window.addEventListener('resize', this.handleResize)
-    },
-    destroyed () {
-      window.removeEventListener('scroll', this.handleScroll)
-      window.removeEventListener('resize', this.handleResize)
+export default {
+  name: 'HomeHeader',
+  components: { MthMainMenu },
+  data () {
+    return {
+      fixed: window.pageYOffset > 0,
+      collapsed: window.outerWidth < 768,
+      logo: logoDark
     }
+  },
+  methods: {
+    handleScroll () {
+      this.fixed = window.pageYOffset > 0
+    },
+    handleResize () {
+      this.collapsed = window.outerWidth < 768
+    }
+  },
+  computed: {
+    theme () {
+      return this.fixed || this.collapsed ? 'light' : 'dark'
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('resize', this.handleResize)
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('resize', this.handleResize)
   }
+}
 </script>
 
 <style scoped>

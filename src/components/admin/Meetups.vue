@@ -16,13 +16,13 @@
           </tr>
         </thead>
         <tbody v-if="meetups && meetups.length > 0">
-          <tr v-for="meetup of meetups">
+          <tr v-for="meetup of meetups" v-bind:key="meetup.id">
             <td><a :href="meetup.meetup_dot_link" target="_blank">{{meetup.name}}</a></td>
             <td>
-            
+
                 <span v-if="meetup.contact_member && membersEntities[meetup.contact_member]">
                   <span class="line_bloc__title">{{membersEntities[meetup.contact_member].name}}</span>
-                  <span class="line_bloc__info">{{membersEntities[meetup.contact_member].email}}</span>   
+                  <span class="line_bloc__info">{{membersEntities[meetup.contact_member].email}}</span>
                 </span>
             </td>
             <td :class="{ expired: moment(meetup.last_event_at).isBefore(moment().subtract(3, 'months').format()) }">
@@ -37,7 +37,7 @@
           </tr>
         </tbody>
       </table>
-      <admin-meetups-add /> 
+      <admin-meetups-add />
     </div>
 </template>
 

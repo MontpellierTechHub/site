@@ -1,19 +1,18 @@
 <template>
-  <b-form @submit="onSubmit">
-    <b-modal size="lg" @ok="onSubmit" ref="modal" :id="'modal_members__update' + this.member.id" title="Editer un membre">
+  <b-modal size="lg" ref="modal" :id="'modal_members__update' + this.member.id" title="Editer un membre" hide-footer>
+    <b-form @submit="onSubmit">
       <Admin-members-form-inputs :form="form" :member="this.member" editing="true"/>
 
-      <div slot="modal-footer" class="w-100">
-        <b-button class="float-left" type="button" v-on:click="onDelete" variant="danger">Supprimer</b-button>
-        <b-button class="float-right" type="submit" variant="primary">Editer</b-button>
-        <b-button class="float-right" type="reset" v-on:click="onReset" variant="default">Annuler</b-button>
-      </div>
-    </b-modal>
-  </b-form>
+        <div class="w-100">
+          <b-button class="float-left" type="button" v-on:click="onDelete" variant="danger">Supprimer</b-button>
+          <b-button class="float-right" type="submit" variant="primary">Editer !</b-button>
+          <b-button class="float-right" type="reset" v-on:click="onReset" variant="default">Annuler</b-button>
+        </div>
+    </b-form>
+  </b-modal>
 </template>
 
 <script>
-import Datepicker from 'vuejs-datepicker'
 import moment from 'moment'
 import { mapGetters } from 'vuex'
 import AdminMembersFormInputs from '@/components/admin/Members_FormInputs'
@@ -33,11 +32,9 @@ const initialForm = (member) => {
 export default {
   name: 'AdminMembers_Update',
   components: {
-    Datepicker,
     AdminMembersFormInputs
   },
   props: ['member'],
-
   computed: {
     ...mapGetters('meetups', {
       meetups: 'getMeetupsOptions',
@@ -50,6 +47,11 @@ export default {
       moment: moment,
       add_cotisation: false
     }
+  },
+  mounted () {
+    this.$root.$on('bv::modal::show', () => {
+      this.form = initialForm(this.member)
+    })
   },
   methods: {
     onSubmit (evt) {
@@ -68,7 +70,7 @@ export default {
           })
       }
 
-      this.$store.dispatch('members/updateMember', {id: this.member.id, ...newMember})
+      this.$store.dispatch('members/updateMember', { id: this.member.id, ...newMember })
       this.$nextTick(() => {
         this.form = initialForm(this.member)
         this.add_cotisation = false
@@ -77,7 +79,7 @@ export default {
     },
     onDelete (evt) {
       evt.preventDefault()
-      this.$store.dispatch('members/updateMember', {id: this.member.id, deleted_at: moment().format()})
+      this.$store.dispatch('members/updateMember', { id: this.member.id, deleted_at: moment().format() })
       this.$refs.modal.hide()
     },
     onReset (evt) {

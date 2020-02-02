@@ -57,6 +57,16 @@ export default new Router({
       component: Slideshow
     },
     {
+      path: '/slides',
+      name: 'Slideshow',
+      component: Slideshow
+    },
+    {
+      path: '/slide',
+      name: 'Slideshow',
+      component: Slideshow
+    },
+    {
       path: '/admin',
       component: AdminLayout,
       children: [
