@@ -17,7 +17,7 @@
     "firebase": "^7.2.2",
     "font-awesome": "^4.7.0",
     "lodash.shuffle": "^4.2.0",
-    "moment": "^2.21.0",
+    "moment": "^2.29.4",
     "reveal.js": "^3.8.0",
     "vue": "^2.6.11",
     "vue-router": "^3.1.3",
