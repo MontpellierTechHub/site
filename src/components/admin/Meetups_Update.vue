@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import AdminMeetupsFormInputs from '@/components/admin/Meetups_FormInputs'
+import AdminMeetupsFormInputs from './Meetups_FormInputs.vue'
 import moment from 'moment'
 
 const initialForm = (meetup) => {

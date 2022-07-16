@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import AdminMeetupsUpdate from '@/components/admin/Meetups_Update'
+import AdminMeetupsUpdate from './Meetups_Update.vue'
 
 export default {
   name: 'AdminMeetups_UpdateButton',

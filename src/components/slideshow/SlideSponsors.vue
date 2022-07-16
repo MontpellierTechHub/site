@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import MthSponsors from '@/components/Sponsors'
+import MthSponsors from '../Sponsors.vue'
 
 export default {
   name: 'SlideSponsors',

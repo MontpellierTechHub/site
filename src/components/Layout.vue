@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import MthFooter from '@/components/Footer'
-import MthHomeHeader from '@/components/HomeHeader'
-import MthPageHeader from '@/components/PageHeader'
+import MthFooter from '../components/Footer.vue'
+import MthHomeHeader from '../components/HomeHeader.vue'
+import MthPageHeader from '../components/PageHeader.vue'
 
 export default {
   name: 'Layout',

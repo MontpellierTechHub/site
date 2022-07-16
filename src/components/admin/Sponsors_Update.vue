@@ -16,7 +16,7 @@
 <script>
 import moment from 'moment'
 import { mapGetters } from 'vuex'
-import AdminSponsorsFormInputs from '@/components/admin/Sponsors_FormInputs'
+import AdminSponsorsFormInputs from './Sponsors_FormInputs.vue'
 
 const initialForm = (sponsor) => {
   return {

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import AdminMembersUpdate from '@/components/admin/Members_Update'
+import AdminMembersUpdate from './Members_Update.vue'
 
 export default {
   name: 'AdminMembers_UpdateButton',

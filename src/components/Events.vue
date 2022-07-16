@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import MthPageBanner from '@/components/PageBanner'
-import MthEventsContent from '@/components/EventsContent'
+import MthPageBanner from '../components/PageBanner.vue'
+import MthEventsContent from '../components/EventsContent.vue'
 export default {
   name: 'Events',
   components: {

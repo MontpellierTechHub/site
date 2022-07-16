@@ -1,24 +1,19 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import About from '@/components/About'
-import BecomeMember from '@/components/BecomeMember'
-import Events from '@/components/Events'
-import Layout from '@/components/Layout'
-import Home from '@/components/Home'
-import Meetups from '@/components/Meetups'
-import Slideshow from '@/components/slideshow/Slideshow'
-import AdminLayout from '@/components/admin/Layout'
-import AdminSponsors from '@/components/admin/Sponsors'
-import AdminMembers from '@/components/admin/Members'
-import AdminMeetups from '@/components/admin/Meetups'
-import AdminDashboard from '@/components/admin/Dashboard'
-import config from '../../config'
+import { createRouter, createWebHistory } from 'vue-router'
+import About from '../components/About.vue'
+import BecomeMember from '../components/BecomeMember.vue'
+import Events from '../components/Events.vue'
+import Layout from '../components/Layout.vue'
+import Home from '../components/Home.vue'
+import Meetups from '../components/Meetups.vue'
+import Slideshow from '../components/slideshow/Slideshow.vue'
+import AdminLayout from '../components/admin/Layout.vue'
+import AdminSponsors from '../components/admin/Sponsors.vue'
+import AdminMembers from '../components/admin/Members.vue'
+import AdminMeetups from '../components/admin/Meetups.vue'
+import AdminDashboard from '../components/admin/Dashboard.vue'
 
-Vue.use(Router)
-
-export default new Router({
-  mode: 'history',
-  base: config.build.assetsPublicPath,
+export const router = createRouter({
+  history: createWebHistory(),
   routes: [
     {
       path: '/',
@@ -93,7 +88,7 @@ export default new Router({
       ]
     },
     {
-      path: '*',
+      path: '/:pathMatch(.*)',
       redirect: { name: 'Home' }
     }
   ],

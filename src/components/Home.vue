@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import MthHomeAbout from '@/components/HomeAbout'
-import MthHomeMeetups from '@/components/HomeMeetups'
-import MthHomeSponsors from '@/components/HomeSponsors'
-import MthHomeWelcome from '@/components/HomeWelcome'
-import MthHomeYoutube from '@/components/HomeYoutube'
+import MthHomeAbout from './HomeAbout.vue'
+import MthHomeMeetups from './HomeMeetups.vue'
+import MthHomeSponsors from './HomeSponsors.vue'
+import MthHomeWelcome from './HomeWelcome.vue'
+import MthHomeYoutube from './HomeYoutube.vue'
 
 export default {
   name: 'Home',

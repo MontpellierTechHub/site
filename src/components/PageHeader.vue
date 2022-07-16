@@ -13,7 +13,7 @@
 <script>
 import logoDark from '../assets/logo-dark.svg'
 import logoLight from '../assets/logo-light.svg'
-import MthMainMenu from '@/components/MainMenu'
+import MthMainMenu from '../components/MainMenu.vue'
 
 export default {
   name: 'PageHeader',

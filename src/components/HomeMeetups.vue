@@ -27,7 +27,7 @@
 
 <script>
 import shuffle from 'lodash.shuffle'
-import meetups from '@/assets/meetups.json'
+import meetups from '../assets/meetups.json'
 import { mapGetters } from 'vuex'
 
 export default {

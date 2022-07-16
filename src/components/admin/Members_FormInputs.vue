@@ -35,11 +35,12 @@
           v-model="form.cotisation.value"
           placeholder="Valeur (en Euros)" />
 
-          <datepicker
+
+          <Datepicker
           v-model="form.cotisation.date"
-          input-class="datepicker_input"
+          inputClassName="datepicker_input"
           placeholder="Date de paiement" >
-          </datepicker>
+          </Datepicker>
       </div>
     </div>
   </div>
@@ -47,7 +48,8 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import Datepicker from 'vuejs-datepicker'
+import Datepicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css'
 import moment from 'moment'
 
 export default {

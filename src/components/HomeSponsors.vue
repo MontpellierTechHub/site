@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import MthSponsors from '@/components/Sponsors'
+import MthSponsors from '../components/Sponsors.vue'
 
 export default {
   name: 'HomeSponsors',

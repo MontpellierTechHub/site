@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import AdminSponsorsUpdate from '@/components/admin/Sponsors_Update'
+import AdminSponsorsUpdate from './Sponsors_Update.vue'
 
 export default {
   name: 'AdminSponsors_UpdateButton',

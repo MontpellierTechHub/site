@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import AdminMembersAdd from '@/components/admin/Members_Add'
-import AdminMembersLine from '@/components/admin/Members_Line'
+import AdminMembersAdd from './Members_Add.vue'
+import AdminMembersLine from './Members_Line.vue'
 
 import { mapGetters } from 'vuex'
 

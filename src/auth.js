@@ -1,5 +1,5 @@
 import { firebaseAuth, provider, getPermissions } from './firebase'
-import store from './store/index'
+import { store } from './store/index'
 import { formatAsArrayFromSnapshot } from './store/modules/utils'
 
 const formatUserFromFirebaseAuth = (user) => {

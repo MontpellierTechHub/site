@@ -15,7 +15,7 @@
 <script>
 import moment from 'moment'
 import { mapGetters } from 'vuex'
-import AdminMembersFormInputs from '@/components/admin/Members_FormInputs'
+import AdminMembersFormInputs from './Members_FormInputs.vue'
 
 const initialForm = (member) => {
   return {

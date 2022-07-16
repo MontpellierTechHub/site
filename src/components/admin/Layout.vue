@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import AdminSignIn from '@/components/admin/SignIn'
+import AdminSignIn from './SignIn.vue'
 
 import logo from '../../assets/logo-dark.svg'
 import { initAuth, firebaseSignOut } from '../../auth'

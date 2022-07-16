@@ -19,7 +19,7 @@
 
 import { mapGetters } from 'vuex'
 
-import AdminMembersUpdateButton from '@/components/admin/Members_UpdateButton'
+import AdminMembersUpdateButton from './Members_UpdateButton.vue'
 import moment from 'moment'
 
 export default {

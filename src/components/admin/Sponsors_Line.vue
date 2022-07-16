@@ -32,7 +32,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import moment from 'moment'
-import AdminSponsorsUpdateButton from '@/components/admin/Sponsors_UpdateButton'
+import AdminSponsorsUpdateButton from './Sponsors_UpdateButton.vue'
 
 export default {
   name: 'AdminSponsors_Line',

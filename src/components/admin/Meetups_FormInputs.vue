@@ -45,12 +45,12 @@
           v-model="form.average_per_year"
           placeholder="Nombre d'évènement en moyenne par an" />
       Date du dernier évènement
-      <datepicker
+      <Datepicker
         class="form"
         name="last-event"
-        input-class="datepicker_input"
+        inputClassName="datepicker_input"
         placeholder="Date du dernier évènement"
-        v-model="form.last_event_at"></datepicker>
+        v-model="form.last_event_at"></Datepicker>
 
       <h3 class="form-title">Social</h3>
       Twitter
@@ -83,7 +83,8 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import Datepicker from 'vuejs-datepicker'
+import Datepicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css'
 
 export default {
   name: 'AdminMeetups_FormInputs',

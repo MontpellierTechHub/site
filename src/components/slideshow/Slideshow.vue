@@ -12,10 +12,10 @@
 
 <script>
 import Reveal from 'reveal.js/js/reveal'
-import SlideLinks from './SlideLinks'
-import SlideSponsors from './SlideSponsors'
-import SlideEvents from './SlideEvents'
-import SlideWeNeedYou from './SlideWeNeedYou'
+import SlideLinks from './SlideLinks.vue'
+import SlideSponsors from './SlideSponsors.vue'
+import SlideEvents from './SlideEvents.vue'
+import SlideWeNeedYou from './SlideWeNeedYou.vue'
 
 const cssFiles = ['/static/revealjs/css/reset.css', '/static/revealjs/css/reveal.css', '/static/revealjs/css/theme-white-modified.css']
 
