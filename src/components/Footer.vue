@@ -5,13 +5,29 @@
         <b-col><img class="footer__logo" :src="logo" alt="Montpellier Tech Hub"/></b-col>
         <b-col cols="8">
           <ul class="list-unstyled">
-            <li><b-nav-item :to="{ name: 'Home' }">Accueil</b-nav-item></li>
-            <li><b-nav-item :to="{ name: 'BecomeMember' }">Devenir membre</b-nav-item></li>
-            <li><b-nav-item :to="{ name: 'Events' }">Evénements</b-nav-item></li>
-            <li><b-nav-item href="/slide">Slides</b-nav-item></li>
-            <li><b-nav-item target="_blank" href="https://docs.google.com/document/d/1mHhKxdeWkU8H6xXzfF85Hgn9x_InXjjFMb-Cl7AOvqg/edit#">Statuts de l'association</b-nav-item></li>
-            <li><b-nav-item target="_blank" href="http://bit.ly/mth-cfp">CFP des meetups</b-nav-item></li>
-            <li><b-nav-item href="mailto:contact@montpellier-techhub.org">Contact</b-nav-item></li>
+            <li class="nav-item nav-item_text">
+              <router-link class="nav-link" :to="{ name:'Home' }" active-class="active">Accueil</router-link>
+            </li>
+            <li class="nav-item nav-item_text">
+              <router-link class="nav-link" :to="{ name:'BecomeMember' }" active-class="active">Devenir membre</router-link>
+            </li>
+            <li class="nav-item nav-item_text">
+              <router-link class="nav-link" :to="{ name:'Events' }" active-class="active">Evénements</router-link>
+            </li>
+
+            <li class="nav-item nav-item_text">
+              <router-link class="nav-link" :to="{ name:'Slideshow' }">Slides</router-link>
+            </li>
+
+            <li class="nav-item nav-item_text">
+              <a class="nav-link" target="_blank"   href="https://docs.google.com/document/d/1mHhKxdeWkU8H6xXzfF85Hgn9x_InXjjFMb-Cl7AOvqg/edit#">Statuts de l'association</a>
+            </li>
+            <li class="nav-item nav-item_text">
+              <a class="nav-link" target="_blank"   href="http://bit.ly/mth-cfp">CFP des meetups</a>
+            </li>
+            <li class="nav-item nav-item_text">
+              <a class="nav-link" target="_blank"   href="mailto:contact@montpellier-techhub.org">Contact</a>
+            </li>
           </ul>
         </b-col>
       </b-row>

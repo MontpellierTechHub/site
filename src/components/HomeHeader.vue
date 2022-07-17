@@ -1,12 +1,23 @@
 <template>
   <header class="Header" :class="['Header--' + theme, { 'Header--fixed': fixed, 'Header--collapsed': collapsed }]">
-    <b-navbar toggleable="md" :type="theme">
-      <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-      <b-navbar-brand :to="{ name:'Home' }" v-if="fixed || collapsed">
-        <img class="Header__logo" :src="logo" alt="Montpellier Tech Hub"/>
-      </b-navbar-brand>
-      <mth-main-menu />
-    </b-navbar>
+    <nav :class="['navbar', 'navbar-expand-lg', (fixed || collapsed)? 'navbar-light' : 'navbar-dark', 'bg-transparent']">
+      <div class="container-fluid">
+        <router-link class="navbar-brand" to="/" active-class="active" v-if="fixed || collapsed">
+          <img class="Header__logo" :src="logo" alt="Montpellier Tech Hub"/>
+        </router-link>
+        <div v-if="!fixed && !collapsed"></div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav_collapse" aria-controls="nav_collapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <mth-main-menu v-bind:fixed="fixed"/>
+      </div>
+    </nav>
+
+<!--    <b-navbar toggleable="md" :type="theme">-->
+<!--      <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>-->
+<!--      <b-navbar-brand :to="{ name:'Home' }" >-->
+<!--      </b-navbar-brand>-->
+<!--    </b-navbar>-->
   </header>
 </template>
 
@@ -55,7 +66,7 @@ export default {
     left: 0;
     right: 0;
     padding: .75em 0;
-    transition: background-color 1s ease, box-shadow 1s ease, padding .25s linear;
+    transition: background-color 1s ease, box-shadow 1s ease, padding .5s linear;
     z-index: 1071; /* https://getbootstrap.com/docs/4.0/layout/overview/#z-index */
   }
   .Header.Header--light {
@@ -96,12 +107,5 @@ export default {
   .navbar > .navbar-brand {
     padding-top: 0;
     padding-bottom: 0;
-  }
-  .active {
-    opacity: 1;
-    pointer-events: none;
-  }
-  .nav-item__last {
-    margin-right: 1rem;
   }
 </style>

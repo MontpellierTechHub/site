@@ -4,7 +4,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   resolve: {
     alias: {
-      vue: '@vue/compat'
+      vue: '@vue/compat',
     }
   },
   plugins: [vue({

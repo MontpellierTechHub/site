@@ -26,8 +26,6 @@
 </template>
 
 <script>
-import shuffle from 'lodash.shuffle'
-import meetups from '../assets/meetups.json'
 import { mapGetters } from 'vuex'
 
 export default {
@@ -36,9 +34,6 @@ export default {
     ...mapGetters('meetups', {
       meetupsFromVux: 'getMeetupsForHomePage'
     })
-  },
-  data () {
-    return { meetups: shuffle(meetups) }
   },
   mounted () {
     this.$store.dispatch('meetups/getMeetups')
