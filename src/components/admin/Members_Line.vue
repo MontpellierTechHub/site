@@ -1,17 +1,23 @@
 <template>
   <tr>
-        <td>{{member.name}}</td>
-        <td>{{member.email}}</td>
+    <td>{{ member.name }}</td>
+    <td>{{ member.email }}</td>
 
-        <td :class="{ expired: active_cotisation && moment(active_cotisation.created_at).isBefore(moment().subtract(1, 'years').format()) }">
+    <td
+      :class="{ expired: active_cotisation && moment(active_cotisation.created_at).isBefore(moment().subtract(1, 'years').format()) }">
             <span v-if="active_cotisation && meetupsEntities[active_cotisation.meetup]">
-            {{meetupsEntities[active_cotisation.meetup].name}} le
-              {{moment(active_cotisation.created_at).format("DD/MM/YYYY")}}
+            {{ meetupsEntities[active_cotisation.meetup].name }} le
+              {{ moment(active_cotisation.created_at).format('DD/MM/YYYY') }}
             </span>
-        </td>
-        <td>
-          <admin-members-update-button v-bind:member="member" />
-        </td>
+    </td>
+    <td>
+      <b-button size="sm" v @click="open = !open">Editer</b-button>
+    </td>
+  </tr>
+  <tr  v-if="open">
+    <td colspan="3">
+      <admin-members-update v-bind:member="member"/>
+    </td>
   </tr>
 </template>
 
@@ -19,13 +25,13 @@
 
 import { mapGetters } from 'vuex'
 
-import AdminMembersUpdateButton from './Members_UpdateButton.vue'
+import AdminMembersUpdate from './Members_Update.vue'
 import moment from 'moment'
 
 export default {
   name: 'AdminMembers_Line',
   components: {
-    AdminMembersUpdateButton
+    AdminMembersUpdate
   },
   props: ['member'],
   computed: {
@@ -40,7 +46,8 @@ export default {
   },
   data () {
     return {
-      moment: moment
+      moment: moment,
+      open: false
     }
   },
   created () {

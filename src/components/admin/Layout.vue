@@ -24,7 +24,9 @@
             </ul>
 
             <b-dropdown right variant="link" size="lg" no-caret>
-              <template slot="button-content"><img class="avatar" :src="user.avatarUrl" :title="user.name"/></template>
+              <template #button-content>
+                <img class="avatar" :src="user.avatarUrl" :title="user.name" />
+              </template>
 
               <b-dropdown-item v-on:click="signOut">Deconnexion</b-dropdown-item>
             </b-dropdown>
@@ -91,6 +93,7 @@ header {
 }
 .avatar {
   height: 40px;
+  width: 40px;
   border-radius: 30px;
 }
 .dropdown-toggle {

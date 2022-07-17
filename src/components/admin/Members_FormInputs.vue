@@ -67,7 +67,7 @@ export default {
   data () {
     return {
       moment: moment,
-      add_cotisation: false
+      add_cotisation: false,
     }
   }
 }

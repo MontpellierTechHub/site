@@ -1,7 +1,6 @@
 <template>
-  <b-modal size="lg" ref="modal" :id="'modal_members__update' + this.member.id" title="Editer un membre" hide-footer>
     <b-form @submit="onSubmit">
-      <Admin-members-form-inputs :form="form" :member="this.member" editing="true"/>
+      <Admin-members-form-inputs :form="form" :member="member" editing="true"/>
 
         <div class="w-100">
           <b-button class="float-left" type="button" v-on:click="onDelete" variant="danger">Supprimer</b-button>
@@ -9,7 +8,6 @@
           <b-button class="float-right" type="reset" v-on:click="onReset" variant="default">Annuler</b-button>
         </div>
     </b-form>
-  </b-modal>
 </template>
 
 <script>
@@ -49,9 +47,7 @@ export default {
     }
   },
   mounted () {
-    this.$root.$on('bv::modal::show', () => {
       this.form = initialForm(this.member)
-    })
   },
   methods: {
     onSubmit (evt) {
@@ -74,19 +70,21 @@ export default {
       this.$nextTick(() => {
         this.form = initialForm(this.member)
         this.add_cotisation = false
-        this.$refs.modal.hide()
       })
     },
     onDelete (evt) {
       evt.preventDefault()
       this.$store.dispatch('members/updateMember', { id: this.member.id, deleted_at: moment().format() })
-      this.$refs.modal.hide()
     },
     onReset (evt) {
       evt.preventDefault()
       this.form = initialForm(this.member)
-      this.$refs.modal.hide()
     }
   }
 }
 </script>
+
+<style>
+@import './admin.css';
+
+</style>
