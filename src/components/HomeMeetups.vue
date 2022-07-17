@@ -7,18 +7,18 @@
       </h2>
 
       <b-card-group columns>
-        <b-card v-for="meetup of meetupsFromVux" :key="meetup.name" tag="article">
+        <b-card v-for="meetup of meetupsFromVux" :key="meetup.name" tag="article" >
           <h5 class="card-title">
-            <a :href="meetup.meetup_dot_link" target="_blank">
+            <a :href="meetup.meetup_dot_link" target="_blank" class="hlink">
               {{ meetup.name }}
             </a>
           </h5>
-          <p class="card-text">{{ meetup.description }}</p>
-          <div slot="footer">
+          <b-card-text>{{ meetup.description }}</b-card-text>
+          <template #footer>
             <span class="text-muted">
               ~ {{ meetup.average_per_year }} évènements par an / {{ meetup.meetup_dot_members }} membres
             </span>
-          </div>
+          </template>
         </b-card>
       </b-card-group>
     </b-container>
@@ -46,5 +46,8 @@ export default {
     font-family: 'Roboto', sans-serif;
     padding: 80px 0;
     background-color: #f5f5f5;
+  }
+  .hlink {
+    text-decoration: none;
   }
 </style>

@@ -2,6 +2,14 @@
   <section class="HomeAbout">
     <b-container>
       <h1 class="text-center">Prochains événements</h1>
+
+      <div v-if="eventsLoading" class="text-center">
+        Chargements des prochains évènements
+      </div>
+      <div v-if="eventsLoaded && events.length === 0" class="text-center">
+        Pas de prochain évènements
+      </div>
+
       <article>
         <b-list-group>
           <b-list-group-item v-for="event of events" :key="event.id" :href="event.url" target="_blank" class="d-flex">
@@ -65,6 +73,7 @@ export default {
   methods: {
     fetchEvents () {
       if (this.eventsLoading) return
+      this.eventsLoading = true
       fetch(ical2ApiURL)
         .then(async response => {
           const events = await response.json()
