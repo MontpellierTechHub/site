@@ -66,8 +66,9 @@ export const router = createRouter({
       component: AdminLayout,
       children: [
         {
-          path: '/',
+          path: '/admin/',
           name: 'AdminDashboard',
+          sensitive: true,
           component: AdminDashboard
         },
         {

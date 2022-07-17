@@ -1,26 +1,36 @@
 <template>
     <div>
-      <header>
-        <b-navbar-brand :to="{ name:'Home' }">
-          <img class="logo" :src="logo" alt="Montpellier Tech Hub"/>
-        </b-navbar-brand>
+      <header class="navbar navbar-expand-lg navbar-light bg-light">
 
-        <div v-if="user" class="nav-wrapper ml-auto d-flex">
-          <b-navbar-nav class="nav" v-if="user.isAdmin">
-            <b-nav-item active-class="active" href="/admin">Dashboard</b-nav-item>
-            <b-nav-item active-class="active" :to="{ name:'AdminSponsors' }">Sponsors</b-nav-item>
-            <b-nav-item active-class="active" :to="{ name:'AdminMembers' }">Members</b-nav-item>
-            <b-nav-item active-class="active" :to="{ name:'AdminMeetups' }">Meetups</b-nav-item>
-          </b-navbar-nav>
+        <div class="container-fluid">
+          <router-link class="navbar-brand" :to="{ name:'Home' }" active-class="active">
+            <img class="logo" :src="logo" alt="Montpellier Tech Hub"/>
+          </router-link>
 
-           <b-dropdown right variant="link" size="lg" no-caret>
-            <template slot="button-content"><img class="avatar" :src="user.avatarUrl" :title="user.name"/></template>
+          <div v-if="user" class="nav-wrapper ml-auto d-flex">
+            <ul class="navbar-nav ml-auto " v-if="user.isAdmin">
+              <li class="nav-item nav-item_text">
+                <router-link class="nav-link" :to="{ name:'AdminDashboard' }" active-class="active">Dashboard</router-link>
+              </li>
+              <li class="nav-item nav-item_text">
+                <router-link class="nav-link" :to="{ name:'AdminSponsors' }" active-class="active">Sponsors</router-link>
+              </li>
+              <li class="nav-item nav-item_text">
+                <router-link class="nav-link" :to="{ name:'AdminMembers' }" active-class="active">Members</router-link>
+              </li>
+              <li class="nav-item nav-item_text">
+                <router-link class="nav-link" :to="{ name:'AdminMeetups' }" active-class="active">Meetups</router-link>
+              </li>
+            </ul>
 
-            <b-dropdown-item v-on:click="signOut">Deconnexion</b-dropdown-item>
-          </b-dropdown>
+            <b-dropdown right variant="link" size="lg" no-caret>
+              <template slot="button-content"><img class="avatar" :src="user.avatarUrl" :title="user.name"/></template>
 
+              <b-dropdown-item v-on:click="signOut">Deconnexion</b-dropdown-item>
+            </b-dropdown>
+
+          </div>
         </div>
-
       </header>
       <div class="main-content">
         <div v-if="!user"><admin-sign-in /></div>
@@ -97,8 +107,10 @@ header {
   margin-right: 30px;
 }
 .nav-item a {
+  padding: 5px 5px;
   color: rgba(0,0,0,0.6);
-  transition: color 1s ease;
+  transition: all 0.5s linear;
+  border: 2px solid transparent;
 }
 .nav-item a:hover {
   color: rgba(0,0,0,1)
@@ -106,6 +118,8 @@ header {
 .nav-item .active {
   color: rgba(0,0,0,1);
   pointer-events: none;
+  border: 2px solid #2a76dd;
+  border-radius: 4px;
 }
 .main-content {
   margin: 20px;
