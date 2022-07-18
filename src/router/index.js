@@ -1,16 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import About from '../components/About.vue'
-import BecomeMember from '../components/BecomeMember.vue'
-import Events from '../components/Events.vue'
-import Layout from '../components/Layout.vue'
 import Home from '../components/Home.vue'
-import Meetups from '../components/Meetups.vue'
-import Slideshow from '../components/slideshow/Slideshow.vue'
-import AdminLayout from '../components/admin/Layout.vue'
-import AdminSponsors from '../components/admin/Sponsors.vue'
-import AdminMembers from '../components/admin/Members.vue'
-import AdminMeetups from '../components/admin/Meetups.vue'
-import AdminDashboard from '../components/admin/Dashboard.vue'
+import Layout from '../components/Layout.vue'
+
+const BecomeMember  = () => import('../components/BecomeMember.vue')
+const Events  = () => import('../components/Events.vue')
+const Slideshow  = () => import('../components/slideshow/Slideshow.vue')
+const AdminLayout  = () => import('../components/admin/Layout.vue')
+const AdminSponsors  = () => import('../components/admin/Sponsors.vue')
+const AdminMembers  = () => import('../components/admin/Members.vue')
+const AdminMeetups  = () => import('../components/admin/Meetups.vue')
+const AdminDashboard  = () => import('../components/admin/Dashboard.vue')
 
 export const router = createRouter({
   history: createWebHistory(),
@@ -23,16 +22,6 @@ export const router = createRouter({
           path: '/',
           name: 'Home',
           component: Home
-        },
-        {
-          path: 'about',
-          name: 'About',
-          component: About
-        },
-        {
-          path: 'meetups',
-          name: 'Meetups',
-          component: Meetups
         },
         {
           path: 'become-member',
