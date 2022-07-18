@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../components/Home.vue'
 import Layout from '../components/Layout.vue'
 
+const BecomeSponsors = () => import('../components/BecomeSponsors.vue')
 const BecomeMember  = () => import('../components/BecomeMember.vue')
 const Events  = () => import('../components/Events.vue')
 const Slideshow  = () => import('../components/slideshow/Slideshow.vue')
@@ -32,6 +33,11 @@ export const router = createRouter({
           path: 'events',
           name: 'Events',
           component: Events
+        },
+        {
+          path: 'sponsors',
+          name: 'Sponsors',
+          component: BecomeSponsors
         }
       ]
     },

@@ -2,10 +2,13 @@
   <b-collapse id="nav_collapse" is-nav visible="false" class="collapse navbar-collapse justify-content-end" >
     <ul :class="['navbar-nav', 'ml-auto', fixed ? '': '']" >
       <li class="nav-item nav-item_text">
+        <router-link class="nav-link" :to="{ name:'Events' }" active-class="active">Evénements</router-link>
+      </li>
+      <li class="nav-item nav-item_text">
         <router-link class="nav-link" :to="{ name:'BecomeMember' }" active-class="active">Devenir membre</router-link>
       </li>
       <li class="nav-item nav-item_text">
-        <router-link class="nav-link" :to="{ name:'Events' }" active-class="active">Evénements</router-link>
+        <router-link class="nav-link" :to="{ name:'Sponsors' }" active-class="active">Devenir sponsors</router-link>
       </li>
       <li class="nav-item">
         <a class="nav-link"  target="_blank" href="https://twitter.com/MtpTechHub">
