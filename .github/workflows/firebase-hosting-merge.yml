@@ -11,9 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version-file: .nvmrc
           cache: 'npm'
       - run: git config --global url."git@github.com:".insteadOf git://github.com/ && npm ci
       - run: npm run build
