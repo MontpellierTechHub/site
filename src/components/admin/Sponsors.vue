@@ -27,8 +27,8 @@
 </template>
 
 <script>
-import AdminSponsorsAdd from '@/components/admin/Sponsors_Add'
-import AdminSponsorsLine from '@/components/admin/Sponsors_Line'
+import AdminSponsorsAdd from './Sponsors_Add.vue'
+import AdminSponsorsLine from './Sponsors_Line.vue'
 
 import { mapGetters } from 'vuex'
 

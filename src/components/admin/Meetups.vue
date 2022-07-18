@@ -30,10 +30,8 @@
             </td>
             <td>{{meetup.status}}</td>
             <td>
-            <td>
               <admin-meetups-update-button v-bind:meetup="meetup" />
             </td>
-
           </tr>
         </tbody>
       </table>
@@ -44,8 +42,8 @@
 <script>
 import { mapGetters } from 'vuex'
 import moment from 'moment'
-import AdminMeetupsAdd from '@/components/admin/Meetups_Add'
-import AdminMeetupsUpdateButton from '@/components/admin/Meetups_UpdateButton'
+import AdminMeetupsAdd from './Meetups_Add.vue'
+import AdminMeetupsUpdateButton from './Meetups_UpdateButton.vue'
 
 export default {
   name: 'AdminMeetups',

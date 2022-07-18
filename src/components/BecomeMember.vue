@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import MthPageBanner from '@/components/PageBanner'
-import MthBecomeMemberContent from '@/components/BecomeMemberContent'
+import MthPageBanner from '../components/PageBanner.vue'
+import MthBecomeMemberContent from '../components/BecomeMemberContent.vue'
 export default {
   name: 'BecomeMember',
   components: {
