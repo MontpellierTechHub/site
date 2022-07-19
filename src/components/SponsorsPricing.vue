@@ -32,15 +32,17 @@
               <div class="card-body">
                 <h1 class="card-title pricing-card-title">1200€<small class="text-muted fw-light">/year</small></h1>
                 <ul class="list-unstyled mt-3 mb-4">
+                  <li><b>✨Logo on the replay</b> (<a href="https://www.youtube.com/channel/UC1ZadBAsgOgD0eo2R3JTgNA" target="_blank">YouTube</a>)*</li>
                   <li>Logo on the website</li>
                   <li>Logo before every events</li>
-                  <li>Logo on the replay (<a href="https://www.youtube.com/channel/UC1ZadBAsgOgD0eo2R3JTgNA" target="_blank">YouTube</a>)</li>
                 </ul>
                 <a role="button" class="w-100 btn btn-lg btn-primary" href="mailto:contact@montpellier-techhub.org">Contact us</a>
               </div>
             </div>
           </div>
         </div>
+
+        <p class="text-secondary">* Most meetups are recorded live, some meetups due to the formats (workshop) or missing man power cannot be recorded. </p>
       </main>
 
     </b-container>
