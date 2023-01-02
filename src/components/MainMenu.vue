@@ -17,7 +17,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link"  target="_blank" href="https://bit.ly/comm-mtp">
+        <a class="nav-link"  target="_blank" href="https://bit.ly/comm-mtp2">
           <i class="fa fa-slack"></i>
           <span class="d-md-none">Slack</span>
         </a>
