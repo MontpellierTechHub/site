@@ -6,7 +6,7 @@
       <b-col sm="12" md="6" v-for="event of events" :key="event.id" :href="event.url" target="_blank" class="events">
         <h6 class="meetupName">{{ event.icalName }}</h6>
         <h4 class="eventName">{{ event.title }}</h4>
-        <p class="detail"><i class="fa fa-clock fa-3x"></i>{{moment(event.startDate).format('dddd DD MMMM à HH:mm')}}</p>
+        <p class="detail"><i class="fa fa-clock fa-3x"></i>{{event.startDate}}</p>
         <p class="detail"><i class="fa fa-map-marker fa-3x"></i>{{event.locationName}}</p>
       </b-col>
     </b-row>
@@ -15,7 +15,7 @@
 
 <script>
 import { ical2ApiURL } from '../../constants'
-import moment from 'moment'
+import { DateTime } from 'luxon'
 
 export default {
   name: 'SlideEvents',
@@ -23,7 +23,6 @@ export default {
     return {
       events: [],
       eventsLoaded: false,
-      moment: moment
     }
   },
   mounted () {
@@ -40,8 +39,16 @@ export default {
           const events = await response.json()
           this.events = events.map(event => ({
             ...event,
-            locationName: event.location ? event.location.substring(0, event.location.indexOf('(')) : ''
+            locationName: event.location ? event.location.substring(0, event.location.indexOf('(')) : '',
+            startDate: DateTime.fromMillis(event.startDate).toLocaleString({
+                month: 'long',
+              weekday: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit',
+            })
           }))
+          console.log(this.events[0])
           this.eventsLoaded = true
         })
     }
