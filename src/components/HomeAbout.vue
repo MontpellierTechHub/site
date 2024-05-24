@@ -19,7 +19,7 @@
               </a>
             </li>
             <li>
-              <a href="https://bit.ly/comm-mtp" target="_blank">
+              <a href="https://bit.ly/comm-mtp2" target="_blank">
                 <i class="fa fa-slack fa-3x"></i>
               </a>
             </li>
